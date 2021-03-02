@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>오렌즈 추가개발 - 사은품 </title>
+        <!-- css -->
+        <link rel="stylesheet" href="/dist/css/main.css">
+        <!-- 내부 js -->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="/dist/js/main.js"></script>
+    </head>
+    <body id="olenzFreegift" class="fb">
+
+        <section class="fb__freegift">
+            <h3 class="fb__title--hidden">사은품 주문 페이지</h3>
+            
+            <div class="freegift">
+                <header class="freegift__header">
+                    <p class="freegift__header__title">FREE GIFTS</p>
+                    <button class="freegift__header__button js__gift__open">Select</button>
+                </header>
+    
+                <div class="freegift__cont">
+                    <!-- 2개인경우에는 freegift__selected--two -->
+                    <ul class="freegift__selected ">
+                        
+                        <!-- 선택사항이 두개일 때 -->
+                        <!-- <li class="freegift__selected__list">
+                            <figure class="freegift__selected__img">
+                                <img src="../../src/images/olenz/img-freegift.png">
+                            </figure>
+                            <div class="freegift__selected__desc">
+                                <p class="freegift__selected__name">Scandi 1Day Gray (20p)</p>
+                                <p class="freegift__selected__power">Power: -1.00</p>
+                                <p class="freegift__selected__qty">Qty : 1</p>
+                            </div>
+                        </li>
+                        <li class="freegift__selected__list">
+                            <figure class="freegift__selected__img">
+                                <img src="../../src/images/olenz/img-freegift.png">
+                            </figure>
+                            <div class="freegift__selected__desc">
+                                <p class="freegift__selected__name">Scandi 1Day Gray (20p)</p>
+                                <p class="freegift__selected__power">Power: -1.00</p>
+                                <p class="freegift__selected__qty">Qty : 1</p>
+                            </div>
+                        </li> -->
+    
+                        <!-- 선택사항이 없을 때 -->
+                        <li class="freegift__selected__list freegift__selected--null">
+                            <div class="freegift__selected__desc">
+                                <p>You did not select any free gifts.</p>
+                            </div>
+                        </li>
+                    </ul>
+        
+                </div>
+                <!-- 안내사항 -->
+                <ul class="freegift__notice">
+                    <li class="freegift__notice__list">
+                        When order returns due to change of mind, the coupon used cannot be returned.
+                    </li>
+                    <li class="freegift__notice__list">
+                        For order return due to change of mind, free gifts must be returned together in original condition.
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- //수정 -->
+
+
+
+            <!-- <div class="freegift">
+                <p class="freegift__header">FREE GIFTS
+                    <button class="freegift__reselect js__gift__open">Select</button>
+                </p>
+                <div class="freegift__selected">
+                    <ul class="freegift__selected__wrap">
+                        <li class="freegift__selected__list">
+                            <a href="#" class="freegift__selected__link">
+                                <figure class="freegift__selected__img">
+                                    <img src="../../src/images/olenz/img-freegift.png">
+                                </figure>
+                                <div class="freegift__selected__desc">
+                                    <strong class="freegift__selected__name">
+                                        Scandi 1Day Gray (20p)
+                                    </strong>
+                                    <p class="freegift__selected__power">
+                                        Power: -1.00
+                                    </p>
+                                    <p class="freegift__selected__qty">
+                                        Qty : 1
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="freegift__selected__list">
+                            <a href="#" class="freegift__selected__link">
+                                <figure class="freegift__selected__img">
+                                    <img src="../../src/images/olenz/img-freegift.png">
+                                </figure>
+                                <div class="freegift__selected__desc">
+                                    <strong class="freegift__selected__name">
+                                        Scandi 1Day Gray (20p)
+                                    </strong>
+                                    <p class="freegift__selected__power">
+                                        Power: -1.00
+                                    </p>
+                                    <p class="freegift__selected__qty">
+                                        Qty : 1
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="freegift__notice">
+                    <li class="freegift__notice__list">
+                        When order returns due to change of mind, the coupon used cannot be returned.
+                    </li>
+                    <li class="freegift__notice__list">
+                        For order return due to change of mind, free gifts must be returned together in original condition.
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="freegift">
+                <p class="freegift__header">FREE GIFTS
+                    <button class="freegift__reselect js__gift__open">Select</button>
+                </p>
+                <div class="freegift__selected">
+                    <ul class="freegift__selected__wrap">
+                        <li class="freegift__selected__list select--one">
+                            <a href="#" class="freegift__selected__link">
+                                <figure class="freegift__selected__img">
+                                    <img src="../../src/images/olenz/img-freegift.png">
+                                </figure>
+                                <div class="freegift__selected__desc">
+                                    <strong class="freegift__selected__name">
+                                        Scandi 1Day Gray (20p)
+                                    </strong>
+                                    <p class="freegift__selected__power">
+                                        Power: -1.00
+                                    </p>
+                                    <p class="freegift__selected__qty">
+                                        Qty : 1
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="freegift__notice">
+                    <li class="freegift__notice__list">
+                        When order returns due to change of mind, the coupon used cannot be returned.
+                    </li>
+                    <li class="freegift__notice__list">
+                        For order return due to change of mind, free gifts must be returned together in original condition.
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="freegift">
+                <p class="freegift__header">FREE GIFTS
+                    <button class="freegift__reselect js__gift__open">Select</button>
+                </p>
+                <div class="freegift__selected">
+                    <ul class="freegift__selected__wrap">
+                        <li class="freegift__selected__list select--null">
+                            You did not select any free gifts.
+                        </li>
+                    </ul>
+                </div>
+                <ul class="freegift__notice">
+                    <li class="freegift__notice__list">
+                        When order returns due to change of mind, the coupon used cannot be returned.
+                    </li>
+                    <li class="freegift__notice__list">
+                        For order return due to change of mind, free gifts must be returned together in original condition.
+                    </li>
+                </ul>
+            </div> -->
+
+        </section> 
+
+        <section class="fb__selectgift js__gift__layer">
+            <h3 class="fb__title--hidden">사은품 주문 팝업창</h3>
+            <main class="selectgift">
+                <p class="freegift__header">SELECT FREE GIFTS
+                    <button class="selectgift__close js__gift__close"></button>
+                </p>
+                <div class="selectgift__header selectgift__inner">
+                    <span>
+                        <em>1</em><!--  
+                        -->/2 Free gifts available
+                    </span>
+                    <button class="selectgift__button--later js__gift__later">Not for this time</button>
+                    <button class="selectgift__button--complete js__gift__complete">Complete</button>
+                </div>
+                <ul class="selectgift__select selectgift__inner">
+                    <li class="selectgift__select__list">
+                        <figure class="freegift__popup__img">
+                            <img src="../../src/images/olenz/img-freegift.png">
+                            <input type="checkbox" id="selectgift__item01">
+                            <label class="selectgift__select__item" for="selectgift__item01"></label>
+                        </figure>
+                        <div class="selectgift__select__desc">
+                            <p class="selectgift__select__name">Scandi Hazel</p>
+                            <div class="selectgift__select__power" >
+                                <select name="power__select">
+                                    <option value="-1.00">-1.00</option>
+                                    <option value="-1.50">-1.50</option>
+                                    <option value="-2.00">-2.00</option>
+                                </select>
+                            </div>
+                            <p class="selectgift__select__qty">
+                                <button class="selectgift__select__qty--minus">-</button>
+                                <span>1</span>
+                                <button class="selectgift__select__qty--plus">+</button>
+                            </p>
+                        </div>  
+                    </li>
+                    <li class="selectgift__select__list">
+                        <figure class="freegift__popup__img">
+                            <img src="../../src/images/olenz/img-freegift.png">
+                            <input type="checkbox" id="selectgift__item02">
+                            <label class="selectgift__select__item" for="selectgift__item02"></label>
+                        </figure>
+                        <div class="selectgift__select__desc">
+                            <p class="selectgift__select__name">Scandi Hazel</p>
+                            <div class="selectgift__select__power" >
+                                <select name="power__select">
+                                    <option value="-1.00">-1.00</option>
+                                    <option value="-1.50">-1.50</option>
+                                    <option value="-2.00">-2.00</option>
+                                </select>
+                            </div>
+                            <p class="selectgift__select__qty">
+                                <span class="selectgift__select__qty--minus"></span>
+                                1
+                                <span class="selectgift__select__qty--plus"></span>
+                            </p>
+                        </div>  
+                    </li>
+                    <li class="selectgift__select__list">
+                        <figure class="freegift__popup__img">
+                            <img src="../../src/images/olenz/img-freegift.png">
+                            <input type="checkbox" id="selectgift__item03">
+                            <label class="selectgift__select__item" for="selectgift__item03"></label>
+                        </figure>
+                        <div class="selectgift__select__desc">
+                            <p class="selectgift__select__name">Scandi Hazel</p>
+                            <div class="selectgift__select__power" >
+                                <select name="power__select">
+                                    <option value="-1.00">-1.00</option>
+                                    <option value="-1.50">-1.50</option>
+                                    <option value="-2.00">-2.00</option>
+                                </select>
+                            </div>
+                            <p class="selectgift__select__qty">
+                                <span class="selectgift__select__qty--minus"></span>
+                                1
+                                <span class="selectgift__select__qty--plus"></span>
+                            </p>
+                        </div>  
+                    </li>
+                    <li class="selectgift__select__list">
+                        <figure class="freegift__popup__img">
+                            <img src="../../src/images/olenz/img-freegift.png">
+                            <input type="checkbox" id="selectgift__item04">
+                            <label class="selectgift__select__item" for="selectgift__item04"></label>
+                        </figure>
+                        <div class="selectgift__select__desc">
+                            <p class="selectgift__select__name">Scandi Hazel</p>
+                            <div class="selectgift__select__power" >
+                                <select name="power__select">
+                                    <option value="-1.00">-1.00</option>
+                                    <option value="-1.50">-1.50</option>
+                                    <option value="-2.00">-2.00</option>
+                                </select>
+                            </div>
+                            <p class="selectgift__select__qty">
+                                <span class="selectgift__select__qty--minus"></span>
+                                1
+                                <span class="selectgift__select__qty--plus"></span>
+                            </p>
+                        </div>  
+                    </li>
+                    <li class="selectgift__select__list">
+                        <figure class="freegift__popup__img">
+                            <img src="../../src/images/olenz/img-freegift.png">
+                            <input type="checkbox" id="selectgift__item05">
+                            <label class="selectgift__select__item" for="selectgift__item05"></label>
+                        </figure>
+                        <div class="selectgift__select__desc">
+                            <p class="selectgift__select__name">Scandi Hazel</p>
+                            <div class="selectgift__select__power" >
+                                <select name="power__select">
+                                    <option value="-1.00">-1.00</option>
+                                    <option value="-1.50">-1.50</option>
+                                    <option value="-2.00">-2.00</option>
+                                </select>
+                            </div>
+                            <p class="selectgift__select__qty">
+                                <span class="selectgift__select__qty--minus"></span>
+                                1
+                                <span class="selectgift__select__qty--plus"></span>
+                            </p>
+                        </div>  
+                    </li>
+                    <li class="selectgift__select__list">
+                        <figure class="freegift__popup__img">
+                            <img src="../../src/images/olenz/img-freegift.png">
+                            <input type="checkbox" id="selectgift__item06">
+                            <label class="selectgift__select__item" for="selectgift__item06"></label>
+                        </figure>
+                        <div class="selectgift__select__desc">
+                            <p class="selectgift__select__name">Scandi Hazel</p>
+                            <div class="selectgift__select__power" >
+                                <select name="power__select">
+                                    <option value="-1.00">-1.00</option>
+                                    <option value="-1.50">-1.50</option>
+                                    <option value="-2.00">-2.00</option>
+                                </select>
+                            </div>
+                            <p class="selectgift__select__qty">
+                                <span class="selectgift__select__qty--minus"></span>
+                                1
+                                <span class="selectgift__select__qty--plus"></span>
+                            </p>
+                        </div>  
+                    </li>
+                    <li class="selectgift__select__list">
+                        <figure class="freegift__popup__img">
+                            <img src="../../src/images/olenz/img-freegift.png">
+                            <input type="checkbox" id="selectgift__item07">
+                            <label class="selectgift__select__item" for="selectgift__item07"></label>
+                        </figure>
+                        <div class="selectgift__select__desc">
+                            <p class="selectgift__select__name">Scandi Hazel</p>
+                            <div class="selectgift__select__power" >
+                                <select name="power__select">
+                                    <option value="-1.00">-1.00</option>
+                                    <option value="-1.50">-1.50</option>
+                                    <option value="-2.00">-2.00</option>
+                                </select>
+                            </div>
+                            <p class="selectgift__select__qty">
+                                <span class="selectgift__select__qty--minus"></span>
+                                1
+                                <span class="selectgift__select__qty--plus"></span>
+                            </p>
+                        </div>  
+                    </li>
+                </ul>
+                
+            </main>
+        </section>
+
+    </body>
+</html>
