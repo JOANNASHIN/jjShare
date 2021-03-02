@@ -770,6 +770,45 @@ textarea {
   content: "";
 }
 
+html {
+  font-size: 125%;
+  -webkit-text-size-adjust: none;
+}
+@media screen and (min-device-width: 320px) {
+  html html {
+    font-size: 62.5%;
+  }
+}
+@media screen and (min-device-width: 360px) {
+  html html {
+    font-size: 70.3125%;
+  }
+}
+@media screen and (min-device-width: 375px) {
+  html html {
+    font-size: 73.2421%;
+  }
+}
+@media screen and (min-device-width: 412px) {
+  html html {
+    font-size: 80.4688%;
+  }
+}
+@media screen and (min-device-width: 414px) {
+  html html {
+    font-size: 80.8594%;
+  }
+}
+@media screen and (min-device-width: 640px) {
+  html html {
+    font-size: 125%;
+  }
+}
+
+.fb {
+  font-size: 1.2rem;
+}
+
 .fb .freegift__selected:after, .fb__selectgift .selectgift__select:after, .fb__selectgift .selectgift__select__list:after {
   display: block;
   clear: both;
