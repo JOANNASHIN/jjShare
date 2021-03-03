@@ -856,6 +856,7 @@ html, body {
 .mo__freegift .freegift__selected.freegift__selected--null .freegift__selected__info p {
   font-family: "OpenSans-Light";
   font-size: 1.1rem;
+  line-height: 1.3;
 }
 .mo__freegift .freegift__selected__list {
   position: relative;
@@ -895,7 +896,7 @@ html, body {
   margin-bottom: 0.6rem;
   font-family: "OpenSans-Regular";
   font-size: 1.1rem;
-  line-height: 1.5rem;
+  line-height: 1.3;
   text-overflow: ellipsis;
   text-align: left;
   word-wrap: break-word;
@@ -924,7 +925,7 @@ html, body {
   color: #888;
   font-family: "OpenSans-Light";
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.3;
 }
 .mo__freegift .freegift__notice__list:after {
   position: absolute;
@@ -935,6 +936,49 @@ html, body {
   background: #888;
   border-radius: 50%;
   content: "";
+}
+.mo__selectgift {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f2f2f2;
+}
+.mo__selectgift .selectgift .freegift__header {
+  position: relative;
+  height: 4.75rem;
+  padding-top: 1.5rem;
+  background: #fff;
+  border-bottom: 0.05rem solid #e6e6e6;
+  text-align: center;
+}
+.mo__selectgift .selectgift .freegift__title {
+  font-family: "OpenSans-Regular";
+  font-size: 1.6rem;
+}
+.mo__selectgift .selectgift__close {
+  position: absolute;
+  top: 1.75rem;
+  right: 1.65rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  font-size: 0;
+  background: none;
+  border: none;
+}
+.mo__selectgift .selectgift__close:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: url(../../src/images/olenz/btn-close-mo.png) no-repeat center;
+  content: "";
+}
+.mo__selectgift .selectgift__cont {
+  margin-top: 0.7rem;
+  background: #fff;
 }
 
 /*# sourceMappingURL=main.css.map*/

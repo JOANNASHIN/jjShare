@@ -46,6 +46,7 @@
                         &__list {
                         }
                         &__info {
+                            // overflow: hidden;
                             position: absolute;
                             top: 50%;
                             left: 0;
@@ -57,6 +58,7 @@
                             p {
                                 font-family: 'OpenSans-Light';
                                 font-size: rem(22px);
+                                line-height: 1.3;
                             }
                         }
                     }
@@ -105,7 +107,7 @@
                     margin-bottom: rem(12px);
                     font-family: 'OpenSans-Regular';
                     font-size: rem(22px);
-                    line-height: rem(30px);
+                    line-height: 1.3;
                     text-overflow: ellipsis;
                     text-align: left;
                     word-wrap: break-word;
@@ -138,7 +140,7 @@
                     color: #888;
                     font-family: 'OpenSans-Light';
                     font-size: rem(20px);
-                    line-height: rem(30px);
+                    line-height: 1.3;
 
                     &:after {
                         position: absolute;
@@ -151,6 +153,61 @@
                         content: "";
                     }
                 }
+            }
+        }
+    }
+
+    &__selectgift {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #f2f2f2;
+
+        .selectgift {
+
+            .freegift {
+                &__header {
+                    position: relative;
+                    height: rem(95px);
+                    padding-top: rem(30px);
+                    background: #fff;
+                    border-bottom: rem(1px) solid #e6e6e6; 
+                    text-align: center;
+
+                }
+                
+                &__title {
+                    font-family: 'OpenSans-Regular';
+                    font-size: rem(32px);
+                }
+            }
+            
+            &__close {
+                position: absolute;
+                top: rem(35px);
+                right: rem(33px);
+                width: rem(24px);
+                height: rem(24px);
+                font-size: 0;
+                background: none;
+                border: none;
+
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: rem(24px);
+                    height: rem(24px);
+                    background: url(../images/olenz/btn-close-mo.png)no-repeat center;
+                    content: "";
+                }
+            }
+
+            &__cont {
+                margin-top: rem(14px);
+                background: #fff;
             }
         }
     }
