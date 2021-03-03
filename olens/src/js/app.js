@@ -14,6 +14,7 @@ import olenzFreegift from "./divide/olenzFreegift";
 const htmlDoc = document.documentElement;
 let enSizing = false;
 
+// rem 적용을 위해 추가
 const setFontSize = () => {
 	htmlDoc.style.fontSize =  (parseInt((htmlDoc.offsetWidth/320*62.5) * 100000) / 100000) + '%';
 }

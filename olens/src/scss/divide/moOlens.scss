@@ -2,18 +2,52 @@
     width: rem(640px);
 
     &__freegift {
+
         .freegift {
+            
             &__header {
+                position: relative;
+                height: rem(100px);
+                margin: rem(0 25px);
+                padding-top: rem(47px);
+                border-bottom: #f0f0f0 rem(1px) solid;
+
                 &__button {
+                    position: absolute;
+                    right: rem(25px);
+                    bottom: rem(13px);
                     width: rem(160px);
-                    width: 8rem;
                     height: rem(64px);
+                    background: #fff;
+                    border: rem(1px) solid #ccc;
+                    color: #555;
+                    font-family: 'OpenSans-Regular';
+                    font-size: rem(24px);
+                }
+            }
+
+            &__title {
+                font-family: 'OpenSans-Regular';
+                font-size: rem(26px);
+                line-height: 1;
+            }
+
+            &__cont {
+                margin: rem(25px);
+            }
+            
+            &__selected {
+                padding: rem(20px);
+                background: #f8f8f8;
+
+                &__list {
+                    width: rem(100%);
+                    height: rem(180px);
+                    // background: yellow;
                 }
             }
         }
     }
 
-    .selectgift__close {
-        width: 120px;
-    }
+    
 }
