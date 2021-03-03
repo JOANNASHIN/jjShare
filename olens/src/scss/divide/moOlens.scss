@@ -200,14 +200,96 @@
                     left: 0;
                     width: rem(24px);
                     height: rem(24px);
-                    background: url(../images/olenz/btn-close-mo.png)no-repeat center;
+                    background: url(../images/olenz/btn-close-mo.png)no-repeat 0 0 / rem(24px 24px);
                     content: "";
+                }
+            }
+            &__top {
+                height: rem(86px);
+                padding-top: rem(40px);
+                
+
+                em {
+                    font-family: 'OpenSans-SemiBold';
+                    font-size: rem(26px);
+                }
+                span {
+                    font-family: 'OpenSans-Light';
+                    font-size: rem(26px);
                 }
             }
 
             &__cont {
                 margin-top: rem(14px);
+                padding: rem(0 24px);
                 background: #fff;
+            }
+
+            &__select {
+                
+                &__list {
+                    position: relative;
+                    min-height: rem(238px);
+                    padding: rem(30px 0);
+                    border-bottom: rem(1px) solid #e6e6e6;
+
+                    .freegift__popup__img {
+                        position: absolute;
+                        top: rem(30px);
+                        left: 0;
+                        width: rem(140px);
+                        height: rem(150px);
+
+                        img {
+                           position: absolute;
+                           top: 0;
+                           right: 0;
+                           bottom: 0;
+                           left: 0;
+                           width: 100%;
+                           height: auto;
+                           margin: auto;
+                        }
+
+                        input[id*="selectgift__item"] {
+                            display: none;
+                        }
+
+                        input[id*="selectgift__item"]:checked + label {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background: rgba(0,0,0,.4) url(../images/olenz/btn-check-mo.png)no-repeat rem(48px 62px) / rem(46px 35px);
+                        }
+                    }
+                }
+
+                &__item {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: rem(140px);
+                    height: rem(150px);
+                }
+                
+                &__info {
+                    padding-left: rem(160px);
+                }
+
+                &__name {
+                    margin-bottom: rem(30px);
+                    font-family: 'OpenSans-Regular';
+                    font-size: rem(22px);
+                }
+
+                &__power {
+                    width: rem(430px);
+                    height: rem(72px);
+                    padding-left: rem(25px);
+                    background: url(../images/olenz/btn-select.png)no-repeat calc(100% - 1.5rem) center / rem(22px 13px);
+                    appearance: none;
+                }
             }
         }
     }
