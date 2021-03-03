@@ -49526,7 +49526,7 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
 
 
 const htmlDoc = document.documentElement;
-const enSizing = false;
+let enSizing = false;
 
 const setFontSize = () => {
 	htmlDoc.style.fontSize =  (parseInt((htmlDoc.offsetWidth/320*62.5) * 100000) / 100000) + '%';

@@ -808,5 +808,8 @@ html, body {
   width: 8rem;
   height: 3.2rem;
 }
+.mo .selectgift__close {
+  width: 120px;
+}
 
 /*# sourceMappingURL=main.css.map*/
