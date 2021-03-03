@@ -9,12 +9,12 @@
                 position: relative;
                 height: rem(100px);
                 margin: rem(0 25px);
-                padding-top: rem(47px);
+                padding: rem(47px 160px 0 0);
                 border-bottom: #f0f0f0 rem(1px) solid;
 
                 &__button {
                     position: absolute;
-                    right: rem(25px);
+                    right: 0;
                     bottom: rem(13px);
                     width: rem(160px);
                     height: rem(64px);
@@ -33,17 +33,123 @@
             }
 
             &__cont {
-                margin: rem(25px);
+                margin: rem(24px);
+                
             }
             
             &__selected {
-                padding: rem(20px);
+                padding: rem(22px);
                 background: #f8f8f8;
 
+                &.freegift__selected--null {
+                    .freegift__selected {
+                        &__list {
+                        }
+                        &__info {
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            width: 100%;
+                            padding: initial;
+                            text-align: center;
+                            transform: translate(0, -50%);
+
+                            p {
+                                font-family: 'OpenSans-Light';
+                                font-size: rem(22px);
+                            }
+                        }
+                    }
+                }
+
                 &__list {
-                    width: rem(100%);
-                    height: rem(180px);
-                    // background: yellow;
+                    position: relative;
+                    width: 100%;
+                    min-height: rem(180px);
+                    padding: rem(22px);
+                    background: #fff;
+
+                    &:not(:first-child) {
+                        margin-top: rem(20px);
+                    }
+                }
+
+                &__img {
+                    overflow: hidden;
+                    position: absolute;
+                    top: rem(22px);
+                    left: rem(22px);
+                    width: rem(120px);
+                    height: rem(135px);
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: auto;
+                        margin: auto;
+                    }
+                }
+
+                &__info {
+                    padding-left: rem(148px);
+                }
+                
+                &__name {
+                    display: -webkit-box;
+                    overflow: hidden;
+                    height: rem(60px);
+                    margin-bottom: rem(12px);
+                    font-family: 'OpenSans-Regular';
+                    font-size: rem(22px);
+                    line-height: rem(30px);
+                    text-overflow: ellipsis;
+                    text-align: left;
+                    word-wrap: break-word;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
+
+                &__power {
+                    margin-bottom: rem(12px);
+                    color: #555;
+                    font-family: 'OpenSans-Light';
+                    font-size: rem(22px);
+                }   
+
+                &__qty {
+                    color: #555;
+                    font-family: 'OpenSans-Light';
+                    font-size: rem(22px);
+                }
+            }
+
+            &__notice {
+                margin: rem(5px 24px 40px);
+
+                &__list {
+                    overflow: hidden;
+                    position: relative;
+                    padding-left: rem(20px);
+                    margin-bottom: 20px;
+                    color: #888;
+                    font-family: 'OpenSans-Light';
+                    font-size: rem(20px);
+                    line-height: rem(30px);
+
+                    &:after {
+                        position: absolute;
+                        top: rem(10px);
+                        left: 0;
+                        width: rem(6px);
+                        height: rem(6px);
+                        background: #888;
+                        border-radius: 50%;
+                        content: "";
+                    }
                 }
             }
         }

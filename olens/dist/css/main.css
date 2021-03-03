@@ -480,7 +480,6 @@ html, body {
   text-align: center;
 }
 .fb__freegift .freegift__cont {
-  margin-top: 20px;
   padding: 20px;
   background: #fafafa;
 }
@@ -516,6 +515,7 @@ html, body {
   padding: 15px 15px 15px 95px;
 }
 .fb__freegift .freegift__selected__img {
+  overflow: hidden;
   position: absolute;
   top: 15px;
   left: 15px;
@@ -534,24 +534,29 @@ html, body {
 }
 .fb__freegift .freegift__selected__info {
   width: 100%;
-  height: 90px;
   margin-left: 14px;
   color: #888;
-  font-size: 13px;
-  line-height: 20px;
-  vertical-align: middle;
 }
 .fb__freegift .freegift__selected__name {
   display: -webkit-box;
   overflow: hidden;
   height: 40px;
-  color: #666;
+  margin-bottom: 10px;
+  color: #000;
+  font-size: 13px;
+  line-height: 20px;
   text-overflow: ellipsis;
   text-align: left;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   word-wrap: break-word;
 }
 .fb__freegift .freegift__selected__power {
   margin-bottom: 10px;
+  font-size: 13px;
+}
+.fb__freegift .freegift__selected__qty {
+  font-size: 13px;
 }
 .fb__freegift .freegift__notice {
   width: 900px;
@@ -607,6 +612,8 @@ html, body {
 }
 .fb__selectgift .selectgift .freegift__title {
   padding: initial;
+  font-family: "OpenSans-Regular";
+  font-size: 16px;
   line-height: 1;
 }
 .fb__selectgift .selectgift__close {
@@ -725,9 +732,10 @@ html, body {
   font-family: "OpenSans-Light";
   font-size: 13px;
   line-height: 15px;
-  white-space: normal;
-  text-align: left;
   text-overflow: ellipsis;
+  text-align: left;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   word-wrap: break-word;
 }
 .fb__selectgift .selectgift__select__power {
@@ -737,6 +745,7 @@ html, body {
   width: 100%;
   border: 1px solid #ccc;
   color: #555;
+  font-size: 13px;
   appearance: none;
 }
 .fb__selectgift .selectgift__select__power:after {
@@ -755,6 +764,7 @@ html, body {
   margin-top: 10px;
   border: 1px solid #ddd;
   color: #888;
+  font-size: 13px;
   text-align: center;
   font-size: 12px;
 }
@@ -807,12 +817,12 @@ html, body {
   position: relative;
   height: 5rem;
   margin: 0 1.25rem;
-  padding-top: 2.35rem;
+  padding: 2.35rem 8rem 0 0;
   border-bottom: #f0f0f0 0.05rem solid;
 }
 .mo__freegift .freegift__header__button {
   position: absolute;
-  right: 1.25rem;
+  right: 0;
   bottom: 0.65rem;
   width: 8rem;
   height: 3.2rem;
@@ -828,15 +838,103 @@ html, body {
   line-height: 1;
 }
 .mo__freegift .freegift__cont {
-  margin: 1.25rem;
+  margin: 1.2rem;
 }
 .mo__freegift .freegift__selected {
-  padding: 1rem;
+  padding: 1.1rem;
   background: #f8f8f8;
 }
-.mo__freegift .freegift__selected__list {
+.mo__freegift .freegift__selected.freegift__selected--null .freegift__selected__info {
+  position: absolute;
+  top: 50%;
+  left: 0;
   width: 100%;
-  height: 9rem;
+  padding: initial;
+  text-align: center;
+  transform: translate(0, -50%);
+}
+.mo__freegift .freegift__selected.freegift__selected--null .freegift__selected__info p {
+  font-family: "OpenSans-Light";
+  font-size: 1.1rem;
+}
+.mo__freegift .freegift__selected__list {
+  position: relative;
+  width: 100%;
+  min-height: 9rem;
+  padding: 1.1rem;
+  background: #fff;
+}
+.mo__freegift .freegift__selected__list:not(:first-child) {
+  margin-top: 1rem;
+}
+.mo__freegift .freegift__selected__img {
+  overflow: hidden;
+  position: absolute;
+  top: 1.1rem;
+  left: 1.1rem;
+  width: 6rem;
+  height: 6.75rem;
+}
+.mo__freegift .freegift__selected__img img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.mo__freegift .freegift__selected__info {
+  padding-left: 7.4rem;
+}
+.mo__freegift .freegift__selected__name {
+  display: -webkit-box;
+  overflow: hidden;
+  height: 3rem;
+  margin-bottom: 0.6rem;
+  font-family: "OpenSans-Regular";
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  text-overflow: ellipsis;
+  text-align: left;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.mo__freegift .freegift__selected__power {
+  margin-bottom: 0.6rem;
+  color: #555;
+  font-family: "OpenSans-Light";
+  font-size: 1.1rem;
+}
+.mo__freegift .freegift__selected__qty {
+  color: #555;
+  font-family: "OpenSans-Light";
+  font-size: 1.1rem;
+}
+.mo__freegift .freegift__notice {
+  margin: 0.25rem 1.2rem 2rem;
+}
+.mo__freegift .freegift__notice__list {
+  overflow: hidden;
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 20px;
+  color: #888;
+  font-family: "OpenSans-Light";
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.mo__freegift .freegift__notice__list:after {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  width: 0.3rem;
+  height: 0.3rem;
+  background: #888;
+  border-radius: 50%;
+  content: "";
 }
 
 /*# sourceMappingURL=main.css.map*/
