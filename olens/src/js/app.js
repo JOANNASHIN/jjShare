@@ -11,6 +11,23 @@ import common from "./divide/common";
 //
 import olenzFreegift from "./divide/olenzFreegift";
 
+const htmlDoc = document.documentElement;
+const enSizing = false;
+
+const setFontSize = () => {
+	htmlDoc.style.fontSize =  (parseInt((htmlDoc.offsetWidth/320*62.5) * 100000) / 100000) + '%';
+}
+
+$(window).on("resize", function(e) {
+	if (!enSizing) {
+		window.requestAnimationFrame(function() {
+			setFontSize();
+			enSizing = false;
+		});
+	}
+	enSizing = true;
+});
+
 const appMethods = {
     common,
     olenzFreegift
@@ -21,6 +38,7 @@ const appInit = () => {
 
     if (appName) [common, appMethods[appName]].forEach(method => {
         if (method) method();
+        setFontSize();
     })
 }
 

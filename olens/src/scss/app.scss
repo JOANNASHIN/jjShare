@@ -3,44 +3,40 @@
 @import "./divide/reset.scss";
 @import "./divide/font.scss";
 @import "./library/vw.scss";
-
-//페이지별
-@import "./divide/olenz.scss";
-@import "~/node_modules/sass-rem/_rem.scss";
-
+@import "../../node_modules/sass-rem/_rem.scss";
 
 $rem-baseline: 20px;
 
-html {
+html,body {
     @include rem-baseline;
-    // font-size: 125%;
+    font-size: 125%;
     -webkit-text-size-adjust:none; 
-
-  @media screen and (min-device-width:320px) {
-    html {font-size:62.5%;}
-  }
-  @media screen and (min-device-width:360px) {
-    html {font-size:70.3125%;}
-  }
-  @media screen and (min-device-width:375px) {
-    html {font-size:73.2421%;}
-  }
-  @media screen and (min-device-width:412px) {
-    html {font-size:80.4688%;}
-  }
-  @media screen and (min-device-width:414px) {
-    html {font-size:80.8594%;}
-  }
-  @media screen and (min-device-width:640px) {
-    html {font-size:125%;}
-  }
-}
- 
-.fb {
-  font-size: rem(24px);
 }
 
-
+// @media screen and (min-device-width:320px) {
+//   html {font-size:62.5%;}
+// }
+// @media screen and (min-device-width:360px) {
+//   html {font-size:70.3125%;}
+// }
+// @media screen and (min-device-width:375px) {
+//   html {font-size:73.2421%;}
+// }
+// @media screen and (min-device-width:412px) {
+//   html {font-size:80.4688%;}
+// }
+// @media screen and (min-device-width:414px) {
+//   html {font-size:80.8594%;}
+// }
+// @media screen and (min-device-width:640px) {
+//   html {font-size:125%;}
+// }
+// @media screen and (min-device-width:750px) {
+//   html {font-size:146.484375%;}
+// }
+// @media screen and (min-device-width:1200px) {
+//   html {font-size: 234.375%;}
+// }
 
 %clear {
     &:after {
@@ -79,3 +75,8 @@ html {
         -webkit-line-clamp: $lineCount;
     }
 }
+
+
+//페이지별
+@import "./divide/olenz.scss";
+@import "./divide/moOlens.scss";

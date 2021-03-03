@@ -49525,6 +49525,23 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
 //
 
 
+const htmlDoc = document.documentElement;
+const enSizing = false;
+
+const setFontSize = () => {
+	htmlDoc.style.fontSize =  (parseInt((htmlDoc.offsetWidth/320*62.5) * 100000) / 100000) + '%';
+}
+
+jquery__WEBPACK_IMPORTED_MODULE_1___default()(window).on("resize", function(e) {
+	if (!enSizing) {
+		window.requestAnimationFrame(function() {
+			setFontSize();
+			enSizing = false;
+		});
+	}
+	enSizing = true;
+});
+
 const appMethods = {
     common: _divide_common__WEBPACK_IMPORTED_MODULE_3__.default,
     olenzFreegift: _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_4__.default
@@ -49535,6 +49552,7 @@ const appInit = () => {
 
     if (appName) [_divide_common__WEBPACK_IMPORTED_MODULE_3__.default, appMethods[appName]].forEach(method => {
         if (method) method();
+        setFontSize();
     })
 }
 

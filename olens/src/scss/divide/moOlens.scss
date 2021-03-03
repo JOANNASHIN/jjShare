@@ -1,0 +1,15 @@
+.mo {
+    width: rem(640px);
+
+    &__freegift {
+        .freegift {
+            &__header {
+                &__button {
+                    width: rem(160px);
+                    width: 8rem;
+                    height: rem(64px);
+                }
+            }
+        }
+    }
+}
