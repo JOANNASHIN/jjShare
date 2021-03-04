@@ -941,15 +941,36 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #f2f2f2;
+  background: #fff;
+}
+.mo__selectgift .selectgift {
+  position: relative;
+  height: 100%;
+  padding-top: 5.45rem;
+}
+.mo__selectgift .selectgift__scroll {
+  overflow-y: auto;
+  height: 100%;
 }
 .mo__selectgift .selectgift .freegift__header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 4.75rem;
-  padding-top: 1.5rem;
+  padding: 1.5rem 0;
   background: #fff;
   border-bottom: 0.1rem solid #e6e6e6;
   text-align: center;
+}
+.mo__selectgift .selectgift .freegift__header:after {
+  position: absolute;
+  bottom: -0.8rem;
+  left: 0;
+  width: 100%;
+  height: 0.7rem;
+  background: #f2f2f2;
+  content: "";
 }
 .mo__selectgift .selectgift .freegift__title {
   font-family: "OpenSans-Regular";
@@ -987,7 +1008,6 @@ html, body {
   font-size: 1.3rem;
 }
 .mo__selectgift .selectgift__cont {
-  margin-top: 0.7rem;
   padding: 0 1.2rem;
   background: #fff;
 }
