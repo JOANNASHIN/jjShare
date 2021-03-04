@@ -266,6 +266,10 @@ select {
   text-transform: none;
 }
 
+select {
+  appearance: none;
+}
+
 /**
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
  *    and `video` controls.
@@ -1000,7 +1004,7 @@ html, body {
   padding-top: 2rem;
 }
 .mo__selectgift .selectgift__top em {
-  font-family: "OpenSans-SemiBold";
+  font-weight: bold;
   font-size: 1.3rem;
 }
 .mo__selectgift .selectgift__top span {
@@ -1058,7 +1062,7 @@ html, body {
   display: block;
   display: -webkit-box;
   overflow: hidden;
-  height: 2.6rem;
+  max-height: 2.6rem;
   margin-bottom: 1.5rem;
   font-family: "OpenSans-Regular";
   font-size: 1.1rem;
@@ -1070,23 +1074,24 @@ html, body {
   word-wrap: break-word;
 }
 .mo__selectgift .selectgift__select__power {
-  width: 21.5rem;
+  width: 100%;
   height: 3.6rem;
   margin-bottom: 1rem;
   padding-left: 1.25rem;
   background: url(../../src/images/olenz/btn-select-mo.png) no-repeat calc(100% - 0.75rem) center/1.1rem 0.65rem;
+  border: 0.1rem solid #ccc;
   font-family: "OpenSans-Light";
   font-size: 1.2rem;
-  appearance: none;
 }
 .mo__selectgift .selectgift__select__qty {
   position: relative;
   width: 7.5rem;
-  height: 1.7rem;
+  height: 1.9rem;
   border: 0.1rem solid #ccc;
   text-align: center;
   line-height: 1;
-  box-sizing: initial;
+  padding: 0 1.8rem;
+  box-sizing: border-box;
 }
 .mo__selectgift .selectgift__select__qty--minus {
   position: absolute;
@@ -1115,12 +1120,18 @@ html, body {
   font-size: 0;
 }
 .mo__selectgift .selectgift__button {
+  margin: 0 -0.25rem;
   padding: 1.5rem 1.2rem 4rem;
-  background: #fff;
 }
-.mo__selectgift .selectgift__button--later {
-  display: inline-block;
-  width: calc(50% - 0.25rem);
+.mo__selectgift .selectgift__button::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.mo__selectgift .selectgift__button button {
+  float: left;
+  width: calc(50% - 0.5rem);
+  margin: 0 0.25rem;
   padding: 1.6rem 0;
   border: 0.1rem solid #000;
   border-radius: 0.2rem;
@@ -1129,16 +1140,8 @@ html, body {
   line-height: 1;
 }
 .mo__selectgift .selectgift__button--complete {
-  display: inline-block;
-  width: calc(50% - 0.25rem);
-  padding: 1.6rem 0;
   background: #000;
-  border: 0.1rem solid #000;
-  border-radius: 0.2rem;
   color: #fff;
-  font-family: "OpenSans-Regular";
-  font-size: 1.3rem;
-  line-height: 1;
 }
 
 /*# sourceMappingURL=main.css.map*/

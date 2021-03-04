@@ -231,7 +231,8 @@
                 
 
                 em {
-                    font-family: 'OpenSans-SemiBold';
+                    // font-family: 'OpenSans-SemiBold';
+                    font-weight: bold;
                     font-size: rem(26px);
                 }
                 span {
@@ -305,7 +306,7 @@
                     display: block;
                     display: -webkit-box;
                     overflow: hidden;
-                    height: rem(52px);
+                    max-height: rem(52px);
                     margin-bottom: rem(30px);
                     font-family: 'OpenSans-Regular';
                     font-size: rem(22px);
@@ -318,24 +319,26 @@
                 }
 
                 &__power {
-                    width: rem(430px);
+                    width: 100%;
                     height: rem(72px);
                     margin-bottom: rem(20px);
                     padding-left: rem(25px);
                     background: url(../images/olenz/btn-select-mo.png)no-repeat calc(100% - 0.75rem) center / rem(22px 13px);
+                    border: rem(2px) solid #ccc;
                     font-family: 'OpenSans-Light';
                     font-size: rem(24px);
-                    appearance: none;
                 }
 
                 &__qty {
                     position: relative;
                     width: rem(150px);
-                    height: rem(34px);
+                    height: rem(38px);
                     border: rem(2px) solid #ccc;
                     text-align: center;
                     line-height: 1;
-                    box-sizing: initial;
+                    // box-sizing: initial;
+                    padding: 0 1.8rem;
+                    box-sizing: border-box;
 
                     &--minus {
                         position: absolute;
@@ -370,31 +373,32 @@
             }
 
             &__button {
+                margin: rem(0 -5px);
                 padding: rem(30px 24px 80px);
-                background: #fff;
+                // font-size: 0;
 
-                &--later {
-                    display: inline-block;
-                    width: calc(50% - 0.25rem);
+                &::after {
+                    display: block;
+                    clear: both;
+                    content: "";
+                }
+
+                button {
+                    float: left;
+                    width: calc(50% - 0.5rem);
+                    margin: rem(0 5px);
                     padding: rem(32px 0);
                     border: rem(2px) solid #000;
                     border-radius: rem(4px);
                     font-family: 'OpenSans-Regular';
                     font-size: rem(26px);
                     line-height: 1;
+                    
                 }
 
                 &--complete {
-                    display: inline-block;
-                    width: calc(50% - 0.25rem);
-                    padding: rem(32px 0);
                     background: #000;
-                    border: rem(2px) solid #000;
-                    border-radius: rem(4px);
                     color: #fff;
-                    font-family: 'OpenSans-Regular';
-                    font-size: rem(26px);
-                    line-height: 1;
                 }
             }
         }
