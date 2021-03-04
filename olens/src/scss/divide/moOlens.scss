@@ -136,7 +136,7 @@
                     overflow: hidden;
                     position: relative;
                     padding-left: rem(20px);
-                    margin-bottom: 20px;
+                    margin-bottom: rem(20px);
                     color: #888;
                     font-family: 'OpenSans-Light';
                     font-size: rem(20px);
@@ -238,7 +238,7 @@
                         top: rem(30px);
                         left: 0;
                         width: rem(140px);
-                        height: rem(150px);
+                        height: rem(160px);
 
                         img {
                            position: absolute;
@@ -270,7 +270,7 @@
                     top: 0;
                     left: 0;
                     width: rem(140px);
-                    height: rem(150px);
+                    height: rem(160px);
                 }
                 
                 &__info {
@@ -298,40 +298,79 @@
                     height: rem(72px);
                     margin-bottom: rem(20px);
                     padding-left: rem(25px);
-                    background: url(../images/olenz/btn-select.png)no-repeat calc(100% - 0.75rem) center / rem(22px 13px);
+                    background: url(../images/olenz/btn-select-mo.png)no-repeat calc(100% - 0.75rem) center / rem(22px 13px);
+                    font-family: 'OpenSans-Light';
+                    font-size: rem(24px);
                     appearance: none;
                 }
 
                 &__qty {
                     position: relative;
-                    width: rem(154px);
-                    height: rem(38px);
+                    width: rem(150px);
+                    height: rem(34px);
                     border: rem(2px) solid #ccc;
                     text-align: center;
+                    line-height: 1;
                     box-sizing: initial;
 
                     &--minus {
                         position: absolute;
                         top: 0;
                         left: 0;
-                        width: rem(38px);
-                        height: rem(38px);
-                        background: url(../images/olenz/btn-gift-minus.png)no-repeat center center / rem(7px 1px);
+                        width: rem(36px);
+                        height: rem(36px);
+                        background: url(../images/olenz/btn-gift-minus-mo.png)no-repeat center center / rem(20px 2px);
                         border-right: rem(2px) solid #ccc;
                         font-size: 0;
+                    }
+
+                    &--value {
+                        display: inline-block;
+                        font-family: 'OpenSans-Light';
+                        font-size: rem(22px);
+                        vertical-align: middle;
                     }
 
                     &--plus {
                         position: absolute;
                         top: 0;
                         right: 0;
-                        width: rem(38px);
-                        height: rem(38px);
-                        background: url(../images/olenz/btn-gift-plus.png)no-repeat center center / rem(7px 7px);
+                        width: rem(36px);
+                        height: rem(36px);
+                        background: url(../images/olenz/btn-gift-plus-mo.png)no-repeat center center / rem(20px 20px);
                         border-left: rem(2px) solid #ccc;
                         font-size: 0;
                         
                     }
+                }
+            }
+
+            &__button {
+                padding: rem(30px 24px 80px);
+                background: #fff;
+
+                &--later {
+                    display: inline-block;
+                    width: calc(50% - 0.25rem);
+                    padding: rem(32px 0);
+                    border: rem(2px) solid #000;
+                    border-radius: rem(4px);
+                    font-family: 'OpenSans-Regular';
+                    font-size: rem(26px);
+                    line-height: 1;
+                }
+
+                &--complete {
+                    display: inline-block;
+                    width: calc(50% - 0.25rem);
+                    padding: rem(32px 0);
+                    background: #000;
+                    border: rem(2px) solid #000;
+                    border-radius: rem(4px);
+                    color: #fff;
+                    font-family: 'OpenSans-Regular';
+                    font-size: rem(26px);
+                    line-height: 1;
                 }
             }
         }
