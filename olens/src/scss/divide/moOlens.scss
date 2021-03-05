@@ -94,6 +94,7 @@
         }
         
         &__name {
+            display: block;
             display: -webkit-box;
             overflow: hidden;
             max-height: rem(60px);
@@ -308,6 +309,7 @@
             }
 
             &__name {
+                display: block;
                 display: -webkit-box;
                 overflow: hidden;
                 max-height: rem(52px);

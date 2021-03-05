@@ -505,6 +505,7 @@ html, body {
   padding-left: 7.4rem;
 }
 .fb__freegift__name {
+  display: block;
   display: -webkit-box;
   overflow: hidden;
   max-height: 3rem;
@@ -684,6 +685,7 @@ html, body {
   padding-left: 8rem;
 }
 .fb__selectgift .selectgift__name {
+  display: block;
   display: -webkit-box;
   overflow: hidden;
   max-height: 2.6rem;
