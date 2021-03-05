@@ -423,11 +423,9 @@ html, body {
   -webkit-text-size-adjust: none;
 }
 
-.fb {
-  width: 32rem;
-}
 .fb__freegift {
-  border-bottom: 0.1rem solid #e6e6e6;
+  display: block;
+  width: 32rem;
 }
 .fb__freegift__top {
   position: relative;
@@ -464,12 +462,16 @@ html, body {
   background: #f8f8f8;
 }
 .fb__freegift__empty {
+  display: none;
   padding: 3.9rem 0;
   background: #fff;
   color: #555;
   font-size: 1.1rem;
   text-align: center;
   line-height: 1.3;
+}
+.fb__freegift__empty.show {
+  display: block;
 }
 .fb__freegift__box {
   position: relative;
@@ -551,12 +553,16 @@ html, body {
   content: "";
 }
 .fb__selectgift {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: #fff;
+}
+.fb__selectgift.show {
+  display: block;
 }
 .fb__selectgift .selectgift__layer {
   position: relative;
@@ -616,27 +622,25 @@ html, body {
   height: 4.3rem;
   padding: 1.75rem 0 1rem;
 }
-.fb__selectgift .selectgift__top em {
+.fb__selectgift .selectgift__desc {
   font-size: 1.3rem;
-  font-weight: bold;
   line-height: 1;
 }
-.fb__selectgift .selectgift__top span {
-  font-size: 1.3rem;
-  line-height: 1;
+.fb__selectgift .selectgift__desc em {
+  font-weight: bold;
 }
 .fb__selectgift .selectgift__scroll {
   overflow-x: hidden;
   overflow-y: auto;
   height: 100%;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__box {
+.fb__selectgift .selectgift__box {
   position: relative;
   min-height: 11.9rem;
   padding: 1.5rem 0;
   border-bottom: 0.1rem solid #e6e6e6;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__label {
+.fb__selectgift .selectgift__label {
   overflow: hidden;
   position: absolute;
   top: 1.5rem;
@@ -644,18 +648,18 @@ html, body {
   width: 7rem;
   height: 8rem;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__label input {
+.fb__selectgift .selectgift__label input {
   display: none;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__label input:checked + .selectgift__img:before {
+.fb__selectgift .selectgift__label input:checked + .selectgift__img:before {
   display: block;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__img {
+.fb__selectgift .selectgift__img {
   position: absolute;
   width: 100%;
   height: 100%;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__img:before {
+.fb__selectgift .selectgift__img:before {
   display: none;
   position: absolute;
   top: 0;
@@ -666,7 +670,7 @@ html, body {
   background: rgba(0, 0, 0, 0.4) url(../../src/images/olenz/btn-check-mo.png) no-repeat 2.4rem 3.1rem/2.3rem 1.75rem;
   content: "";
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__img img {
+.fb__selectgift .selectgift__img img {
   position: absolute;
   top: 0;
   right: 0;
@@ -676,11 +680,10 @@ html, body {
   height: auto;
   margin: auto;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__info {
+.fb__selectgift .selectgift__info {
   padding-left: 8rem;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__name {
-  display: block;
+.fb__selectgift .selectgift__name {
   display: -webkit-box;
   overflow: hidden;
   max-height: 2.6rem;
@@ -694,7 +697,7 @@ html, body {
   -webkit-box-orient: vertical;
   word-wrap: break-word;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__eye {
+.fb__selectgift .selectgift__eye {
   width: 100%;
   height: 3.6rem;
   margin-bottom: 1rem;
@@ -704,7 +707,7 @@ html, body {
   font-size: 1.2rem;
   line-height: 3.6rem;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__spinner {
+.fb__selectgift .selectgift__spinner {
   display: inline-block;
   position: relative;
   width: 7.5rem;
@@ -714,26 +717,26 @@ html, body {
   padding: 0 1.8rem;
   box-sizing: border-box;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__spinner button {
+.fb__selectgift .selectgift__spinner button {
   position: absolute;
   top: 0;
   width: 1.8rem;
   height: 1.8rem;
   font-size: 0;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__spinner__btn--minus {
+.fb__selectgift .selectgift__spinner__btn--minus {
   left: 0;
   background: url(../../src/images/olenz/btn-gift-minus-mo.png) no-repeat center center/1rem 0.1rem;
   border-right: 0.1rem solid #ccc;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__spinner__btn--plus {
+.fb__selectgift .selectgift__spinner__btn--plus {
   top: 0;
   right: 0;
   background: url(../../src/images/olenz/btn-gift-plus-mo.png) no-repeat center center/1rem 1rem;
   border-left: 0.1rem solid #ccc;
   font-size: 0;
 }
-.fb__selectgift .selectgift__scroll__inner .selectgift__spinner__count {
+.fb__selectgift .selectgift__spinner__count {
   width: 3.9rem;
   height: 1.7rem;
   border: none;
