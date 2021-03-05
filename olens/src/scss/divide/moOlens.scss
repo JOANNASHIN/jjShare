@@ -1,162 +1,152 @@
-.mo {
+.fb {
     width: rem(640px);
 
     &__freegift {
 
-        .freegift {
-            
-            &__header {
+        border-bottom: rem(2px) solid #e6e6e6;
+        
+        &__top {
+            position: relative;
+            min-height: rem(100px);
+            margin: rem(0 25px);
+            padding: rem(50px 160px 30px 0);
+            border-bottom: #f0f0f0 rem(2px) solid;
+        }
+
+        &__title {
+            font-size: rem(26px);
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        &__select {
+            position: absolute;
+            right: 0;
+            bottom: rem(13px);
+            width: rem(160px);
+            height: rem(64px);
+            background: #fff;
+            border: rem(2px) solid #ccc;
+            color: #555;
+            font-size: rem(24px);
+            font-weight: 600;
+            text-align: center;
+            line-height: rem(64px);
+        }
+
+        &__cont {
+            padding: rem(24px);
+        }
+
+        &__inner {
+            min-height: 220px;
+            padding: rem(22px);
+            background: #f8f8f8;
+        }
+
+        &__empty {
+            padding: rem(78px 0);
+            background: #fff;
+            color: #555;
+            font-size: rem(22px);
+            text-align: center;
+            line-height: 1.3;
+        }
+        
+        &__box {
+            position: relative;
+            width: 100%;
+            min-height: rem(180px);
+            padding: rem(22px);
+            background: #fff;
+
+            &:not(:first-child) {
+                margin-top: rem(20px);
+            }
+        }
+
+        &__img {
+            overflow: hidden;
+            position: absolute;
+            top: rem(22px);
+            left: rem(22px);
+            width: rem(120px);
+            height: rem(135px);
+        
+            img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+                margin: auto;
+            }
+        }
+
+        &__info {
+            padding-left: rem(148px);
+        }
+        
+        &__name {
+            display: -webkit-box;
+            overflow: hidden;
+            max-height: rem(60px);
+            margin-top: rem(25px);
+            margin-bottom: rem(12px);
+            font-size: rem(22px);
+            font-weight: 600;
+            line-height: 1.3;
+            text-overflow: ellipsis;
+            text-align: left;
+            word-wrap: break-word;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        &__option {
+            display: block;
+            margin-bottom: rem(12px);
+            color: #555;
+            font-size: rem(22px);
+        }   
+
+        &__qty {
+            display: block;
+            color: #555;
+            font-size: rem(22px);
+        }
+
+        &__desc {
+            margin-top: rem(30px);
+
+            p {
+                overflow: hidden;
                 position: relative;
-                height: rem(100px);
-                margin: rem(0 25px);
-                padding: rem(47px 160px 0 0);
-                border-bottom: #f0f0f0 rem(2px) solid;
-
-                &__button {
+                padding-left: rem(20px);
+                margin-bottom: rem(20px);
+                color: #888;
+                font-size: rem(20px);
+                line-height: 1.3;
+        
+                &:after {
                     position: absolute;
-                    right: 0;
-                    bottom: rem(13px);
-                    width: rem(160px);
-                    height: rem(64px);
-                    background: #fff;
-                    border: rem(2px) solid #ccc;
-                    color: #555;
-                    font-family: 'OpenSans-Regular';
-                    font-size: rem(24px);
-                }
-            }
-
-            &__title {
-                font-family: 'OpenSans-Regular';
-                font-size: rem(26px);
-                line-height: 1;
-            }
-
-            &__cont {
-                margin: rem(24px);
-                
-            }
-            
-            &__selected {
-                padding: rem(22px);
-                background: #f8f8f8;
-
-                &.freegift__selected--null {
-                    .freegift__selected {
-                        &__list {
-                        }
-                        &__info {
-                            // overflow: hidden;
-                            position: absolute;
-                            top: 50%;
-                            left: 0;
-                            width: 100%;
-                            padding: initial;
-                            text-align: center;
-                            transform: translate(0, -50%);
-
-                            p {
-                                font-family: 'OpenSans-Light';
-                                font-size: rem(22px);
-                                line-height: 1.3;
-                            }
-                        }
-                    }
-                }
-
-                &__list {
-                    position: relative;
-                    width: 100%;
-                    min-height: rem(180px);
-                    padding: rem(22px);
-                    background: #fff;
-
-                    &:not(:first-child) {
-                        margin-top: rem(20px);
-                    }
-                }
-
-                &__img {
-                    overflow: hidden;
-                    position: absolute;
-                    top: rem(22px);
-                    left: rem(22px);
-                    width: rem(120px);
-                    height: rem(135px);
-
-                    img {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                        left: 0;
-                        width: 100%;
-                        height: auto;
-                        margin: auto;
-                    }
-                }
-
-                &__info {
-                    padding-left: rem(148px);
-                }
-                
-                &__name {
-                    display: -webkit-box;
-                    overflow: hidden;
-                    height: rem(60px);
-                    margin-bottom: rem(12px);
-                    font-family: 'OpenSans-Regular';
-                    font-size: rem(22px);
-                    line-height: 1.3;
-                    text-overflow: ellipsis;
-                    text-align: left;
-                    word-wrap: break-word;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
-                }
-
-                &__power {
-                    margin-bottom: rem(12px);
-                    color: #555;
-                    font-family: 'OpenSans-Light';
-                    font-size: rem(22px);
-                }   
-
-                &__qty {
-                    color: #555;
-                    font-family: 'OpenSans-Light';
-                    font-size: rem(22px);
-                }
-            }
-
-            &__notice {
-                margin: rem(5px 24px 40px);
-
-                &__list {
-                    overflow: hidden;
-                    position: relative;
-                    padding-left: rem(20px);
-                    margin-bottom: rem(20px);
-                    color: #888;
-                    font-family: 'OpenSans-Light';
-                    font-size: rem(20px);
-                    line-height: 1.3;
-
-                    &:after {
-                        position: absolute;
-                        top: rem(10px);
-                        left: 0;
-                        width: rem(6px);
-                        height: rem(6px);
-                        background: #888;
-                        border-radius: 50%;
-                        content: "";
-                    }
+                    top: rem(10px);
+                    left: 0;
+                    width: rem(6px);
+                    height: rem(6px);
+                    background: #888;
+                    border-radius: 50%;
+                    content: "";
                 }
             }
         }
     }
 
+
+
+    
     &__selectgift {
         position: fixed;
         top: 0;
@@ -166,17 +156,13 @@
         background: #fff;
 
         .selectgift {
-            position: relative;
-            height: 100%;
-            padding-top: rem(109px);
 
-            &__scroll {
-                overflow-y: auto;
+            &__layer {
+                position: relative;
                 height: 100%;
-            }
+                padding-top: rem(109px);
 
-            .freegift {
-                &__header {
+                header {
                     position: fixed;
                     top: 0;
                     left: 0;
@@ -196,186 +182,203 @@
                         background: #f2f2f2;
                         content: "";
                     }
-                }
-                
-                &__title {
-                    font-family: 'OpenSans-Regular';
-                    font-size: rem(32px);
-                }
-            }
-            
-            &__close {
-                position: absolute;
-                top: rem(35px);
-                right: rem(33px);
-                width: rem(24px);
-                height: rem(24px);
-                font-size: 0;
-                background: none;
-                border: none;
 
-                &:after {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: rem(24px);
-                    height: rem(24px);
-                    background: url(../images/olenz/btn-close-mo.png)no-repeat 0 0 / rem(24px 24px);
-                    content: "";
-                }
-            }
+                    h2 {
+                        font-size: rem(32px);
+                        font-weight: 600;
+                    }
 
-            &__top {
-                height: rem(86px);
-                padding-top: rem(40px);
-                
+                    button {
+                        position: absolute;
+                        top: rem(35px);
+                        right: rem(33px);
+                        width: rem(24px);
+                        height: rem(24px);
+                        font-size: 0;
+                        background: none;
+                        border: none;
 
-                em {
-                    // font-family: 'OpenSans-SemiBold';
-                    font-weight: bold;
-                    font-size: rem(26px);
-                }
-                span {
-                    font-family: 'OpenSans-Light';
-                    font-size: rem(26px);
+                        &:after {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: rem(24px);
+                            height: rem(24px);
+                            background: url(../images/olenz/btn-close-mo.png)no-repeat 0 0 / rem(24px 24px);
+                            content: "";
+                        }
+                    }
                 }
             }
 
             &__cont {
                 padding: rem(0 24px);
                 background: #fff;
-                // border-top: rem(14px) solid #f2f2f2;
             }
 
-            &__select {
-                
-                // min-height: rem(957px);
-                // overflow-y: auto;
-                
-                &__list {
-                    position: relative;
-                    min-height: rem(238px);
-                    padding: rem(30px 0);
-                    border-bottom: rem(2px) solid #e6e6e6;
+            &__top {
+                height: rem(86px);
+                padding: rem(35px 0 20px);
 
-                    .freegift__popup__img {
-                        position: absolute;
-                        top: rem(30px);
-                        left: 0;
-                        width: rem(140px);
-                        height: rem(160px);
-
-                        img {
-                           position: absolute;
-                           top: 0;
-                           right: 0;
-                           bottom: 0;
-                           left: 0;
-                           width: 100%;
-                           height: auto;
-                           margin: auto;
-                        }
-
-                        input[id*="selectgift__item"] {
-                            display: none;
-                        }
-
-                        input[id*="selectgift__item"]:checked + label {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            background: rgba(0,0,0,.4) url(../images/olenz/btn-check-mo.png)no-repeat rem(48px 62px) / rem(46px 35px);
-                        }
-                    }
-                }
-
-                &__item {
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: rem(140px);
-                    height: rem(160px);
-                }
-                
-                &__info {
-                    padding-left: rem(160px);
-                }
-
-                &__name {
-                    display: block;
-                    display: -webkit-box;
-                    overflow: hidden;
-                    max-height: rem(52px);
-                    margin-bottom: rem(30px);
-                    font-family: 'OpenSans-Regular';
-                    font-size: rem(22px);
-                    line-height: rem(26px);
-                    text-overflow: ellipsis;
-                    text-align: left;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
-                    word-wrap: break-word;
-                }
-
-                &__power {
-                    width: 100%;
-                    height: rem(72px);
-                    margin-bottom: rem(20px);
-                    padding-left: rem(25px);
-                    background: url(../images/olenz/btn-select-mo.png)no-repeat calc(100% - 0.75rem) center / rem(22px 13px);
-                    border: rem(2px) solid #ccc;
-                    font-family: 'OpenSans-Light';
-                    font-size: rem(24px);
-                }
-
-                &__qty {
-                    position: relative;
-                    width: rem(150px);
-                    height: rem(38px);
-                    border: rem(2px) solid #ccc;
-                    text-align: center;
+                em {
+                    font-size: rem(26px);
+                    font-weight: bold;
                     line-height: 1;
-                    // box-sizing: initial;
-                    padding: 0 1.8rem;
-                    box-sizing: border-box;
+                }
+                span {
+                    font-size: rem(26px);
+                    line-height: 1;
+                }
+            }
 
-                    &--minus {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: rem(36px);
-                        height: rem(36px);
-                        background: url(../images/olenz/btn-gift-minus-mo.png)no-repeat center center / rem(20px 2px);
-                        border-right: rem(2px) solid #ccc;
-                        font-size: 0;
-                    }
+            &__scroll {
+                overflow-y: auto;
+                height: 100%;
 
-                    &--value {
-                        display: inline-block;
-                        font-family: 'OpenSans-Light';
-                        font-size: rem(22px);
-                        vertical-align: middle;
-                    }
+                &__inner {
 
-                    &--plus {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        width: rem(36px);
-                        height: rem(36px);
-                        background: url(../images/olenz/btn-gift-plus-mo.png)no-repeat center center / rem(20px 20px);
-                        border-left: rem(2px) solid #ccc;
-                        font-size: 0;
-                        
+                    .selectgift {
+
+                        &__box {
+                            position: relative;
+                            min-height: rem(238px);
+                            padding: rem(30px 0);
+                            border-bottom: rem(2px) solid #e6e6e6;
+                        }
+
+                        &__label {
+                            overflow: hidden;
+                            position: absolute;
+                            top: rem(30px);
+                            left: 0;
+                            width: rem(140px);
+                            height: rem(160px);
+
+                            input {
+                                display: none;
+
+                                &:checked {
+                                    & + .selectgift__img {
+                                        
+                                        &:before {
+                                            display: block;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &__img {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+
+
+                            &:before {
+                                display: none;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: 1;
+                                width: 100%;
+                                height: 100%;
+                                background: rgba(0,0,0,.4) url(../images/olenz/btn-check-mo.png)no-repeat rem(48px 62px) / rem(46px 35px);
+                                content: "";
+                            }
+
+                            img {
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                left: 0;
+                                width: 100%;
+                                height: auto;
+                                margin: auto;
+                            }
+                        }
+
+                        &__info {
+                            padding-left: rem(160px);
+                        }
+
+                        &__name {
+                            display: block;
+                            display: -webkit-box;
+                            overflow: hidden;
+                            max-height: rem(52px);
+                            margin-bottom: rem(30px);
+                            font-size: rem(22px);
+                            font-weight: 600;
+                            line-height: rem(26px);
+                            text-overflow: ellipsis;
+                            text-align: left;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            word-wrap: break-word;
+                        }
+        
+                        &__eye {
+                            width: 100%;
+                            height: rem(72px);
+                            margin-bottom: rem(20px);
+                            padding: rem(0 52px 0 25px);
+                            background: url(../images/olenz/btn-select-mo.png)no-repeat calc(100% - 0.75rem) center / rem(22px 13px);
+                            border: rem(2px) solid #ccc;
+                            font-size: rem(24px);
+                            line-height: rem(72px);
+                        }
+
+                        &__spinner {
+                            display: inline-block;
+                            position: relative;
+                            width: rem(150px);
+                            height: rem(38px);
+                            border: rem(2px) solid #ccc;
+                            line-height: 1;
+                            padding: 0 1.8rem;
+                            box-sizing: border-box;
+        
+                            button {
+                                position: absolute;
+                                top: 0;
+                                width: rem(36px);
+                                height: rem(36px);
+                                font-size: 0;
+                            }
+                            
+                            &__btn {
+
+                                &--minus {
+                                    left: 0;
+                                    background: url(../images/olenz/btn-gift-minus-mo.png)no-repeat center center / rem(20px 2px);
+                                    border-right: rem(2px) solid #ccc;
+                                }
+            
+                                &--plus {
+                                    top: 0;
+                                    right: 0;
+                                    background: url(../images/olenz/btn-gift-plus-mo.png)no-repeat center center / rem(20px 20px);
+                                    border-left: rem(2px) solid #ccc;
+                                    font-size: 0;
+                                }
+                            }
+        
+                            &__count {
+                                width: rem(78px);
+                                height: rem(34px);
+                                border: none;
+                                font-size: rem(22px);
+                                text-align: center;
+                            }
+                        }
                     }
                 }
             }
 
-            &__button {
+            &__btn {
                 margin: rem(0 -5px);
                 padding: rem(30px 24px 80px);
-                // font-size: 0;
 
                 &::after {
                     display: block;
@@ -390,19 +393,16 @@
                     padding: rem(32px 0);
                     border: rem(2px) solid #000;
                     border-radius: rem(4px);
-                    font-family: 'OpenSans-Regular';
                     font-size: rem(26px);
+                    font-weight: 600;
                     line-height: 1;
-                    
                 }
-
-                &--complete {
+          
+                &--bk {
                     background: #000;
                     color: #fff;
                 }
             }
         }
     }
-
-    
 }

@@ -1,25 +1,14 @@
 // 모든 scss는 app.scss를 바라보게 되어있다. 따라서 app.scss 기준으로 경로를 설정해주어야 한다.
 
-@font-face {
-    src: url(../fonts/OpenSans-ExtraBold.ttf);
-    font-family: 'OpenSans-ExtraBold';
-}
-@font-face {
-    src: url(../fonts/OpenSans-Bold.ttf);
-    font-family: 'OpenSans-Bold';
-}
-@font-face {
-    src: url(../fonts/OpenSans-SemiBold.ttf);
-    font-family: 'OpenSans-SemiBold';
-}
-@font-face {
-    src: url(../fonts/OpenSans-Regular.ttf);
-    font-family: 'OpenSans-Regular';
-}
-@font-face {
-    src: url(../fonts/OpenSans-Light.ttf);
-    font-family: 'OpenSans-Light';
-}
+// olens에서 설정된 폰트 기본 값은,
+// font-family: 'OpenSans'; 
+// font-weight: '400' (PSD 상에서 light)
+// 따라서 font-family, font-weight: '400'는 줄 필요 없다
+
+// 설정해야할 font-weight 는,
+// font-weight: '600' (PSD상에서 regular)
+// font-weight: bold (PSD상에서 bold)  
+
 @font-face {
     src: url(../fonts/Myriad-Pro_31655.ttf);
     font-family: 'Myriad-Pro';

@@ -1,438 +1,438 @@
-.fb {
+// .fb {
 
-    &__title {
-        &--hidden {
-            font-size: 0;
-            line-height: 0;
-        }
-    }
+//     &__title {
+//         &--hidden {
+//             font-size: 0;
+//             line-height: 0;
+//         }
+//     }
 
-    &__freegift {
-        .freegift {
-            width: 900px;
-            font-family: 'OpenSans-Regular';
+//     &__freegift {
+//         .freegift {
+//             width: 900px;
+//             font-family: 'OpenSans-Regular';
     
-            &__title {
-                padding: 20px 100px 0 0;
-                font-family: 'OpenSans-SemiBold';
-                font-size: 16px;  
-            }
+//             &__title {
+//                 padding: 20px 100px 0 0;
+//                 font-family: 'OpenSans-SemiBold';
+//                 font-size: 16px;  
+//             }
     
-            &__header {
-                position: relative;
-                height: 47px;
-                border-bottom: 1px solid #000;
+//             &__header {
+//                 position: relative;
+//                 height: 47px;
+//                 border-bottom: 1px solid #000;
                 
     
-                &__button {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    width: 100px;
-                    height: 36px;
-                    border: 1px solid #000;
-                    background: #fff;
-                    font-size: 12px;
-                    text-align: center;
-                }
-            }
+//                 &__button {
+//                     position: absolute;
+//                     top: 0;
+//                     right: 0;
+//                     width: 100px;
+//                     height: 36px;
+//                     border: 1px solid #000;
+//                     background: #fff;
+//                     font-size: 12px;
+//                     text-align: center;
+//                 }
+//             }
     
-            &__cont {
-                padding: 20px;
-                background: #fafafa;
-            }
+//             &__cont {
+//                 padding: 20px;
+//                 background: #fafafa;
+//             }
     
-            &__selected {
+//             &__selected {
                 
-                &--two {
-                    // 고칠 부분
-                    margin: 0 -10px;
+//                 &--two {
+//                     // 고칠 부분
+//                     margin: 0 -10px;
     
-                    .freegift__selected__list {
-                        float: left;
-                        width: calc(50% - 20px);
-                        margin: 0 10px;
-                    }  
+//                     .freegift__selected__list {
+//                         float: left;
+//                         width: calc(50% - 20px);
+//                         margin: 0 10px;
+//                     }  
     
-                    &:after {
-                        display: block;
-                        clear: both;
-                        content: "";
-                    }
-                }
+//                     &:after {
+//                         display: block;
+//                         clear: both;
+//                         content: "";
+//                     }
+//                 }
     
-                &--null {
+//                 &--null {
     
-                    .freegift__selected__list {
-                        padding: initial;
-                    }
+//                     .freegift__selected__list {
+//                         padding: initial;
+//                     }
     
-                    .freegift__selected__desc {
-                       position: absolute;
-                       top: 50%;
-                       left: 50%;
-                       width: auto;
-                       height: auto;
-                       transform: translate(-50%, -50%);
-                    }
-                }
+//                     .freegift__selected__desc {
+//                        position: absolute;
+//                        top: 50%;
+//                        left: 50%;
+//                        width: auto;
+//                        height: auto;
+//                        transform: translate(-50%, -50%);
+//                     }
+//                 }
     
     
-                &__list {
-                    // display: inline-block;
-                    position: relative;
-                    width: 100%;
-                    min-height: 120px;
-                    background: #fff;
-                    padding: 15px 15px 15px 95px;
-                }
+//                 &__list {
+//                     // display: inline-block;
+//                     position: relative;
+//                     width: 100%;
+//                     min-height: 120px;
+//                     background: #fff;
+//                     padding: 15px 15px 15px 95px;
+//                 }
     
-                &__img {
-                    overflow: hidden;
-                    position: absolute;
-                    top: 15px;
-                    left: 15px;
-                    width: 80px;
-                    height: 90px;
+//                 &__img {
+//                     overflow: hidden;
+//                     position: absolute;
+//                     top: 15px;
+//                     left: 15px;
+//                     width: 80px;
+//                     height: 90px;
     
-                    img {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                        left: 0;
-                        width: 100%;
-                        height: auto;
-                        margin: auto;
-                    }
-                }
+//                     img {
+//                         position: absolute;
+//                         top: 0;
+//                         right: 0;
+//                         bottom: 0;
+//                         left: 0;
+//                         width: 100%;
+//                         height: auto;
+//                         margin: auto;
+//                     }
+//                 }
     
-                &__info {
-                    // width: 750px;******************
-                    width: 100%;
-                    margin-left: 14px;
-                    color: #888;
-                }
+//                 &__info {
+//                     // width: 750px;******************
+//                     width: 100%;
+//                     margin-left: 14px;
+//                     color: #888;
+//                 }
     
-                &__name {
-                    display: -webkit-box;
-                    overflow: hidden;
-                    height: 40px;
-                    margin-bottom: 10px;
-                    color: #000;
-                    font-size: 13px;
-                    line-height: 20px;
-                    text-overflow: ellipsis;
-                    text-align: left;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
-                    word-wrap: break-word;
-                }
+//                 &__name {
+//                     display: -webkit-box;
+//                     overflow: hidden;
+//                     height: 40px;
+//                     margin-bottom: 10px;
+//                     color: #000;
+//                     font-size: 13px;
+//                     line-height: 20px;
+//                     text-overflow: ellipsis;
+//                     text-align: left;
+//                     -webkit-line-clamp: 2;
+//                     -webkit-box-orient: vertical;
+//                     word-wrap: break-word;
+//                 }
     
-                &__power {
-                    margin-bottom: 10px;
-                    font-size: 13px;
-                }
+//                 &__power {
+//                     margin-bottom: 10px;
+//                     font-size: 13px;
+//                 }
 
-                &__qty {
-                    font-size: 13px;
-                }
-            }
+//                 &__qty {
+//                     font-size: 13px;
+//                 }
+//             }
     
-            &__notice {
-                width: 900px;
-                margin-top: 20px;
-                color: #888;
-                font-size: 12px;
-                font-family: 'OpenSans-Light';
+//             &__notice {
+//                 width: 900px;
+//                 margin-top: 20px;
+//                 color: #888;
+//                 font-size: 12px;
+//                 font-family: 'OpenSans-Light';
     
-                &__list {
-                    position: relative;
-                    padding-left: 13px;
-                    margin-bottom: 10px;
+//                 &__list {
+//                     position: relative;
+//                     padding-left: 13px;
+//                     margin-bottom: 10px;
     
-                    &:before {
-                        position: absolute;
-                        top: 6px;
-                        left: 0;
-                        width: 4px;
-                        height: 4px;
-                        border-radius: 50%;
-                        background: #888;
-                        transform: translate(0, -50%);
-                        content: "";
-                    }
+//                     &:before {
+//                         position: absolute;
+//                         top: 6px;
+//                         left: 0;
+//                         width: 4px;
+//                         height: 4px;
+//                         border-radius: 50%;
+//                         background: #888;
+//                         transform: translate(0, -50%);
+//                         content: "";
+//                     }
     
-                }
-            }
-        }
-    }
+//                 }
+//             }
+//         }
+//     }
 
-    &__selectgift {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 100;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.8);
+//     &__selectgift {
+//         display: none;
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         z-index: 100;
+//         width: 100%;
+//         height: 100%;
+//         background: rgba(0,0,0,0.8);
 
-        &.active {
-            display: block;
-        }
+//         &.active {
+//             display: block;
+//         }
 
-        .selectgift {
-            overflow: hidden;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            z-index: 10;
-            width: 852px;
-            background: #fff;
-            transform: translate(-50%, -50%);
+//         .selectgift {
+//             overflow: hidden;
+//             position: absolute;
+//             top: 50%;
+//             left: 50%;
+//             z-index: 10;
+//             width: 852px;
+//             background: #fff;
+//             transform: translate(-50%, -50%);
 
-            .freegift {
+//             .freegift {
                
-                &__header {
-                    height: 50px;
-                    padding: 18px 25px;
-                    border-bottom: 1px solid #ddd;
-                    background: #fafafa;
-                }
+//                 &__header {
+//                     height: 50px;
+//                     padding: 18px 25px;
+//                     border-bottom: 1px solid #ddd;
+//                     background: #fafafa;
+//                 }
 
-                &__title {
-                    padding: initial;
-                    font-family: 'OpenSans-Regular';
-                    font-size: 16px;
-                    line-height: 1;
-                }
-            }
+//                 &__title {
+//                     padding: initial;
+//                     font-family: 'OpenSans-Regular';
+//                     font-size: 16px;
+//                     line-height: 1;
+//                 }
+//             }
 
-            &__close {
-                position: absolute;
-                top: 20px;
-                right: 25px;
-                width: 12px;
-                height: 12px;
-                background: #fafafa;
-                border: none;
-                font-size: 0;
+//             &__close {
+//                 position: absolute;
+//                 top: 20px;
+//                 right: 25px;
+//                 width: 12px;
+//                 height: 12px;
+//                 background: #fafafa;
+//                 border: none;
+//                 font-size: 0;
 
-                &:after {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 12px;
-                    height: 12px;
-                    background: url(../images/olenz/btn-close.png) no-repeat center;
-                    content: "";
+//                 &:after {
+//                     position: absolute;
+//                     top: 0;
+//                     left: 0;
+//                     width: 12px;
+//                     height: 12px;
+//                     background: url(../images/olenz/btn-close.png) no-repeat center;
+//                     content: "";
 
-                }
-            }
+//                 }
+//             }
             
-            &__cont {
-                padding: 17px 25px 30px 25px;
-            }
+//             &__cont {
+//                 padding: 17px 25px 30px 25px;
+//             }
 
-            &__top {
-                position: relative;
-                padding: 10px 0 20px 0;
-                border-bottom: 1px solid #000;
-                font-size: 14px;
-                font-family: 'OpenSans-Light';
+//             &__top {
+//                 position: relative;
+//                 padding: 10px 0 20px 0;
+//                 border-bottom: 1px solid #000;
+//                 font-size: 14px;
+//                 font-family: 'OpenSans-Light';
 
-                em {
-                    font-family: 'OpenSans-Bold';
-                }
-            }
+//                 em {
+//                     font-family: 'OpenSans-Bold';
+//                 }
+//             }
 
-            &__button {
-                font-size: 13px;
+//             &__button {
+//                 font-size: 13px;
                 
-                    &--later {
-                        position: absolute;
-                        right: 145px;
-                        bottom: 12px;
-                        width: 140px;
-                        padding: 10px;
-                        background: #fff;
-                        border: 1px solid #ccc;
-                        color: #555;
-                    }
+//                     &--later {
+//                         position: absolute;
+//                         right: 145px;
+//                         bottom: 12px;
+//                         width: 140px;
+//                         padding: 10px;
+//                         background: #fff;
+//                         border: 1px solid #ccc;
+//                         color: #555;
+//                     }
 
-                    &--complete {
-                        position: absolute;
-                        right: 0;
-                        bottom: 12px;
-                        width: 140px;
-                        padding: 10px;
-                        background: #000;
-                        border: 1px solid #000;
-                        color: #fff;
-                    }
-            }
+//                     &--complete {
+//                         position: absolute;
+//                         right: 0;
+//                         bottom: 12px;
+//                         width: 140px;
+//                         padding: 10px;
+//                         background: #000;
+//                         border: 1px solid #000;
+//                         color: #fff;
+//                     }
+//             }
             
-            &__select {
-                overflow-y: auto;
-                max-height: 408px;
-                // 이렇게 하면 스크롤이 margin값 다음에 생김(1)
-                // margin: 30px -25px 0; 
-                margin: 30px 0 0;
-                @extend %clear;
+//             &__select {
+//                 overflow-y: auto;
+//                 max-height: 408px;
+//                 // 이렇게 하면 스크롤이 margin값 다음에 생김(1)
+//                 // margin: 30px -25px 0; 
+//                 margin: 30px 0 0;
+//                 @extend %clear;
 
-                &__list {
-                    float: left;
-                    position: relative;
-                    width: 360px;
-                    min-height: 115px;
-                    // 이렇게 하면 스크롤이 margin값 다음에 생김(2)
-                    // margin: 0 25px 30px;
-                    margin: 0 50px 30px 0;
-                    padding-left: 102px;
+//                 &__list {
+//                     float: left;
+//                     position: relative;
+//                     width: 360px;
+//                     min-height: 115px;
+//                     // 이렇게 하면 스크롤이 margin값 다음에 생김(2)
+//                     // margin: 0 25px 30px;
+//                     margin: 0 50px 30px 0;
+//                     padding-left: 102px;
 
-                    @extend %clear;
+//                     @extend %clear;
 
-                    &:nth-child(2n) {
-                        margin: 0 0 30px 0;
-                    } 
-                }
+//                     &:nth-child(2n) {
+//                         margin: 0 0 30px 0;
+//                     } 
+//                 }
 
-                .freegift__popup__img {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 102px;
-                    height: 115px;
+//                 .freegift__popup__img {
+//                     position: absolute;
+//                     top: 0;
+//                     left: 0;
+//                     width: 102px;
+//                     height: 115px;
 
-                    img {
-                        @extend %imageResize;
-                    }
-                }
+//                     img {
+//                         @extend %imageResize;
+//                     }
+//                 }
 
-                input[id*="selectgift__item"] {
-                    display: none;
-                }
+//                 input[id*="selectgift__item"] {
+//                     display: none;
+//                 }
                 
-                .selectgift__select__item {
-                    display: inline-block;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 102px;
-                    height: 115px;
-                    cursor: pointer;
-                }
+//                 .selectgift__select__item {
+//                     display: inline-block;
+//                     position: absolute;
+//                     top: 0;
+//                     left: 0;
+//                     width: 102px;
+//                     height: 115px;
+//                     cursor: pointer;
+//                 }
 
-                // 이 부분 
-                input[id*="selectgift__item"]:checked + label {
-                    background: rgba(0,0,0,0.4);
+//                 // 이 부분 
+//                 input[id*="selectgift__item"]:checked + label {
+//                     background: rgba(0,0,0,0.4);
 
-                    &:after {
-                        position: absolute;
-                        top: 47px;
-                        left: 37px;
-                        width: 30px;
-                        height: 22px;
-                        background: url(../images/olenz/btn-check.png) no-repeat center;
-                        content: "";
-                    }
-                }
+//                     &:after {
+//                         position: absolute;
+//                         top: 47px;
+//                         left: 37px;
+//                         width: 30px;
+//                         height: 22px;
+//                         background: url(../images/olenz/btn-check.png) no-repeat center;
+//                         content: "";
+//                     }
+//                 }
 
-                &__info {
-                    margin-left: 18px;
-                    font-family: 'OpenSans-Regular';
-                    font-size: 12px;
-                }
+//                 &__info {
+//                     margin-left: 18px;
+//                     font-family: 'OpenSans-Regular';
+//                     font-size: 12px;
+//                 }
                 
-                &__name {
-                    display: -webkit-box;
-                    overflow: hidden;
-                    width: 100%;
-                    height: 30px;
-                    margin: 10px 0 15px 0;
-                    font-family: 'OpenSans-Light';
-                    font-size: 13px;
-                    line-height: 15px;
-                    text-overflow: ellipsis;
-                    text-align: left;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
-                    word-wrap: break-word;
-                }
+//                 &__name {
+//                     display: -webkit-box;
+//                     overflow: hidden;
+//                     width: 100%;
+//                     height: 30px;
+//                     margin: 10px 0 15px 0;
+//                     font-family: 'OpenSans-Light';
+//                     font-size: 13px;
+//                     line-height: 15px;
+//                     text-overflow: ellipsis;
+//                     text-align: left;
+//                     -webkit-line-clamp: 2;
+//                     -webkit-box-orient: vertical;
+//                     word-wrap: break-word;
+//                 }
 
-                &__power {
-                    display: block;
-                    position: relative;
-                    padding: 12px 22px 12px 10px;
-                    width: 100%;
-                    background: url(../images/olenz/btn-select.png) no-repeat calc(100% - 18px) center;
-                    border: 1px solid #ccc;
-                    color: #555;
-                    font-size: 13px;
-                    appearance: none;
-                }
+//                 &__power {
+//                     display: block;
+//                     position: relative;
+//                     padding: 12px 22px 12px 10px;
+//                     width: 100%;
+//                     background: url(../images/olenz/btn-select.png) no-repeat calc(100% - 18px) center;
+//                     border: 1px solid #ccc;
+//                     color: #555;
+//                     font-size: 13px;
+//                     appearance: none;
+//                 }
 
-                &__qty {
-                    position: relative;
-                    width: 77px;
-                    height: 20px;
-                    margin-top: 10px;
-                    border: 1px solid #ddd;
-                    color: #888;
-                    font-size: 13px;
-                    text-align: center;
-                    font-size: 12px;
+//                 &__qty {
+//                     position: relative;
+//                     width: 77px;
+//                     height: 20px;
+//                     margin-top: 10px;
+//                     border: 1px solid #ddd;
+//                     color: #888;
+//                     font-size: 13px;
+//                     text-align: center;
+//                     font-size: 12px;
                     
-                    &--value {
-                        line-height: 20px;
-                    }
+//                     &--value {
+//                         line-height: 20px;
+//                     }
 
-                    &--minus {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 18px;
-                        height: 18px;
-                        border: none;
-                        border-right: 1px solid #ddd;
-                        font-size: 0;
+//                     &--minus {
+//                         position: absolute;
+//                         top: 0;
+//                         left: 0;
+//                         width: 18px;
+//                         height: 18px;
+//                         border: none;
+//                         border-right: 1px solid #ddd;
+//                         font-size: 0;
 
-                        &:after {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 18px;
-                            height: 18px;
-                            background: url(../images/olenz/btn-gift-minus.png)no-repeat center;
-                            content: "";
-                        }
-                    }
+//                         &:after {
+//                             position: absolute;
+//                             top: 0;
+//                             left: 0;
+//                             width: 18px;
+//                             height: 18px;
+//                             background: url(../images/olenz/btn-gift-minus.png)no-repeat center;
+//                             content: "";
+//                         }
+//                     }
 
-                    &--plus {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        width: 18px;
-                        height: 18px;
-                        border: none;
-                        border-left: 1px solid #ddd;
-                        font-size: 0;
+//                     &--plus {
+//                         position: absolute;
+//                         top: 0;
+//                         right: 0;
+//                         width: 18px;
+//                         height: 18px;
+//                         border: none;
+//                         border-left: 1px solid #ddd;
+//                         font-size: 0;
 
-                        &:after {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 18px;
-                            height: 18px;
-                            background: url(../images/olenz/btn-gift-plus.png)no-repeat center;
-                            content: "";
-                        }
-                    }
-                }
-            }
+//                         &:after {
+//                             position: absolute;
+//                             top: 0;
+//                             left: 0;
+//                             width: 18px;
+//                             height: 18px;
+//                             background: url(../images/olenz/btn-gift-plus.png)no-repeat center;
+//                             content: "";
+//                         }
+//                     }
+//                 }
+//             }
 
-        }
-    }
+//         }
+//     }
 
-}
+// }

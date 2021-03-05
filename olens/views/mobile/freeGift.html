@@ -9,208 +9,231 @@
         <!-- 내부 js -->
         <script src="/dist/js/main.js"></script>
     </head>
-    <body id="olenzFreegift" class="mo">
+    <body id="olenzFreegift" class="fb">
 
-        <section class="mo__freegift">
+        <section class="fb__freegift">
+            <header class="fb__freegift__top">
+                <h2 class="fb__freegift__title">Free Gifts</h2>
+                <a rel="facebox" href="#" class="fb__freegift__select js__layer__open" data-layer="js__selectgift">Select</a>
+            </header>
 
-            <div class="freegift">
-                <header class="freegift__header">
-                    <h3 class="freegift__title">Free Gifts</h3>
-                    <button class="freegift__header__button js__gift__open">Select</button>
-                </header>
-    
-                <div class="freegift__cont">
+            <div class="fb__freegift__cont">
+                <!-- 각각 필요한 상태에 show 클래스 붙여주시면 됩니다. -->
+                <ul class="fb__freegift__inner">
+                
+                    <!-- 아직 선택 안한경우 -->
+                    <!-- <li class="fb__freegift__empty show js__selectgift__yet">
+                        Please select the free gifts.
+                    </li> -->
 
-                    <!-- 선택사항이 없을 경우에는 freegift__selected--null -->
-                    <ul class="freegift__selected">
-                        <!-- <li class="freegift__selected__list">
-                            <figure class="freegift__selected__img">
-                                <img src="../../src/images/olenz/img-freegift.png">
-                            </figure>
-                            <div class="freegift__selected__info">
-                                <p class="freegift__selected__name">Scandi 1Day Gray (20p)</p>
-                                <p class="freegift__selected__power">Power: -1.00</p>
-                                <p class="freegift__selected__qty">Qty : 1</p>
-                            </div>
-                        </li> -->
-                        <li class="freegift__selected__list">
-                            <figure class="freegift__selected__img">
-                                <img src="../../src/images/olenz/img-freegift.png">
-                            </figure>
-                            <div class="freegift__selected__info">
-                                <p class="freegift__selected__name">Scandi 1Day Gray (20p)</p>
-                                <p class="freegift__selected__power">Power: -1.00</p>
-                                <p class="freegift__selected__qty">Qty : 1</p>
-                            </div>
-                        </li>
-    
-                        <!-- 선택사항이 없을 때 -->
-                        <!-- <li class="freegift__selected__list">
-                            <div class="freegift__selected__info">
-                                <p>You did not select any free gifts.</p>
-                            </div>
-                        </li> -->
-                    </ul>
-                </div>
+                    <!-- 선택완료: 사은품X (사은품선택안함) -->
+                    <!-- <li class="fb__freegift__empty js__selectgift__nothing">
+                        You did not select any free gifts.
+                    </li> -->
 
-                <!-- 안내사항 -->
-                <ul class="freegift__notice">
-                    <li class="freegift__notice__list">
-                        When order returns due to change of mind, the coupon used cannot be returned.
+                    <!-- 선택완료: 사은품O (최대 2개) -->
+                    <li class="fb__freegift__box">
+                        <figure class="fb__freegift__img">
+                            <img src="../../src/images/olenz/img-freegift.png" alt="">
+                        </figure>
+
+                        <div class="fb__freegift__info">
+                            <em class="fb__freegift__name">Scandi 1Day Gray (20p)</em>
+                            <span class="fb__freegift__option">Power: -1.00</span>
+                            <span class="fb__freegift__qty">Qty : 1</span>
+                        </div>
                     </li>
-                    <li class="freegift__notice__list">
-                        For order return due to change of mind, free gifts must be returned together in original condition.
+
+                    <li class="fb__freegift__box">
+                        <figure class="fb__freegift__img">
+                            <img src="../../src/images/olenz/img-freegift.png" alt="">
+                        </figure>
+
+                        <div class="fb__freegift__info">
+                            <em class="fb__freegift__name">Scandi 1Day Gray (20p)</em>
+                            <span class="fb__freegift__option">Power: -1.00</span>
+                            <span class="fb__freegift__qty">Qty : 1</span>
+                        </div>
                     </li>
                 </ul>
+
+                <!-- 안내문구 -->
+                <div class="fb__freegift__desc">
+                    <p>
+                        When order returns due to change of mind, the coupon used cannot be returned.
+                    </p>
+                    <p>
+                        For order return due to change of mind, free gifts must be returned together in original condition.
+                    </p>
+                </div>
             </div>
-        </section> 
+        </section>
 
-        <section class="mo__selectgift js__gift__layer">
 
-            <div class="selectgift">
-                <header class="freegift__header">
-                    <h3 class="freegift__title">Select a free gift</h3>   
-                    <button class="selectgift__close js__gift__close">close</button>
+        
+        <section id="js__selectgift" class="fb__selectgift js__layer">
+            <div class="selectgift__layer">
+                <header>
+                    <h2>Select a free gift</h2>
+                    <button class="js__layer__close">close</button>
                 </header>
-                
-                <div class="selectgift__scroll">
-                    <div class="selectgift__cont">
-                        <div class="selectgift__top">
-                            <em>1</em><!--  
-                            --><span>/2 Free gifts available</span> 
-                        </div>
-    
-                        <ul class="selectgift__select">
-                            <li class="selectgift__select__list">
-                                <figure class="freegift__popup__img">
-                                    <img src="../../src/images/olenz/img-freegift.png">
-                                    <input type="checkbox" id="selectgift__item01">
-                                    <label class="selectgift__select__item" for="selectgift__item01"></label>
-                                </figure>
-    
-                                <div class="selectgift__select__info">
-                                    <p class="selectgift__select__name">Scandi Hazel</p>
-                                    
-                                    <select class="selectgift__select__power" name="power__select">
-                                        <option value="-1.00">Select</option>
-                                        <option value="-1.00">-1.00</option>
-                                        <option value="-1.50">-1.50</option>
-                                        <option value="-2.00">-2.00</option>
+                <div class="selectgift__cont">
+                    <div class="selectgift__top">
+                        <span class="selectgift__desc">
+                            <em class="js__selectgift__selected">0</em><!--
+                            --><span>/2 Free gifts available</span>
+                        </span>
+                    </div>
+
+                    <div class="selectgift__scroll">
+                        <ul class="selectgift__scroll__inner">
+                            <li class="selectgift__box js__selectgift__each">
+                                <label class="selectgift__label">
+                                    <input type="checkbox" name="selectFreeGift" class="js__selectgift__checkbox">
+                                    <figure class="selectgift__img">
+                                        <img src="../../src/images/olenz/img-freegift.png" alt="">
+                                    </figure>
+                                </label>
+                                <div class="selectgift__info">
+                                    <span class="selectgift__name">ScandaifffScan</span>
+                                    <select name="" class="selectgift__eye js__selectgift__eye">
+                                        <option value="">Select</option>
+                                        <option value="1">-1.00</option>
                                     </select>
-                                    
-                                    <!-- @todo. input태그로 변경하고 내거랑 비교하기 -->
-                                    <nav class="selectgift__select__qty">
-                                        <button class="selectgift__select__qty--minus">-</button>
-                                        <span class="selectgift__select__qty--value">1</span>
-                                        <button class="selectgift__select__qty--plus">+</button>
-                                    </nav>
-                                </div>  
+                                    <div class="selectgift__spinner">
+                                        <button class="selectgift__spinner__btn--minus js__selectgift__spinner" data-action="minus">-</button>
+                                        <input type="text" class="selectgift__spinner__count js__selectgift__count" value="0" readonly>
+                                        <button class="selectgift__spinner__btn--plus js__selectgift__spinner" data-action="plus">+</button>
+                                    </div>
+                                </div>
                             </li>
-                            <li class="selectgift__select__list">
-                                <figure class="freegift__popup__img">
-                                    <img src="../../src/images/olenz/img-freegift.png">
-                                    <input type="checkbox" id="selectgift__item02">
-                                    <label class="selectgift__select__item" for="selectgift__item02"></label>
-                                </figure>
-    
-                                <div class="selectgift__select__info">
-                                    <p class="selectgift__select__name">Scandi Hazel</p>
-                                    
-                                    <select class="selectgift__select__power" name="power__select">
-                                        <option value="-1.00">select</option>
-                                        <option value="-1.00">-1.00</option>
-                                        <option value="-1.50">-1.50</option>
-                                        <option value="-2.00">-2.00</option>
+                            <li class="selectgift__box js__selectgift__each">
+                                <label class="selectgift__label">
+                                    <input type="checkbox" name="selectFreeGift" class="js__selectgift__checkbox">
+                                    <figure class="selectgift__img">
+                                        <img src="../../src/images/olenz/img-freegift.png" alt="">
+                                    </figure>
+                                </label>
+                                <div class="selectgift__info">
+                                    <span class="selectgift__name">ScandaifffScan</span>
+                                    <select name="" class="selectgift__eye js__selectgift__eye">
+                                        <option value="">Select</option>
+                                        <option value="1">-1.00</option>
                                     </select>
-                                    
-                                    <p class="selectgift__select__qty">
-                                        <button class="selectgift__select__qty--minus">-</button>
-                                        <span class="selectgift__select__qty--value">1</span>
-                                        <button class="selectgift__select__qty--plus">+</button>
-                                    </p>
-                                </div>  
+                                    <div class="selectgift__spinner">
+                                        <button class="selectgift__spinner__btn--minus js__selectgift__spinner" data-action="minus">-</button>
+                                        <input type="text" class="selectgift__spinner__count js__selectgift__count" value="0" readonly>
+                                        <button class="selectgift__spinner__btn--plus js__selectgift__spinner" data-action="plus">+</button>
+                                    </div>
+                                </div>
                             </li>
-                            <li class="selectgift__select__list">
-                                <figure class="freegift__popup__img">
-                                    <img src="../../src/images/olenz/img-freegift.png">
-                                    <input type="checkbox" id="selectgift__item03">
-                                    <label class="selectgift__select__item" for="selectgift__item03"></label>
-                                </figure>
-    
-                                <div class="selectgift__select__info">
-                                    <p class="selectgift__select__name">Scandi Hazel</p>
-                                    
-                                    <select class="selectgift__select__power" name="power__select">
-                                        <option value="-1.00">select</option>
-                                        <option value="-1.00">-1.00</option>
-                                        <option value="-1.50">-1.50</option>
-                                        <option value="-2.00">-2.00</option>
+                            <li class="selectgift__box js__selectgift__each">
+                                <label class="selectgift__label">
+                                    <input type="checkbox" name="selectFreeGift" class="js__selectgift__checkbox">
+                                    <figure class="selectgift__img">
+                                        <img src="../../src/images/olenz/img-freegift.png" alt="">
+                                    </figure>
+                                </label>
+                                <div class="selectgift__info">
+                                    <span class="selectgift__name">ScandaifffScan</span>
+                                    <select name="" class="selectgift__eye js__selectgift__eye">
+                                        <option value="">Select</option>
+                                        <option value="1">-1.00</option>
                                     </select>
-                                    
-                                    <p class="selectgift__select__qty">
-                                        <button class="selectgift__select__qty--minus">-</button>
-                                        <span class="selectgift__select__qty--value">1</span>
-                                        <button class="selectgift__select__qty--plus">+</button>
-                                    </p>
-                                </div>  
+                                    <div class="selectgift__spinner">
+                                        <button class="selectgift__spinner__btn--minus js__selectgift__spinner" data-action="minus">-</button>
+                                        <input type="text" class="selectgift__spinner__count js__selectgift__count" value="0" readonly>
+                                        <button class="selectgift__spinner__btn--plus js__selectgift__spinner" data-action="plus">+</button>
+                                    </div>
+                                </div>
                             </li>
-                            <li class="selectgift__select__list">
-                                <figure class="freegift__popup__img">
-                                    <img src="../../src/images/olenz/img-freegift.png">
-                                    <input type="checkbox" id="selectgift__item04">
-                                    <label class="selectgift__select__item" for="selectgift__item04"></label>
-                                </figure>
-    
-                                <div class="selectgift__select__info">
-                                    <p class="selectgift__select__name">Scandi Hazel</p>
-                                    
-                                    <select class="selectgift__select__power" name="power__select">
-                                        <option value="-1.00">select</option>
-                                        <option value="-1.00">-1.00</option>
-                                        <option value="-1.50">-1.50</option>
-                                        <option value="-2.00">-2.00</option>
+                            <li class="selectgift__box js__selectgift__each">
+                                <label class="selectgift__label">
+                                    <input type="checkbox" name="selectFreeGift" class="js__selectgift__checkbox">
+                                    <figure class="selectgift__img">
+                                        <img src="../../src/images/olenz/img-freegift.png" alt="">
+                                    </figure>
+                                </label>
+                                <div class="selectgift__info">
+                                    <span class="selectgift__name">ScandaifffScan</span>
+                                    <select name="" class="selectgift__eye js__selectgift__eye">
+                                        <option value="">Select</option>
+                                        <option value="1">-1.00</option>
                                     </select>
-                                    
-                                    <p class="selectgift__select__qty">
-                                        <button class="selectgift__select__qty--minus">-</button>
-                                        <span class="selectgift__select__qty--value">1</span>
-                                        <button class="selectgift__select__qty--plus">+</button>
-                                    </p>
-                                </div>  
+                                    <div class="selectgift__spinner">
+                                        <button class="selectgift__spinner__btn--minus js__selectgift__spinner" data-action="minus">-</button>
+                                        <input type="text" class="selectgift__spinner__count js__selectgift__count" value="0" readonly>
+                                        <button class="selectgift__spinner__btn--plus js__selectgift__spinner" data-action="plus">+</button>
+                                    </div>
+                                </div>
                             </li>
-                            <li class="selectgift__select__list">
-                                <figure class="freegift__popup__img">
-                                    <img src="../../src/images/olenz/img-freegift.png">
-                                    <input type="checkbox" id="selectgift__item04">
-                                    <label class="selectgift__select__item" for="selectgift__item04"></label>
-                                </figure>
-    
-                                <div class="selectgift__select__info">
-                                    <p class="selectgift__select__name">Scandi Hazel</p>
-                                    
-                                    <select class="selectgift__select__power" name="power__select">
-                                        <option value="-1.00">select</option>
-                                        <option value="-1.00">-1.00</option>
-                                        <option value="-1.50">-1.50</option>
-                                        <option value="-2.00">-2.00</option>
+                            <li class="selectgift__box js__selectgift__each">
+                                <label class="selectgift__label">
+                                    <input type="checkbox" name="selectFreeGift" class="js__selectgift__checkbox">
+                                    <figure class="selectgift__img">
+                                        <img src="../../src/images/olenz/img-freegift.png" alt="">
+                                    </figure>
+                                </label>
+                                <div class="selectgift__info">
+                                    <span class="selectgift__name">ScandaifffScan</span>
+                                    <select name="" class="selectgift__eye js__selectgift__eye">
+                                        <option value="">Select</option>
+                                        <option value="1">-1.00</option>
                                     </select>
-                                    
-                                    <p class="selectgift__select__qty">
-                                        <button class="selectgift__select__qty--minus">-</button>
-                                        <span class="selectgift__select__qty--value">1</span>
-                                        <button class="selectgift__select__qty--plus">+</button>
-                                    </p>
-                                </div>  
+                                    <div class="selectgift__spinner">
+                                        <button class="selectgift__spinner__btn--minus js__selectgift__spinner" data-action="minus">-</button>
+                                        <input type="text" class="selectgift__spinner__count js__selectgift__count" value="0" readonly>
+                                        <button class="selectgift__spinner__btn--plus js__selectgift__spinner" data-action="plus">+</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="selectgift__box js__selectgift__each">
+                                <label class="selectgift__label">
+                                    <input type="checkbox" name="selectFreeGift" class="js__selectgift__checkbox">
+                                    <figure class="selectgift__img">
+                                        <img src="../../src/images/olenz/img-freegift.png" alt="">
+                                    </figure>
+                                </label>
+                                <div class="selectgift__info">
+                                    <span class="selectgift__name">ScandaifffScan</span>
+                                    <select name="" class="selectgift__eye js__selectgift__eye">
+                                        <option value="">Select</option>
+                                        <option value="1">-1.00</option>
+                                    </select>
+                                    <div class="selectgift__spinner">
+                                        <button class="selectgift__spinner__btn--minus js__selectgift__spinner" data-action="minus">-</button>
+                                        <input type="text" class="selectgift__spinner__count js__selectgift__count" value="0" readonly>
+                                        <button class="selectgift__spinner__btn--plus js__selectgift__spinner" data-action="plus">+</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="selectgift__box js__selectgift__each">
+                                <label class="selectgift__label">
+                                    <input type="checkbox" name="selectFreeGift" class="js__selectgift__checkbox">
+                                    <figure class="selectgift__img">
+                                        <img src="../../src/images/olenz/img-freegift.png" alt="">
+                                    </figure>
+                                </label>
+                                <div class="selectgift__info">
+                                    <span class="selectgift__name">ScandaifffScan</span>
+                                    <select name="" class="selectgift__eye js__selectgift__eye">
+                                        <option value="">Select</option>
+                                        <option value="1">-1.00</option>
+                                    </select>
+                                    <div class="selectgift__spinner">
+                                        <button class="selectgift__spinner__btn--minus js__selectgift__spinner" data-action="minus">-</button>
+                                        <input type="text" class="selectgift__spinner__count js__selectgift__count" value="0" readonly>
+                                        <button class="selectgift__spinner__btn--plus js__selectgift__spinner" data-action="plus">+</button>
+                                    </div>
+                                </div>
                             </li>
                         </ul>
-                    </div>
-    
-                    <div class="selectgift__button">
-                        <button class="selectgift__button--later js__gift__later">Not for this time</button>
-                        <button class="selectgift__button--complete js__gift__complete">Complete</button>
-                    </div>
+                        <nav class="selectgift__btn">
+                            <button class="selectgift__btn--wt js__selectgift__noselect">Not for this time</button>
+                            <button class="selectgift__btn--bk js__selectgift__complete">Complete</button>
+                        </nav>
+                    </div>  
                 </div>
-            
             </div>
         </section>
 
