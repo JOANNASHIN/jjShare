@@ -212,6 +212,8 @@
             }
 
             &__cont {
+                width: 100%;
+                height: 100%;
                 padding: rem(0 24px);
                 background: #fff;
             }
@@ -232,6 +234,7 @@
             }
 
             &__scroll {
+                overflow-x: hidden;
                 overflow-y: auto;
                 height: 100%;
 
