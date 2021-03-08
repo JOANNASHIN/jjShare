@@ -668,7 +668,7 @@ html, body {
   z-index: 1;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4) url(../../src/images/olenz/btn-check-mo.png) no-repeat 2.4rem 3.1rem/2.3rem 1.75rem;
+  background: rgba(0, 0, 0, 0.4) url(../../src/images/olenz/btn-check.png) no-repeat 2.4rem 3.1rem/2.3rem 1.75rem;
   content: "";
 }
 .fb__selectgift .selectgift__img img {
@@ -704,7 +704,7 @@ html, body {
   height: 3.6rem;
   margin-bottom: 1rem;
   padding: 0 2.6rem 0 1.25rem;
-  background: url(../../src/images/olenz/btn-select-mo.png) no-repeat calc(100% - 0.75rem) center/1.1rem 0.65rem;
+  background: url(../../src/images/olenz/btn-select.png) no-repeat calc(100% - 0.75rem) center/1.1rem 0.65rem;
   border: 0.1rem solid #ccc;
   font-size: 1.2rem;
   line-height: 3.6rem;
@@ -728,13 +728,13 @@ html, body {
 }
 .fb__selectgift .selectgift__spinner__btn--minus {
   left: 0;
-  background: url(../../src/images/olenz/btn-gift-minus-mo.png) no-repeat center center/1rem 0.1rem;
+  background: url(../../src/images/olenz/btn-gift-minus.png) no-repeat center center/1rem 0.1rem;
   border-right: 0.1rem solid #ccc;
 }
 .fb__selectgift .selectgift__spinner__btn--plus {
   top: 0;
   right: 0;
-  background: url(../../src/images/olenz/btn-gift-plus-mo.png) no-repeat center center/1rem 1rem;
+  background: url(../../src/images/olenz/btn-gift-plus.png) no-repeat center center/1rem 1rem;
   border-left: 0.1rem solid #ccc;
   font-size: 0;
 }
@@ -768,6 +768,34 @@ html, body {
 .fb__selectgift .selectgift__btn--bk {
   background: #000;
   color: #fff;
+}
+.fb__orderlist.hide .fb__freegift__box:not(:first-child) {
+  display: none;
+}
+.fb__orderlist.hide .fb__orderlist__btn:after {
+  transform: rotate(180deg);
+}
+.fb__orderlist__nav {
+  padding: 50px 0 60px;
+  text-align: center;
+}
+.fb__orderlist__btn {
+  position: relative;
+  padding: 16px 52px 16px 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+}
+.fb__orderlist__btn:after {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 16px;
+  height: 10px;
+  background: url(../../src/images/olenz/icon-orderlist-hold-off.png) no-repeat 0 0/16px 10px;
+  content: "";
 }
 
 /*# sourceMappingURL=main.css.map*/

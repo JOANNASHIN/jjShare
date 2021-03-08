@@ -408,4 +408,42 @@
             }
         }
     }
+
+    &__orderlist {
+
+        &.hide {
+            .fb__freegift__box:not(:first-child) {
+                display: none;
+            }
+
+            .fb__orderlist__btn:after {
+                transform: rotate(180deg);
+            }
+        }
+
+        &__nav {
+            padding: 50px 0 60px;
+            text-align: center;
+        }
+
+        &__btn {
+            position: relative;
+            padding: 16px 52px 16px 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1;
+
+            &:after {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 16px;
+                height: 10px;
+                background: url(../images/olenz/icon-orderlist-hold-off.png) no-repeat 0 0 / 16px 10px;
+                content: "";
+            }
+        }
+    }
 }

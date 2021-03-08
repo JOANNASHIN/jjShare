@@ -14,9 +14,26 @@ const olenzFreegift = () => {
             $target.removeClass("active");
         })
     }
+
+    const orderlistToggle = () => {
+        $document.on("click", ".js__orderlist__btn", function() {
+            const $orderlist = $(".js__orderlist")
+            const $btn = $(".js__orderlist__btn");
+
+            $orderlist.toggleClass("hide"); 
+
+            if( $orderlist.hasClass("hide") ){
+                $btn.text("View all");
+            } else {
+                $btn.text("close");
+            }
+        })
+    }
+
     const init = () => {
         layerOpen();
         layerClose();
+        orderlistToggle();
     }
 
     init();
