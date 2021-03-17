@@ -1,0 +1,129 @@
+.fb {
+
+    &__reviewPop {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,.3);
+
+        &__layer {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1200px;
+            height: 1000px;
+            background: #fff;
+            transform: translate(-50%, -50%);
+
+            &.show {
+                display: block;
+            }
+        }
+
+        &__header {
+            position: relative;
+            height: 30px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        &__title {
+            padding-right: 30px;
+            font-size: 15px;
+            line-height: 30px;
+        }
+
+        &__close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            background: #ccc;
+            font-size: 0;
+        }
+
+        &__main {
+            padding: 50px 80px;
+        }
+
+        &__allReview {
+            position: relative;
+            padding: 0 50px;            
+            border: 1px solid #ccc;
+
+            .allReview {
+                
+                &__slider {
+                    overflow: hidden;
+                    width: 100%;
+                    height: 100%;
+                    border: 1px solid #000;
+
+                    &:after {
+                        display: block;
+                        clear: both;
+                        content: "";
+                    }
+                }
+
+                &__slide {
+                    float: left;
+                    background: #ddd;
+                    margin-left: 6.5px;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+
+                &__link {
+                    display: block;
+                }
+
+                &__image {
+                    width: 150px;
+                    height: 150px;
+                    border: 1px solid #000;
+                }
+
+                &__button {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 154px;
+
+                    button {
+                        position: absolute;
+                        width: 10px;
+                        height: 30px;
+                        background: green;                        
+                        font-size: 0;
+                    }
+
+                    &--prev {
+                        top: 50%;
+                        left: 20px;
+                        transform: translate(0, -50%);
+                    }
+
+                    &--next {
+                        top: 50%;
+                        right: 20px;
+                        transform: translate(0, -50%);
+                    }
+                }
+
+            }
+
+            &__selectReview {
+                
+                margin-top: 50px;
+                background: red;
+            }
+
+        }
+    }
+}

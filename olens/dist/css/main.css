@@ -788,14 +788,108 @@ html, body {
   font-weight: 600;
   line-height: 1;
 }
-.fb__orderlist__btn:after {
+
+.fb__reviewPop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+}
+.fb__reviewPop__layer {
+  display: none;
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 16px;
-  height: 10px;
-  background: url(../../src/images/olenz/icon-orderlist-hold-off.png) no-repeat 0 0/16px 10px;
+  top: 50%;
+  left: 50%;
+  width: 1200px;
+  height: 1000px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+}
+.fb__reviewPop__layer.show {
+  display: block;
+}
+.fb__reviewPop__header {
+  position: relative;
+  height: 30px;
+  border-bottom: 1px solid #ccc;
+}
+.fb__reviewPop__title {
+  padding-right: 30px;
+  font-size: 15px;
+  line-height: 30px;
+}
+.fb__reviewPop__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background: #ccc;
+  font-size: 0;
+}
+.fb__reviewPop__main {
+  padding: 50px 80px;
+}
+.fb__reviewPop__allReview {
+  position: relative;
+  padding: 0 50px;
+  border: 1px solid #ccc;
+}
+.fb__reviewPop__allReview .allReview__slider {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+}
+.fb__reviewPop__allReview .allReview__slider:after {
+  display: block;
+  clear: both;
   content: "";
+}
+.fb__reviewPop__allReview .allReview__slide {
+  float: left;
+  background: #ddd;
+  margin-left: 6.5px;
+}
+.fb__reviewPop__allReview .allReview__slide:first-child {
+  margin-left: 0;
+}
+.fb__reviewPop__allReview .allReview__link {
+  display: block;
+}
+.fb__reviewPop__allReview .allReview__image {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #000;
+}
+.fb__reviewPop__allReview .allReview__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 154px;
+}
+.fb__reviewPop__allReview .allReview__button button {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  background: green;
+  font-size: 0;
+}
+.fb__reviewPop__allReview .allReview__button--prev {
+  top: 50%;
+  left: 20px;
+  transform: translate(0, -50%);
+}
+.fb__reviewPop__allReview .allReview__button--next {
+  top: 50%;
+  right: 20px;
+  transform: translate(0, -50%);
+}
+.fb__reviewPop__allReview__selectReview {
+  margin-top: 50px;
+  background: red;
 }
 
 /*# sourceMappingURL=main.css.map*/
