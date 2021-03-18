@@ -1,16 +1,21 @@
 import _ from "lodash";
 import $ from 'jquery';
 import moment from "moment";
+import Swiper from "swiper";
+import SwiperCore, { Navigation, Pagination } from 'swiper/core';
 
+SwiperCore.use([Navigation, Pagination]);
 window.$ = window.jquery = window.jQuery = $;
 window.moment = moment;
 
 //공통
 import common from "./divide/common";
 
-//
+// 페이지
+import olenzReview from "./divide/olenzReview";
 import olenzFreegift from "./divide/olenzFreegift";
 
+const swiper = new Swiper;
 const htmlDoc = document.documentElement;
 let enSizing = false;
 
@@ -31,7 +36,8 @@ $(window).on("resize", function(e) {
 
 const appMethods = {
     common,
-    olenzFreegift
+    olenzFreegift,
+    olenzReview
 }
 
 const appInit = () => {

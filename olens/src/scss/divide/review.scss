@@ -28,8 +28,8 @@
         }
 
         &__title {
-            padding-right: 30px;
-            font-size: 15px;
+            padding: 0 30px 0 20px;
+            font-size: 20px;
             line-height: 30px;
         }
 
@@ -45,21 +45,50 @@
         }
 
         &__main {
+            width: 1200px;
+            height: 970px;
             padding: 50px 80px;
         }
 
         &__allReview {
-            position: relative;
             padding: 0 50px;            
-            border: 1px solid #ccc;
 
             .allReview {
+                &__button {
+                    display: none;
+                    position: relative;
+
+                    &--prev {
+                        position: absolute;
+                        width: 10px;
+                        height: 30px;
+                        top: 60px;
+                        left: -25px;
+                        background: green;                        
+                        font-size: 0;
+                    }
+    
+                    &--next {
+                        position: absolute;
+                        width: 10px;
+                        height: 30px;
+                        top: 60px;
+                        right: -25px;
+                        background: green;                        
+                        font-size: 0;
+                    }
+                    
+                    &.show {
+                        display: block;
+                    }
+                }
+
+                &__container {
+                    overflow: hidden;
+                    border: 1px solid #000;
+                }
                 
                 &__slider {
-                    overflow: hidden;
-                    width: 100%;
-                    height: 100%;
-                    border: 1px solid #000;
 
                     &:after {
                         display: block;
@@ -70,60 +99,280 @@
 
                 &__slide {
                     float: left;
-                    background: #ddd;
+                    width: 150px;
+                    height: 150px;
                     margin-left: 6.5px;
 
                     &:first-child {
                         margin-left: 0;
                     }
+
+                    &.swiper-slide {
+                        flex-shrink: initial;
+                    }
+
+                    &.active {
+                        .allReview__image:after {
+                            display: none;
+                        }
+                    }
                 }
 
                 &__link {
                     display: block;
+                    position: relative;
                 }
 
                 &__image {
                     width: 150px;
                     height: 150px;
-                    border: 1px solid #000;
+
+                    &:after {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.5);
+                        content: "";
+                    }
+                }
+            }
+        }
+
+        &__selectReview {
+            margin-top: 50px;
+
+            &:after {
+                display: block;
+                clear: both;
+                content: "";
+            }
+
+            .selectReview {
+
+                &__container {
+                    float: left;
+                    width: calc(50% - 25px);
+                    height: 665px;
+                    margin-right: 50px;
+                }
+                
+                &__slider {
+                    position: relative;
                 }
 
                 &__button {
                     position: absolute;
-                    top: 0;
-                    left: 0;
                     width: 100%;
-                    height: 154px;
-
+                    height: 100%;
+                    
                     button {
                         position: absolute;
-                        width: 10px;
-                        height: 30px;
-                        background: green;                        
+                        top: 50%;
+                        color: #fff;
                         font-size: 0;
+                        transform: translate(0, -50%);
+                    }
+
+                    .swiper-button-disabled {
+                        display: none;
                     }
 
                     &--prev {
-                        top: 50%;
-                        left: 20px;
-                        transform: translate(0, -50%);
+                        left: 0;
                     }
 
                     &--next {
-                        top: 50%;
-                        right: 20px;
-                        transform: translate(0, -50%);
+                        right: 0;
                     }
                 }
+             
+                &__image {
+                    width: 100%;
+                    height: 665px;
+                    background: #ccc;
+                }
 
-            }
+                &__pagination {
+                    display: inline-block;
+                    position: absolute;
+                    right: 20px;
+                    bottom: 20px;
+                    left: auto;
+                    z-index: 10;
+                    width: 100px;
+                    height: 40px;
+                    background: rgba(0,0,0,.5);
+                    border-radius: 50px;
+                    color: #fff;
+                    font-size: 25px;
+                    font-weight: 300;
+                    text-align: center;
+                    line-height: 40px;
+                    vertical-align: top;
 
-            &__selectReview {
+                    &--current {
+                        display: inline-block;
+                        padding: 0 5px;
+                        font-size: 25px;
+                        font-weight: 300;
+                        line-height: 40px;
+                        vertical-align: top;
+                    }
+                    
+                    &--total {
+                        display: inline-block;
+                        padding: 0 5px;
+                        font-size: 25px;
+                        font-weight: 300;
+                        line-height: 40px;
+                        vertical-align: top;
+                    }
+                    
+                    .swiper-pagination-current {
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+
+                    .swiper-pagination-total {
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+                    
+                }
+
+
+                &__cont {
+                    float: right;
+                    position: relative;
+                    width: calc(50% - 25px);
+                     
+                    &__info {
+                        position: relative;
+                        padding: 40px 150px 0 0;
+                        margin-bottom: 30px;
+                        min-height: 150px;
+                        border-bottom: 2px solid #ddd;
+                        font-size: 0;
+                    }
+
+                    &__score {
+                        display: inline-block;
+                        position: relative;
+                        width: 75px;
+                        height: 14px;
+                        margin-right: 15px;
+                        background: url(../images/olenz/star-gray.png) repeat-x;
+
+                        &--full {
+                            display: inline-block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: url(../images/olenz/star-yellow.png) repeat-x;
+                        }
+
+                        &:after {
+                            position: absolute;
+                            top: -40px;
+                            left: 0;
+                            width: 40px;
+                            height: 20px;
+                            background: red;
+                            border-radius: 5px;
+                            content: "";
+                        }
+                    }
+
+                    &__writer {
+                        font-size: 20px;
+                        line-height: 20px;
+                    }
+
+                    &__name {
+                        margin-top: 20px;
+                        font-size: 20px;
+                    }
+
+                    &__eye {
+                        margin-top: 15px;
+                        
+                        &--color {
+                            position: relative;
+                            margin-right: 16px;
+                            font-size: 15px;
+                            line-height: 1;
+
+                            &:after {
+                                position: absolute;
+                                top: 50%;
+                                right: -8px;
+                                width: 1px;
+                                height: 13px;
+                                background: #000;
+                                transform: translate(0, -50%);
+                                content: "";
+                            }
+                        }
+
+                        &--type {
+                            display: inline-block;
+                            position: relative;
+                            padding-left: 20px;
+                            font-size: 15px;
+                            line-height: 1;
+
+                            &:before {
+                                position: absolute;
+                                top: 50%;
+                                left: 5px;
+                                width: 10px;
+                                height: 10px;
+                                background: brown;
+                                border-radius: 50%;
+                                transform: translate(0, -50%);
+                                content: "";
+                            }
+                        }
+                    }
+
+                    &__product {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+
+                   &__link {
+                       display: block;
+                   }
+
+                   &__image {
+                        width: 130px;
+                        height: 130px;
+                        background: lightyellow;
+                    }
+
+                    &__wrapper {
+                        height: 485px;
+                    }
+                    
+                    &__scroll {
+                        width: 100%;
+                        height: 100%;
+                        overflow-y: auto;
+                    }
+
+                    &__desc {
+                        font-size: 17px;
+                        font-weight: 300;
+                        line-height: 1.5;
+                    }
+                }
                 
-                margin-top: 50px;
-                background: red;
             }
-
         }
     }
 }
