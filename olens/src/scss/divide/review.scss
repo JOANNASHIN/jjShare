@@ -1,13 +1,114 @@
 .fb {
 
+    &__review {
+        width: 1040px;
+        margin: 0 auto;
+        background: salmon;
+
+        &__reviewPage {
+            padding: 0 50px;            
+
+        }
+    }
+    .reviewPage {
+        &__button {
+            position: relative;
+
+            &--prev {
+                position: absolute;
+                width: 10px;
+                height: 30px;
+                top: 60px;
+                left: -25px;
+                background: green;                        
+                font-size: 0;
+            }
+
+            &--next {
+                position: absolute;
+                width: 10px;
+                height: 30px;
+                top: 60px;
+                right: -25px;
+                background: green;                        
+                font-size: 0;
+            }
+        }
+
+        &__container {
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+        
+        &__slider {
+            // counter-reset: section 0;
+
+            &:after {
+                display: block;
+                clear: both;
+                content: "";
+            }
+        }
+
+        &__slide {
+            float: left;
+            width: 150px;
+            height: 150px;
+            margin-left: 6.5px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &.swiper-slide {
+                flex-shrink: initial;
+            }
+
+            &.swiper-slide-active {
+                .allReview__image:after {
+                    display: none;
+                }
+            }
+            
+            &:hover {
+                .allReview__image:after {
+                    display: none;
+                }
+            }
+        }
+
+        &__link {
+            display: block;
+            position: relative;
+        }
+
+        &__image {
+            width: 150px;
+            height: 150px;
+
+            span {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
     &__reviewPop {
+        display: none;
         position: fixed;
+        left: 0;
+        top: 0px;
+        z-index: 100;
         width: 100vw;
         height: 100vh;
-        background: rgba(0,0,0,.3);
+        background: rgba(0, 0, 0, 0.7);
+
+        &.show {
+            display: block;
+        }
 
         &__layer {
-            display: none;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -16,9 +117,6 @@
             background: #fff;
             transform: translate(-50%, -50%);
 
-            &.show {
-                display: block;
-            }
         }
 
         &__header {
@@ -111,7 +209,13 @@
                         flex-shrink: initial;
                     }
 
-                    &.active {
+                    &.swiper-slide-active {
+                        .allReview__image:after {
+                            display: none;
+                        }
+                    }
+                    
+                    &:hover {
                         .allReview__image:after {
                             display: none;
                         }
@@ -135,6 +239,13 @@
                         height: 100%;
                         background: rgba(0, 0, 0, 0.5);
                         content: "";
+                    }
+
+                    span {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+        
                     }
                 }
             }

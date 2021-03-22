@@ -1336,14 +1336,89 @@ html, body {
   line-height: 1;
 }
 
+.fb__review {
+  width: 1040px;
+  margin: 0 auto;
+  background: salmon;
+}
+.fb__review__reviewPage {
+  padding: 0 50px;
+}
+.fb .reviewPage__button {
+  position: relative;
+}
+.fb .reviewPage__button--prev {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  top: 60px;
+  left: -25px;
+  background: green;
+  font-size: 0;
+}
+.fb .reviewPage__button--next {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  top: 60px;
+  right: -25px;
+  background: green;
+  font-size: 0;
+}
+.fb .reviewPage__container {
+  overflow: hidden;
+  border: 1px solid #000;
+}
+.fb .reviewPage__slider:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.fb .reviewPage__slide {
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin-left: 6.5px;
+}
+.fb .reviewPage__slide:first-child {
+  margin-left: 0;
+}
+.fb .reviewPage__slide.swiper-slide {
+  flex-shrink: initial;
+}
+.fb .reviewPage__slide.swiper-slide-active .allReview__image:after {
+  display: none;
+}
+.fb .reviewPage__slide:hover .allReview__image:after {
+  display: none;
+}
+.fb .reviewPage__link {
+  display: block;
+  position: relative;
+}
+.fb .reviewPage__image {
+  width: 150px;
+  height: 150px;
+}
+.fb .reviewPage__image span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .fb__reviewPop {
+  display: none;
   position: fixed;
+  left: 0;
+  top: 0px;
+  z-index: 100;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.7);
+}
+.fb__reviewPop.show {
+  display: block;
 }
 .fb__reviewPop__layer {
-  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1351,9 +1426,6 @@ html, body {
   height: 1000px;
   background: #fff;
   transform: translate(-50%, -50%);
-}
-.fb__reviewPop__layer.show {
-  display: block;
 }
 .fb__reviewPop__header {
   position: relative;
@@ -1429,7 +1501,10 @@ html, body {
 .fb__reviewPop__allReview .allReview__slide.swiper-slide {
   flex-shrink: initial;
 }
-.fb__reviewPop__allReview .allReview__slide.active .allReview__image:after {
+.fb__reviewPop__allReview .allReview__slide.swiper-slide-active .allReview__image:after {
+  display: none;
+}
+.fb__reviewPop__allReview .allReview__slide:hover .allReview__image:after {
   display: none;
 }
 .fb__reviewPop__allReview .allReview__link {
@@ -1448,6 +1523,11 @@ html, body {
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   content: "";
+}
+.fb__reviewPop__allReview .allReview__image span {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .fb__reviewPop__selectReview {
   margin-top: 50px;

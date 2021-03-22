@@ -57266,6 +57266,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _divide_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./divide/common */ "./src/js/divide/common.js");
 /* harmony import */ var _divide_olenzReview__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./divide/olenzReview */ "./src/js/divide/olenzReview.js");
 /* harmony import */ var _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./divide/olenzFreegift */ "./src/js/divide/olenzFreegift.js");
+/* harmony import */ var _divide_quest__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./divide/quest */ "./src/js/divide/quest.js");
 /* provided dependency */ var __webpack_provided_window_dot_$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
@@ -57281,6 +57282,7 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
 
 
 // 페이지
+
 
 
 
@@ -57306,7 +57308,8 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(window).on("resize", function(e) {
 const appMethods = {
     common: _divide_common__WEBPACK_IMPORTED_MODULE_6__.default,
     olenzFreegift: _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_8__.default,
-    olenzReview: _divide_olenzReview__WEBPACK_IMPORTED_MODULE_7__.default
+    olenzReview: _divide_olenzReview__WEBPACK_IMPORTED_MODULE_7__.default,
+    quest: _divide_quest__WEBPACK_IMPORTED_MODULE_9__.default
 }
 
 const appInit = () => {
@@ -57505,47 +57508,101 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const olenzReview = () => {
-    const $document = $(document) 
+    const $document = $(document);
+    
+    // 리뷰페이지 슬라이드
+    const pageReviewSlider = () => {
+        new swiper__WEBPACK_IMPORTED_MODULE_0__.default( ".js__reviewPage__slider", {
+            loop: true,
+            slidesPerView: 6,
+            navigation: {
+                prevEl: '.reviewPage__button--prev',
+                nextEl: '.reviewPage__button--next',
+            },
+        });
+    }
 
-    const ReviewPopClose = () => {
-        $document.on("click", ".fb__reviewPop__close", function() {
-            $(".fb__reviewPop__layer").removeClass("show");
+    // 팝업창 열기
+    const ReviewPopOpen = () => {
+        $document.on("click", ".js__slide__layerOpen", function() {
+            $(".fb__reviewPop").addClass("show");
+            ReviewPopStart();
+            let _target = $(this).attr("data-index");
+            allReviewStart(_target);
         })
     }
 
-    // 슬라이드 갯수가 설정해놓은 값을 초과하면 슬라이드가 실행되며 버튼 나타남
-    const allReviewStart = () => {
-        const $slide = $(".allReview__slide");
-        //하나로 컨트롤
-        const $slideBtn = $(".allReview__button");
+
+    // 팝업창 닫기
+    const ReviewPopClose = () => {
+        $document.on("click", ".fb__reviewPop__close", function() {
+            $(".fb__reviewPop").removeClass("show");
+        })
+    }
+
+
+    // 팝업창 스크립트 실행 
+    const ReviewPopStart = () => {
+        selectReviewSlider(); //선택리뷰 슬라이드
+    }
+
+    
+    // 전체리뷰 슬라이드 갯수에 따른 실행 정의
+    const allReviewStart = (_target) => {
+        const $area = $(".js__allreview");
+        
+        const $slide = $area.find(".swiper-slide");
+        const $slideBtn = $area.find(".js__slider__nav");
         const _slideLength = $slide.length;
         const _showLength = 6;
-
+        
         if( _slideLength > _showLength ){
             $slideBtn.addClass("show");
-            allReviewSlider(); //전체리뷰 슬라이드 실행
+            allReviewSlider(_target, _showLength); //전체리뷰 슬라이드 실행
         } else {
             $slideBtn.removeClass("show");
         }
-
-        // 슬라이드를 클릭하면 해당 슬라이드 active됨
-        $document.on("click", ".allReview__slide", function() {
-            $(".allReview__slide").removeClass("active");
-            $(this).addClass("active");
-        })
     }
-    
-    const allReviewSlider = () => {
-        new swiper__WEBPACK_IMPORTED_MODULE_0__.default( ".allReview__container", {
-            // loop: true,
+
+
+    // 전체리뷰 슬라이드
+    const allReviewSlider = (_target, _showLength) => {
+        new swiper__WEBPACK_IMPORTED_MODULE_0__.default( ".js__allreview .swiper-container", {
+            loop: true,
+            // preventClicks: true,
+            // preventClicksPropagation: true,
             slidesPerView: 6,
             navigation: {
                 prevEl: '.allReview__button--prev',
                 nextEl: '.allReview__button--next',
             },
+            slideToClickedSlide : true,
+            on: {
+                // 페이지 레이아웃의 슬라이드 값과 같은 값의 팝업창 전체리뷰 슬라이드를!
+                init() {
+                    this.slideTo(Number(_target) + Number(_showLength), 1, true)
+                },
+
+                // click(swiper, event) {
+                //     //그 인덱스로 가라
+                //     // this.slideTo()
+            
+                //     // console.log("this", this); //this
+                //     // console.log("swiper", swiper); //this
+                //     // console.log("swiper", event); //사용 가능한 event
+                //     console.log("clickedIndex", this.clickedIndex); //this의 realIndex 
+                //     // realIndex가 슬라이드 한번 할 때마다 바뀜 0 - 1 - 2 -3 - 4 - 5 - 6 - 0
+                //     console.log("activeIndex", this.activeIndex); 
+                //     // 6 - 7 - 8 - 9 - 10 - 11 - 12 - 13 - 7
+                // }
+            }
         });
+
+        // window.test = test;
     }
     
+    
+    //선택리뷰 슬라이드
     const selectReviewSlider = () => {
         new swiper__WEBPACK_IMPORTED_MODULE_0__.default('.selectReview__container', {
             pagination: {
@@ -57559,17 +57616,214 @@ const olenzReview = () => {
         });
     }
     
+    // 가장 먼저 실행되는 것
     const init = () => {
+        pageReviewSlider(); //리뷰페이지 슬라이드
+        ReviewPopOpen(); //팝업창 열기
         ReviewPopClose(); //팝업창 닫기
-        allReviewStart(); //전체리뷰 슬라이드
-        selectReviewSlider(); //선택리뷰 슬라이드
     }
-
+    
     init();
-
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (olenzReview);
+
+
+
+// // active 위치값 고정일 때, 전체리뷰 active
+// const allReviewActive = () => {
+//     const _activePosition = $(".allReview__slide:nth-child(3)").position().left;
+
+//     // 슬라이드를 클릭하면 동작
+//     $document.on("click", ".allReview__slide", function() {
+//         const _thisPosition = $(this).position().left;
+//         const _thisMovePosition = -(_thisPosition) + _activePosition
+        
+//         $(".allReview__slide").removeClass("active");
+//         $(this).addClass("active");
+
+//         $(".allReview__slider").css("transform","translate("+ _thisMovePosition + "px)");
+//         $(".allReview__slider").css("transition" ,"transform 0.3s");
+//     })
+// }
+
+/***/ }),
+
+/***/ "./src/js/divide/quest.js":
+/*!********************************!*\
+  !*** ./src/js/divide/quest.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+const $document = $(document);
+
+const quest = () => {
+   
+    // 짝수의 합
+    const sumEven = () => {
+        let sum = 0;
+        for( let i = 1; i <= 10; i++ ){
+            
+            if( i % 2 == 0 ){
+                sum = sum + i;
+            }
+        }
+        document.write(sum + "<br>");
+    }
+
+    // 이중for문 ( 5*5 )
+    const password = () => {
+        let star = "*"
+        let space = "<br>"
+        for( let i = 1; i <= 5; i++ ){
+            
+            for( let s = 1; s <= 5; s++ ){
+                document.write(star);
+            }
+            document.write(space);
+        }
+    }
+
+    // 삼각형
+    const triangle = () => {
+        let zero = "0";
+        let sum = "";
+        for( let i = 1; i <= 30; i++ ){
+            sum += zero;
+            document.write(sum + "<br>");
+        }
+    }
+
+    // 빈 삼각형 - 이중for문
+    const nullTriangle = () => {
+        let zero = "0"
+        let sum = "";
+        let nullvalue = "-";
+
+        for( let i = 1; i <= 30; i++ ){
+            for(let t = 1; t <= 1; t++ ){
+                document.write(sum);
+            }
+            sum = sum + nullvalue;
+            document.write( zero + "<br>")
+        } 
+    }
+
+    // 5:5 대각선 5개만 0, 나머지는 빈 값
+    const nullBox = () => {
+        let zero = "*"
+        let sum = "";
+        let nullvalue = "-";
+
+        for( let i = 1; i <= 5; i++ ){
+            for(let t = 1; t <= 5; t++){
+
+                if( i == t ){
+                    document.write(zero);
+                } else {
+                    document.write(nullvalue);
+                }
+            } 
+            document.write("<br>")
+        } 
+    }
+
+    // 역삼각형으로 만들어보기
+    const test = () => {
+        let zero = "*"
+        let sum = "";
+        let nullvalue = " ";
+
+        document.write("<pre>")
+        for( let i = 1; i <= 5; i++ ){
+            for(let t = 1; t <= 5; t++){
+
+                if( i > t ){
+                    document.write(nullvalue);
+                } else {
+                    document.write(zero);
+                }
+            } 
+            document.write("<br>")
+        } 
+
+        document.write("</pre>")
+    }
+
+    // 다이아몬드
+    const diamond = () => {
+        
+        // let $null = " ";
+        // let $star = "*";
+        // for ( let i = 1; i <= 5; i++ ) {
+        //     for ( let t = 1; t <= 5; t++) {
+        //         // i와 t가 3보다 작거나 같을 때, i + t의 값이 3보다 크다
+        //         let $standard = 3;
+
+        //         if ((i <= $standard && t <= $standard)
+        //             && (i + t) > $standard 
+        //         ) { 
+        //             document.write($star);
+        //         } 
+        //         else {
+        //             document.write($null)
+        //         }
+                
+        //     //    if( t == 3 || i == 3 && t % 2 == 0 ){
+        //     //        console.log( i*t == Math.pow(2) );                                  
+        //     //        document.write($star);
+        //     //    } else {
+        //     //        document.write($null)
+        //     //    }
+        //     }
+        //     document.write("<br>")
+        // }
+
+        //   *
+        //  ***
+        // *****
+        //  ***
+        //   *
+        // 별:     1 3 5 3 5
+        // 빈공간: 2 1 0 1 2
+        // "5를 기준으로 절댓값"
+        // 별      4 2 0 -2 -4
+        // 빈공간: (4 2 0 -2 -4 ) / 2
+        let n = 4;
+        while ( n >= -4 ){
+            console.log( " " .repeat(Math.abs(n) / 2) +  "*" .repeat(5 - Math.abs(n)));
+            n -= 2;
+        }
+
+        let j = 4;
+        while ( n >= -4 ){
+            // document.write(" ")
+            n -= 2;
+        }
+
+
+    }
+
+    const init = () => {
+        diamond();
+        sumEven();
+        password();
+        triangle();
+        nullTriangle();
+        nullBox();
+        test();
+    }
+
+    init();
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (quest);
 
 /***/ })
 

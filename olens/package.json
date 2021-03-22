@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "oriBuild": "webpack",
     "build": "webpack --config webpack.config.js",
-    "dev": "webpack serve",
-    "watch": "cross-env NODE_ENV=production webpack --watch --mode development",
+    "watch": "webpack serve",
+    "watch2": "cross-env NODE_ENV=production webpack --watch --mode development",
     "start": "webpack serve --env mode"
   },
   "repository": {

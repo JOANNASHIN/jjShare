@@ -14,6 +14,7 @@ import common from "./divide/common";
 // 페이지
 import olenzReview from "./divide/olenzReview";
 import olenzFreegift from "./divide/olenzFreegift";
+import quest from "./divide/quest";
 
 const swiper = new Swiper;
 const htmlDoc = document.documentElement;
@@ -37,7 +38,8 @@ $(window).on("resize", function(e) {
 const appMethods = {
     common,
     olenzFreegift,
-    olenzReview
+    olenzReview,
+    quest
 }
 
 const appInit = () => {
