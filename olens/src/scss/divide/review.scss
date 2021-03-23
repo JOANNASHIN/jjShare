@@ -1,17 +1,18 @@
 .fb {
 
-    &__review {
+    &__reviewPage {
         width: 1040px;
         margin: 0 auto;
-        background: salmon;
+        background: #ccc;
 
-        &__reviewPage {
+        &__box {
             padding: 0 50px;            
-
         }
     }
+    
     .reviewPage {
         &__button {
+            display: none;
             position: relative;
 
             &--prev {
@@ -33,6 +34,10 @@
                 background: green;                        
                 font-size: 0;
             }
+            
+            &.show {
+                display: block;
+            }
         }
 
         &__container {
@@ -41,7 +46,6 @@
         }
         
         &__slider {
-            // counter-reset: section 0;
 
             &:after {
                 display: block;
@@ -273,11 +277,20 @@
                     position: relative;
                 }
 
-                &__button {
+                &__nav {
+                    display: none;
+
+                    &.show {
+                        display: block; 
+                    }
+                }
+
+                &__button {                      
+                    display: block;
                     position: absolute;
                     width: 100%;
                     height: 100%;
-                    
+
                     button {
                         position: absolute;
                         top: 50%;
@@ -285,11 +298,11 @@
                         font-size: 0;
                         transform: translate(0, -50%);
                     }
-
+                    
                     .swiper-button-disabled {
                         display: none;
                     }
-
+                    
                     &--prev {
                         left: 0;
                     }

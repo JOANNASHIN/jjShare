@@ -1336,15 +1336,16 @@ html, body {
   line-height: 1;
 }
 
-.fb__review {
+.fb__reviewPage {
   width: 1040px;
   margin: 0 auto;
-  background: salmon;
+  background: #ccc;
 }
-.fb__review__reviewPage {
+.fb__reviewPage__box {
   padding: 0 50px;
 }
 .fb .reviewPage__button {
+  display: none;
   position: relative;
 }
 .fb .reviewPage__button--prev {
@@ -1364,6 +1365,9 @@ html, body {
   right: -25px;
   background: green;
   font-size: 0;
+}
+.fb .reviewPage__button.show {
+  display: block;
 }
 .fb .reviewPage__container {
   overflow: hidden;
@@ -1546,7 +1550,14 @@ html, body {
 .fb__reviewPop__selectReview .selectReview__slider {
   position: relative;
 }
+.fb__reviewPop__selectReview .selectReview__nav {
+  display: none;
+}
+.fb__reviewPop__selectReview .selectReview__nav.show {
+  display: block;
+}
 .fb__reviewPop__selectReview .selectReview__button {
+  display: block;
   position: absolute;
   width: 100%;
   height: 100%;
