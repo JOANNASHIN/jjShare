@@ -12,8 +12,9 @@ window.moment = moment;
 import common from "./divide/common";
 
 // 페이지
-import olenzReview from "./divide/olenzReview";
 import olenzFreegift from "./divide/olenzFreegift";
+import olenzReview from "./divide/olenzReview";
+import olenzReview2 from "./divide/olenzReview2";
 import quest from "./divide/quest";
 
 const swiper = new Swiper;
@@ -39,6 +40,7 @@ const appMethods = {
     common,
     olenzFreegift,
     olenzReview,
+    olenzReview2,
     quest
 }
 

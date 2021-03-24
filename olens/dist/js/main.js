@@ -57264,9 +57264,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/core */ "./node_modules/swiper/esm/components/navigation/navigation.js");
 /* harmony import */ var swiper_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/core */ "./node_modules/swiper/esm/components/pagination/pagination.js");
 /* harmony import */ var _divide_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./divide/common */ "./src/js/divide/common.js");
-/* harmony import */ var _divide_olenzReview__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./divide/olenzReview */ "./src/js/divide/olenzReview.js");
-/* harmony import */ var _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./divide/olenzFreegift */ "./src/js/divide/olenzFreegift.js");
-/* harmony import */ var _divide_quest__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./divide/quest */ "./src/js/divide/quest.js");
+/* harmony import */ var _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./divide/olenzFreegift */ "./src/js/divide/olenzFreegift.js");
+/* harmony import */ var _divide_olenzReview__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./divide/olenzReview */ "./src/js/divide/olenzReview.js");
+/* harmony import */ var _divide_olenzReview2__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./divide/olenzReview2 */ "./src/js/divide/olenzReview2.js");
+/* harmony import */ var _divide_quest__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./divide/quest */ "./src/js/divide/quest.js");
 /* provided dependency */ var __webpack_provided_window_dot_$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
@@ -57282,6 +57283,7 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
 
 
 // 페이지
+
 
 
 
@@ -57307,9 +57309,10 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(window).on("resize", function(e) {
 
 const appMethods = {
     common: _divide_common__WEBPACK_IMPORTED_MODULE_6__.default,
-    olenzFreegift: _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_8__.default,
-    olenzReview: _divide_olenzReview__WEBPACK_IMPORTED_MODULE_7__.default,
-    quest: _divide_quest__WEBPACK_IMPORTED_MODULE_9__.default
+    olenzFreegift: _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_7__.default,
+    olenzReview: _divide_olenzReview__WEBPACK_IMPORTED_MODULE_8__.default,
+    olenzReview2: _divide_olenzReview2__WEBPACK_IMPORTED_MODULE_9__.default,
+    quest: _divide_quest__WEBPACK_IMPORTED_MODULE_10__.default
 }
 
 const appInit = () => {
@@ -57649,6 +57652,197 @@ const olenzReview = () => {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (olenzReview);
+
+
+/***/ }),
+
+/***/ "./src/js/divide/olenzReview2.js":
+/*!***************************************!*\
+  !*** ./src/js/divide/olenzReview2.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/core/core-class.js");
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+
+const olenzReview2 = () => {
+    const $document = $(document);
+
+    const isLayerShow = function ($layer, isShow) {
+        if (isShow) $layer.addClass("show");
+        else $layer.removeClass("show");
+    }
+    
+
+    //공통함수 (슬라이드 실행여부)
+    const canMakeSlider = function ($slides, minLength) {
+        let isPass = true;
+
+        if ($slides.length < minLength) {
+            isPass = false;
+        }
+
+        return isPass; //슬라이드 만들거면 true / 아니면 false
+    }
+
+    //첫번째 슬라이드 만들기
+    const photoSlider = function () {
+        const $area = $(".js__photoSlider__area");
+        const $slides = $area.find(".swiper-slide");
+        const minLength = 6;
+
+        if (!canMakeSlider($slides, minLength)) return ;
+
+
+        $area.find(".js__slider__nav").addClass("show");
+
+        new swiper__WEBPACK_IMPORTED_MODULE_0__.default(".js__photoSlider__area .swiper-container", {
+            loop: true,
+            slidesPerView: "auto",
+            navigation: {
+                prevEl: '.reviewPage__button--prev',
+                nextEl: '.reviewPage__button--next',
+            },
+        })
+    }
+
+    //레이어 함수
+    const layerEvents = function () {
+        const $layer = $(".fb__reviewPop");
+
+        $document
+            //팝업열기
+            .on("click", ".js__slide__layerOpen", function () {
+                const _index = $(this).data("index");
+
+                isLayerShow($layer, true);
+                photoPopupSlider(_index);                
+            })
+            //팝업닫기
+            .on("click", ".fb__reviewPop__close", function () {
+                isLayerShow($layer, false);
+            })
+    }
+
+    const _loopCaseActiveClass = ($area, _index) => {
+        if (!$area) return ;
+
+        $area.find(".swiper-slide").removeClass("active");
+        $area.find(".swiper-slide-active").addClass("active");
+
+           // $(".allReview__slide").on("click", function(){
+        //     sliders.slideTo($(this).index())
+        // })
+    }
+
+    const addActiveClass = ($area, _index) => {
+        if (!$area) return ;
+
+        $area.find(".swiper-slide").removeClass("active");
+        $area.find(".swiper-slide").eq(_index).addClass("active");
+    }
+
+    // 팝업 안 포토 슬라이드
+    const photoPopupSlider = (_index) => {
+        const $area = $(".js__photoPopupSlider__area");
+        const $slides = $area.find(".swiper-slide");
+        const minLength = 6;
+
+        if (!canMakeSlider($slides, minLength)) {
+            addActiveClass($area, _index);
+            requestphotoPopupDetail(_index);
+        }
+        else {
+            $area.find(".js__slider__nav").addClass("show");
+    
+            new swiper__WEBPACK_IMPORTED_MODULE_0__.default(".js__photoPopupSlider__area .swiper-container", {
+                // loop: true,
+                slidesPerView: "auto",
+
+                navigation: {
+                    prevEl: '.allReview__button--prev',
+                    nextEl: '.allReview__button--next',
+                },
+                on: {
+                    init() {
+                        //해당 슬라이드로 이동
+                        this.slideToLoop(Number(_index));
+
+                        //선택한 슬라이드에 active
+                        addActiveClass($area, _index);
+                        
+                        //
+                        requestphotoPopupDetail(_index);
+                    },
+    
+                    click(swiper, e) {
+                        const $clickTarget = $(e.target);
+                        if (!$clickTarget.closest(".swiper-slide").data("index")) return ;
+    
+                        let _clickedIndex = 0;
+                        
+                        if (!$clickTarget.data("index")) {
+                            _clickedIndex = $clickTarget.closest(".swiper-slide").data("index");
+                        }
+                        else {
+                            _clickedIndex = $clickTarget.data("index");
+                        }
+                        
+                        //갈수있는 슬라이드가 남아있는지 체크
+                        if (_clickedIndex <= ($slides.length - minLength)) {
+                            this.slideToLoop(Number(_clickedIndex), 1000, true)
+                        }
+    
+                        //선택한 슬라이드에 active
+                        addActiveClass($area, _clickedIndex);
+                        requestphotoPopupDetail(_clickedIndex);
+                    }
+                }
+            })
+        }
+
+    }
+
+    const requestphotoPopupDetail = function (_index) {
+        //api연동 필요 
+
+        const $area = $(".js__photoDetail__area");
+        const $slides = $area.find(".swiper-slide");
+        const minLength = 1;
+
+        if (!canMakeSlider($slides, minLength)) return ;
+
+        $area.find(".js__slider__nav").addClass("show");
+        
+        new swiper__WEBPACK_IMPORTED_MODULE_0__.default('.js__photoDetail__area .swiper-container', {
+            pagination: {
+                el: '.selectReview__pagination',
+                type: 'fraction',
+            },
+            navigation: {
+                prevEl: '.selectReview__button--prev',
+                nextEl: '.selectReview__button--next',
+            },
+        });
+    }
+   
+
+    const init = () => {
+        photoSlider();
+        layerEvents(); //팝업 오픈
+    }
+    
+    init();
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (olenzReview2);
+
 
 
 /***/ }),

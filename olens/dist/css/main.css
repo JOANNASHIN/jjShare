@@ -1371,7 +1371,8 @@ html, body {
 }
 .fb .reviewPage__container {
   overflow: hidden;
-  border: 1px solid #000;
+  width: 950px;
+  border: 1px solid red;
 }
 .fb .reviewPage__slider:after {
   display: block;
@@ -1379,13 +1380,12 @@ html, body {
   content: "";
 }
 .fb .reviewPage__slide {
-  float: left;
   width: 150px;
   height: 150px;
-  margin-left: 6.5px;
+  margin-right: 10px;
 }
-.fb .reviewPage__slide:first-child {
-  margin-left: 0;
+.fb .reviewPage__slide:last-child {
+  margin-right: 0;
 }
 .fb .reviewPage__slide.swiper-slide {
   flex-shrink: initial;
@@ -1486,27 +1486,19 @@ html, body {
 }
 .fb__reviewPop__allReview .allReview__container {
   overflow: hidden;
+  width: 950px;
   border: 1px solid #000;
 }
-.fb__reviewPop__allReview .allReview__slider:after {
-  display: block;
-  clear: both;
-  content: "";
-}
 .fb__reviewPop__allReview .allReview__slide {
-  float: left;
   width: 150px;
   height: 150px;
-  margin-left: 6.5px;
+  margin-right: 10px;
 }
-.fb__reviewPop__allReview .allReview__slide:first-child {
-  margin-left: 0;
+.fb__reviewPop__allReview .allReview__slide:last-child {
+  margin-right: 0;
 }
 .fb__reviewPop__allReview .allReview__slide.swiper-slide {
   flex-shrink: initial;
-}
-.fb__reviewPop__allReview .allReview__slide.swiper-slide-active .allReview__image:after {
-  display: none;
 }
 .fb__reviewPop__allReview .allReview__slide:hover .allReview__image:after {
   display: none;

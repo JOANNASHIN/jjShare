@@ -1,5 +1,4 @@
 .fb {
-
     &__reviewPage {
         width: 1040px;
         margin: 0 auto;
@@ -42,7 +41,8 @@
 
         &__container {
             overflow: hidden;
-            border: 1px solid #000;
+            width: 950px;
+            border: 1px solid red;
         }
         
         &__slider {
@@ -55,13 +55,13 @@
         }
 
         &__slide {
-            float: left;
+            // float: left;
             width: 150px;
             height: 150px;
-            margin-left: 6.5px;
+            margin-right: 10px;
 
-            &:first-child {
-                margin-left: 0;
+            &:last-child {
+                margin-right: 0;
             }
 
             &.swiper-slide {
@@ -187,37 +187,38 @@
 
                 &__container {
                     overflow: hidden;
+                    width: 950px;
                     border: 1px solid #000;
                 }
                 
                 &__slider {
 
-                    &:after {
-                        display: block;
-                        clear: both;
-                        content: "";
-                    }
+                    // &:after {
+                    //     display: block;
+                    //     clear: both;
+                    //     content: "";
+                    // }
                 }
 
                 &__slide {
-                    float: left;
+                    // float: left;
                     width: 150px;
                     height: 150px;
-                    margin-left: 6.5px;
+                    margin-right: 10px;
 
-                    &:first-child {
-                        margin-left: 0;
+                    &:last-child {
+                        margin-right: 0;
                     }
 
                     &.swiper-slide {
                         flex-shrink: initial;
                     }
 
-                    &.swiper-slide-active {
-                        .allReview__image:after {
-                            display: none;
-                        }
-                    }
+                    // &.swiper-slide-active {
+                    //     .allReview__image:after {
+                    //         display: none;
+                    //     }
+                    // }
                     
                     &:hover {
                         .allReview__image:after {
