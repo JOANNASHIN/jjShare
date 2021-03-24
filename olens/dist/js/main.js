@@ -57525,13 +57525,13 @@ const olenzReview = () => {
             ReviewPopOpen(true);
         } 
         else {
-            // value = false;
             $slideBtn.removeClass("show");
             ReviewPopOpen(false);
         }
 
         // *** 팝업 열기전 슬라이드의 값을 고정적인 값 전달하여 
         // *** 팝업 연 후의 슬라이드 값을 비교 않고 바로 알 수 있게 해야함
+        // *** ( $("allReview__slide") / 2 ) = _slideLength 이면 true
         return _slideLength;
     }
 
@@ -57574,7 +57574,6 @@ const olenzReview = () => {
     const reviewPageNotFull = (_target) => {
         $(".allReview__slide").removeClass("active");
         $(`.allReview__slide:eq(${_target})`).addClass("active");
-        console.log("액티브 안됐을 때 실행ㅇ여부")
     }
 
     
@@ -57593,12 +57592,11 @@ const olenzReview = () => {
 
     // 전체리뷰 슬라이더
     const allReviewSlider = (_target) => {
-        console.log("타켓 값", _target)
         new swiper__WEBPACK_IMPORTED_MODULE_0__.default( ".allReview__container", {
             loop: true,
-            centeredSlides: true,
+            // centeredSlides: true,
             loopFillGroupWithBlank: true,
-            slidesPerColumnFill: "row",
+            initialSlide: 0,
             slidesPerView: "auto",
             navigation: {
                 prevEl: '.allReview__button--prev',
