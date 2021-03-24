@@ -57516,7 +57516,7 @@ const olenzReview = () => {
         const $slide = $review.find(".swiper-slide");
         const $slideBtn = $review.find(".js__slider__nav");  
         // const _slideLength = ( $slide.length ); 
-        const _slideLength = ( $slide.length / 2 ) //임시 팝업창 열렸을 때 다시 파악
+        const _slideLength = ( $slide.length / 2 ) //임시 
         const _showLength = 6;
 
         if ( _slideLength > _showLength ){
@@ -57529,6 +57529,10 @@ const olenzReview = () => {
             $slideBtn.removeClass("show");
             ReviewPopOpen(false);
         }
+
+        // *** 팝업 열기전 슬라이드의 값을 고정적인 값 전달하여 
+        // *** 팝업 연 후의 슬라이드 값을 비교 않고 바로 알 수 있게 해야함
+        return _slideLength;
     }
 
 
@@ -57568,7 +57572,7 @@ const olenzReview = () => {
 
     // 선택한 슬라이드마다 수기로 active
     const reviewPageNotFull = (_target) => {
-        console.log("되냐", _target) 
+        // console.log("되냐", _target) 
         // $(`.allReview__slide:nth-child(${_target})`).addClass('show');
         
     }
@@ -57589,6 +57593,7 @@ const olenzReview = () => {
 
     // 전체리뷰 슬라이더
     const allReviewSlider = (_target) => {
+        console.log("타켓 값", _target)
         new swiper__WEBPACK_IMPORTED_MODULE_0__.default( ".allReview__container", {
             loop: true,
             centeredSlides: true,
@@ -57639,7 +57644,6 @@ const olenzReview = () => {
     // 가장 먼저 실행되는 것
     const init = () => {
         isSliderStart(); //페이지, 전체리뷰 갯수 체크
-        // ReviewPopOpen(); //팝업창 열기
         ReviewPopClose(); //팝업창 닫기
     }
     
