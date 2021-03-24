@@ -57572,9 +57572,9 @@ const olenzReview = () => {
 
     // 선택한 슬라이드마다 수기로 active
     const reviewPageNotFull = (_target) => {
-        // console.log("되냐", _target) 
-        // $(`.allReview__slide:nth-child(${_target})`).addClass('show');
-        
+        $(".allReview__slide").removeClass("active");
+        $(`.allReview__slide:eq(${_target})`).addClass("active");
+        console.log("액티브 안됐을 때 실행ㅇ여부")
     }
 
     
@@ -57606,7 +57606,7 @@ const olenzReview = () => {
             },
             slideToClickedSlide : true,
             on: {
-                // 페이지 슬라이더의 슬라이드 값과 팝업창 전체리뷰 슬라이더의 슬라이드 값을 같도록!
+                // 페이지 슬라이더에서 선택한 슬라이드의 값과 전체리뷰 슬라이더의 슬라이드 값을 같도록!
                 init() {
                     this.slideTo(Number(_target), 1, true)
                     // console.log("고른거", _target);

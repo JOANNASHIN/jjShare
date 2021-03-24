@@ -224,6 +224,12 @@
                             display: none;
                         }
                     }
+
+                    &.active {
+                        .allReview__image:after {
+                            display: none;
+                        }
+                    }
                 }
 
                 &__link {

@@ -1511,6 +1511,9 @@ html, body {
 .fb__reviewPop__allReview .allReview__slide:hover .allReview__image:after {
   display: none;
 }
+.fb__reviewPop__allReview .allReview__slide.active .allReview__image:after {
+  display: none;
+}
 .fb__reviewPop__allReview .allReview__link {
   display: block;
   position: relative;
