@@ -77,7 +77,7 @@ const olenzReview2 = () => {
             self.requestphotoPopupDetail(_index);
             
             if (!canMakeSlider($slides, minLength)) return ;
-            
+
             $area.find(".js__slider__nav").addClass("show");
     
             self.photoPopupSlideObj = new Swiper(".js__photoPopupSlider__area .swiper-container", {
@@ -88,7 +88,7 @@ const olenzReview2 = () => {
                     prevEl: '.allReview__button--prev',
                     nextEl: '.allReview__button--next',
                 },
-                
+
                 on: {
                     init() {
                         //해당 슬라이드로 이동
