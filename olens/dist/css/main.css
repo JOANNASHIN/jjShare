@@ -1490,6 +1490,7 @@ html, body {
   border: 1px solid #000;
 }
 .fb__reviewPop__allReview .allReview__slide {
+  display: inline-block;
   width: 150px;
   height: 150px;
   margin-right: 10px;
@@ -1563,9 +1564,6 @@ html, body {
   color: #fff;
   font-size: 0;
   transform: translate(0, -50%);
-}
-.fb__reviewPop__selectReview .selectReview__button .swiper-button-disabled {
-  display: none;
 }
 .fb__reviewPop__selectReview .selectReview__button--prev {
   left: 0;
@@ -1730,6 +1728,9 @@ html, body {
   font-size: 17px;
   font-weight: 300;
   line-height: 1.5;
+}
+.fb .swiper-button-disabled {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map*/

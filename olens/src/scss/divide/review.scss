@@ -202,6 +202,7 @@
 
                 &__slide {
                     // float: left;
+                    display: inline-block;
                     width: 150px;
                     height: 150px;
                     margin-right: 10px;
@@ -304,10 +305,6 @@
                         color: #fff;
                         font-size: 0;
                         transform: translate(0, -50%);
-                    }
-                    
-                    .swiper-button-disabled {
-                        display: none;
                     }
                     
                     &--prev {
@@ -505,5 +502,9 @@
                 
             }
         }
+    }
+
+    .swiper-button-disabled {
+        display: none;
     }
 }
