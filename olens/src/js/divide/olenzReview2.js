@@ -65,7 +65,7 @@ const olenzReview2 = () => {
         $area.find(".swiper-slide").removeClass("active");
         $area.find(".swiper-slide-active").addClass("active");
 
-           // $(".allReview__slide").on("click", function(){
+        // $(".allReview__slide").on("click", function(){
         //     sliders.slideTo($(this).index())
         // })
     }
