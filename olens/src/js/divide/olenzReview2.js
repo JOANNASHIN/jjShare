@@ -81,7 +81,6 @@ const olenzReview2 = () => {
             $area.find(".js__slider__nav").addClass("show");
     
             self.photoPopupSlideObj = new Swiper(".js__photoPopupSlider__area .swiper-container", {
-                // loop: true,
                 slidesPerView: "auto",
     
                 navigation: {
@@ -103,12 +102,10 @@ const olenzReview2 = () => {
 
             $document.on("click", ".allReview__slide", function() {
                 const slideObj = self.photoPopupSlideObj;
-                const $slides = $(".allReview__slider").find(".swiper-slide");
-                const minLength = 6;
                 let _clickedIndex = $(this).data("index");
     
                 //갈수있는 슬라이드가 남아있는지 체크
-                if (slideObj && (_clickedIndex <= ($slides.length - minLength))) {
+                if (slideObj) {
                     slideObj.slideToLoop(Number(_clickedIndex), 1000, true)
                 }
     
