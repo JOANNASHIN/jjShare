@@ -18,6 +18,7 @@ import olenzReview2 from "./divide/olenzReview2";
 import olensMobileSlide from "./divide/olensMobileSlide";
 import quest from "./divide/quest";
 import todoList from "./divide/todoList";
+import todoFeedback from "./divide/todoFeedback";
 
 const swiper = new Swiper;
 const htmlDoc = document.documentElement;
@@ -45,7 +46,8 @@ const appMethods = {
     olenzReview2,
     quest,
     olensMobileSlide,
-    todoList
+    todoList,
+    todoFeedback
 }
 
 const appInit = () => {

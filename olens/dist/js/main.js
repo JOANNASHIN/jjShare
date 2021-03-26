@@ -57270,6 +57270,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _divide_olensMobileSlide__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./divide/olensMobileSlide */ "./src/js/divide/olensMobileSlide.js");
 /* harmony import */ var _divide_quest__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./divide/quest */ "./src/js/divide/quest.js");
 /* harmony import */ var _divide_todoList__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./divide/todoList */ "./src/js/divide/todoList.js");
+/* harmony import */ var _divide_todoFeedback__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./divide/todoFeedback */ "./src/js/divide/todoFeedback.js");
 /* provided dependency */ var __webpack_provided_window_dot_$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
@@ -57285,6 +57286,7 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
 
 
 // 페이지
+
 
 
 
@@ -57318,7 +57320,8 @@ const appMethods = {
     olenzReview2: _divide_olenzReview2__WEBPACK_IMPORTED_MODULE_9__.default,
     quest: _divide_quest__WEBPACK_IMPORTED_MODULE_11__.default,
     olensMobileSlide: _divide_olensMobileSlide__WEBPACK_IMPORTED_MODULE_10__.default,
-    todoList: _divide_todoList__WEBPACK_IMPORTED_MODULE_12__.default
+    todoList: _divide_todoList__WEBPACK_IMPORTED_MODULE_12__.default,
+    todoFeedback: _divide_todoFeedback__WEBPACK_IMPORTED_MODULE_13__.default
 }
 
 const appInit = () => {
@@ -58353,6 +58356,48 @@ const quest = () => {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (quest);
+
+/***/ }),
+
+/***/ "./src/js/divide/todoFeedback.js":
+/*!***************************************!*\
+  !*** ./src/js/divide/todoFeedback.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+const todoFeedback = () => {
+    $document = $(document);
+    console.log("되니?")
+
+    const rewrite = () => {
+        const $formUpdate = $(".fb__todo__update")
+        $document
+                .on("click", ".js__controller__rewrite", function () {
+                    console.log("클릭 되니")
+                    $formUpdate.addClass("show");
+                })
+                .on("click", ".js__controller__delete", function () {
+                    $formUpdate.removeClass("show");
+                })
+                
+    }
+
+
+    const init = () => {
+        rewrite();
+    }   
+    
+    init();
+
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (todoFeedback);
 
 /***/ }),
 
