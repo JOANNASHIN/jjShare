@@ -964,6 +964,10 @@ input[type=button] {
   src: url(../../src/fonts/Myriad-Pro_31655.ttf);
   font-family: "Myriad-Pro";
 }
+@font-face {
+  src: url(../../src/fonts/NotoSansCJKkr-Regular.ttf);
+  font-family: "Noto-Sans";
+}
 html, body {
   font-size: 125%;
   font-size: 125%;
@@ -1731,6 +1735,196 @@ html, body {
 }
 .fb .swiper-button-disabled {
   display: none;
+}
+
+.fb {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Noto-Sans";
+  background: #ddd;
+}
+.fb__button {
+  width: 100px;
+  height: 50px;
+  background: #000;
+  border: 2px solid #000;
+  color: #fff;
+  font-size: 18px;
+  vertical-align: middle;
+}
+.fb__todo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 750px;
+  height: 1000px;
+  padding: 50px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+}
+.fb__todo__header {
+  position: relative;
+  width: 100%;
+  height: 185px;
+  border-bottom: 2px solid #000;
+}
+.fb__todo__title {
+  padding-right: 300px;
+  font-size: 40px;
+  line-height: 1;
+}
+.fb__todo__today {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  font-size: 28px;
+  line-height: 1;
+}
+.fb__todo__addlist {
+  margin-top: 44px;
+  font-size: 0;
+  line-height: 0;
+}
+.fb__todo__addlist input {
+  width: 550px;
+  height: 50px;
+  border: 2px solid #000;
+  font-size: 18px;
+  vertical-align: middle;
+}
+.fb__todo__count {
+  margin-top: 18px;
+  font-size: 0;
+}
+.fb__todo__total {
+  display: inline-block;
+  margin-right: 22px;
+}
+.fb__todo__total--name {
+  margin-right: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+.fb__todo__total--value {
+  font-size: 18px;
+  line-height: 1;
+  color: #999999;
+}
+.fb__todo__doing {
+  display: inline-block;
+  margin-right: 22px;
+  font-size: 0;
+}
+.fb__todo__doing--name {
+  margin-right: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+.fb__todo__doing--value {
+  font-size: 18px;
+  line-height: 1;
+  color: #999999;
+}
+.fb__todo__done {
+  display: inline-block;
+  font-size: 0;
+}
+.fb__todo__done--name {
+  margin-right: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+.fb__todo__done--value {
+  font-size: 18px;
+  line-height: 1;
+  color: #999999;
+}
+.fb__todo__content {
+  overflow-y: auto;
+  max-height: 710px;
+  margin-top: 20px;
+}
+.fb__todo__scroll {
+  height: 100%;
+}
+.fb__todo__list {
+  position: relative;
+  padding: 20px 0;
+  border-bottom: 1px solid #aaa;
+}
+.fb__todo__list:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.fb__todo__list:first-child {
+  padding-top: 0;
+}
+.fb__todo__list:last-child {
+  border-bottom: none;
+}
+.fb__todo__inner {
+  float: left;
+  width: 564px;
+}
+.fb__todo__text {
+  font-size: 18px;
+  line-height: 20px;
+}
+.fb__todo__date {
+  display: block;
+  margin-top: 9px;
+  color: #999;
+  font-size: 14px;
+  line-height: 1;
+}
+.fb__todo__controller {
+  float: right;
+}
+.fb__todo__controller button {
+  display: block;
+  width: 50px;
+  height: 30px;
+}
+.fb__todo__controller--rewrite {
+  background: #666;
+  margin-bottom: 4px;
+  color: #fff;
+  font-size: 14px;
+}
+.fb__todo__controller--delete {
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+}
+.fb__todo__update {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 1px);
+  padding-top: 23px;
+  background: #fff;
+  font-size: 0;
+  vertical-align: middle;
+}
+.fb__todo__update.show {
+  display: block;
+}
+.fb__todo__update input {
+  width: calc(100% - 200px);
+  height: 50px;
+  border: 2px solid #000;
+  vertical-align: middle;
+}
+.fb__todo__update button:last-child {
+  background: #fff;
+  color: #000;
 }
 
 /*# sourceMappingURL=main.css.map*/

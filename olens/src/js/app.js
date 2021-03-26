@@ -16,6 +16,7 @@ import olenzFreegift from "./divide/olenzFreegift";
 import olenzReview from "./divide/olenzReview";
 import olenzReview2 from "./divide/olenzReview2";
 import quest from "./divide/quest";
+import todoList from "./divide/todoList";
 
 const swiper = new Swiper;
 const htmlDoc = document.documentElement;
@@ -41,7 +42,8 @@ const appMethods = {
     olenzFreegift,
     olenzReview,
     olenzReview2,
-    quest
+    quest,
+    todoList
 }
 
 const appInit = () => {

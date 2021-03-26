@@ -57268,6 +57268,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _divide_olenzReview__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./divide/olenzReview */ "./src/js/divide/olenzReview.js");
 /* harmony import */ var _divide_olenzReview2__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./divide/olenzReview2 */ "./src/js/divide/olenzReview2.js");
 /* harmony import */ var _divide_quest__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./divide/quest */ "./src/js/divide/quest.js");
+/* harmony import */ var _divide_todoList__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./divide/todoList */ "./src/js/divide/todoList.js");
 /* provided dependency */ var __webpack_provided_window_dot_$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
@@ -57283,6 +57284,7 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
 
 
 // 페이지
+
 
 
 
@@ -57312,7 +57314,8 @@ const appMethods = {
     olenzFreegift: _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_7__.default,
     olenzReview: _divide_olenzReview__WEBPACK_IMPORTED_MODULE_8__.default,
     olenzReview2: _divide_olenzReview2__WEBPACK_IMPORTED_MODULE_9__.default,
-    quest: _divide_quest__WEBPACK_IMPORTED_MODULE_10__.default
+    quest: _divide_quest__WEBPACK_IMPORTED_MODULE_10__.default,
+    todoList: _divide_todoList__WEBPACK_IMPORTED_MODULE_11__.default
 }
 
 const appInit = () => {
@@ -58313,6 +58316,52 @@ const quest = () => {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (quest);
+
+/***/ }),
+
+/***/ "./src/js/divide/todoList.js":
+/*!***********************************!*\
+  !*** ./src/js/divide/todoList.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+
+const todoList = () => {
+    $document = $(document);
+    console.log("되니?")
+
+    const rewrite = () => {
+        const $formUpdate = $(".fb__todo__update")
+        $document
+                .on("click", ".js__controller__rewrite", function () {
+                    console.log("클릭 되니")
+                    $formUpdate.addClass("show");
+                })
+                .on("click", ".js__controller__delete", function () {
+                    $formUpdate.removeClass("show");
+                })
+                
+    }
+
+
+    const init = () => {
+        rewrite();
+    }   
+    
+    init();
+
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (todoList);
 
 /***/ })
 
