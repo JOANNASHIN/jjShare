@@ -15,6 +15,7 @@ import common from "./divide/common";
 import olenzFreegift from "./divide/olenzFreegift";
 import olenzReview from "./divide/olenzReview";
 import olenzReview2 from "./divide/olenzReview2";
+import olensMobileSlide from "./divide/olensMobileSlide";
 import quest from "./divide/quest";
 
 const swiper = new Swiper;
@@ -41,7 +42,8 @@ const appMethods = {
     olenzFreegift,
     olenzReview,
     olenzReview2,
-    quest
+    quest,
+    olensMobileSlide
 }
 
 const appInit = () => {
