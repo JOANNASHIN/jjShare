@@ -57267,8 +57267,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./divide/olenzFreegift */ "./src/js/divide/olenzFreegift.js");
 /* harmony import */ var _divide_olenzReview__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./divide/olenzReview */ "./src/js/divide/olenzReview.js");
 /* harmony import */ var _divide_olenzReview2__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./divide/olenzReview2 */ "./src/js/divide/olenzReview2.js");
-/* harmony import */ var _divide_quest__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./divide/quest */ "./src/js/divide/quest.js");
-/* harmony import */ var _divide_todoList__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./divide/todoList */ "./src/js/divide/todoList.js");
+/* harmony import */ var _divide_olensMobileSlide__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./divide/olensMobileSlide */ "./src/js/divide/olensMobileSlide.js");
+/* harmony import */ var _divide_quest__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./divide/quest */ "./src/js/divide/quest.js");
+/* harmony import */ var _divide_todoList__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./divide/todoList */ "./src/js/divide/todoList.js");
 /* provided dependency */ var __webpack_provided_window_dot_$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
@@ -57284,6 +57285,7 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
 
 
 // 페이지
+
 
 
 
@@ -57314,8 +57316,9 @@ const appMethods = {
     olenzFreegift: _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_7__.default,
     olenzReview: _divide_olenzReview__WEBPACK_IMPORTED_MODULE_8__.default,
     olenzReview2: _divide_olenzReview2__WEBPACK_IMPORTED_MODULE_9__.default,
-    quest: _divide_quest__WEBPACK_IMPORTED_MODULE_10__.default,
-    todoList: _divide_todoList__WEBPACK_IMPORTED_MODULE_11__.default
+    quest: _divide_quest__WEBPACK_IMPORTED_MODULE_11__.default,
+    olensMobileSlide: _divide_olensMobileSlide__WEBPACK_IMPORTED_MODULE_10__.default,
+    todoList: _divide_todoList__WEBPACK_IMPORTED_MODULE_12__.default
 }
 
 const appInit = () => {
@@ -57437,6 +57440,39 @@ const common = () => {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (common);
+
+/***/ }),
+
+/***/ "./src/js/divide/olensMobileSlide.js":
+/*!*******************************************!*\
+  !*** ./src/js/divide/olensMobileSlide.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/core/core-class.js");
+
+
+const olensMobileSlide = () => {
+    const slideInit = () => {
+        new swiper__WEBPACK_IMPORTED_MODULE_0__.default(".fb__slidetest__slider", {
+            loop: true,
+            slidesPerView: "auto"
+        })
+    }
+
+    const init = () => {
+        slideInit();
+    }
+
+    init();
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (olensMobileSlide);
 
 /***/ }),
 
@@ -58059,7 +58095,8 @@ const olenzReview2 = () => {
     
             self.photoPopupSlideObj = new swiper__WEBPACK_IMPORTED_MODULE_0__.default(".js__photoPopupSlider__area .swiper-container", {
                 slidesPerView: "auto",
-    
+                centeredSlides: true,
+                centeredSlidesBounds: true,
                 navigation: {
                     prevEl: '.allReview__button--prev',
                     nextEl: '.allReview__button--next',

@@ -1,5 +1,4 @@
-.fb {
-    
+.fb {    
     &__freegift {
         display: block;
         width: rem(640px);
@@ -444,6 +443,45 @@
             //     background: url(../images/olenz/icon-orderlist-hold-off.png) no-repeat 0 0 / 16px 10px;
             //     content: "";
             // }
+        }
+    }
+
+    //모바일 슬라이드테스트
+    &__slidetest {
+        display: block;
+        width: rem(640px);
+
+        &__slider {
+            overflow: hidden;
+            width: 100%;
+
+            .slider {
+                &__wrapper {
+                    white-space: nowrap;
+                }
+
+                &__item {
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    overflow-y: auto;
+                }
+
+                &__cont {
+                    background: red;
+                    height: rem(2000px);
+
+                    &.yellow {
+                        background: yellow;
+                        height: rem(100px);
+                    }
+
+                    &.green {
+                        background: green;
+                        height: rem(1000px);
+                    }
+                }
+            }
         }
     }
 }

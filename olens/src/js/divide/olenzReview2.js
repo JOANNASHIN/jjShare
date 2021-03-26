@@ -82,7 +82,8 @@ const olenzReview2 = () => {
     
             self.photoPopupSlideObj = new Swiper(".js__photoPopupSlider__area .swiper-container", {
                 slidesPerView: "auto",
-    
+                centeredSlides: true,
+                centeredSlidesBounds: true,
                 navigation: {
                     prevEl: '.allReview__button--prev',
                     nextEl: '.allReview__button--next',
