@@ -1893,6 +1893,9 @@ html, body {
 .fb__todo__list:first-child {
   padding-top: 0;
 }
+.fb__todo__list:first-child .fb__todo__update {
+  padding-top: 0;
+}
 .fb__todo__list:last-child {
   border-bottom: none;
 }
@@ -1901,8 +1904,13 @@ html, body {
   width: 564px;
 }
 .fb__todo__text {
+  min-height: 40px;
   font-size: 18px;
   line-height: 20px;
+  cursor: pointer;
+}
+.fb__todo__text.checked {
+  text-decoration: line-through;
 }
 .fb__todo__date {
   display: block;

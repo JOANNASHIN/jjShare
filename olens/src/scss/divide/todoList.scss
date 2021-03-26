@@ -146,6 +146,10 @@
 
             &:first-child {
                 padding-top: 0;
+
+                .fb__todo__update {
+                    padding-top: 0;
+                }
             }
 
             &:last-child {
@@ -159,8 +163,14 @@
         }
 
         &__text {
+            min-height: 40px;
             font-size: 18px;
             line-height: 20px;
+            cursor: pointer;
+
+            &.checked {
+                text-decoration: line-through;
+            }
         }
 
         &__date {
