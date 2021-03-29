@@ -1830,13 +1830,13 @@ html, body {
   display: inline-block;
   margin-right: 22px;
 }
-.fb__todo__total--name {
+.fb__todo__total .total__name {
   margin-right: 5px;
   font-size: 18px;
   font-weight: bold;
   line-height: 1;
 }
-.fb__todo__total--value {
+.fb__todo__total .total__value {
   font-size: 18px;
   line-height: 1;
   color: #999999;
@@ -1846,13 +1846,13 @@ html, body {
   margin-right: 22px;
   font-size: 0;
 }
-.fb__todo__doing--name {
+.fb__todo__doing .doing__name {
   margin-right: 5px;
   font-size: 18px;
   font-weight: bold;
   line-height: 1;
 }
-.fb__todo__doing--value {
+.fb__todo__doing .doing__value {
   font-size: 18px;
   line-height: 1;
   color: #999999;
@@ -1861,13 +1861,13 @@ html, body {
   display: inline-block;
   font-size: 0;
 }
-.fb__todo__done--name {
+.fb__todo__done .done__name {
   margin-right: 5px;
   font-size: 18px;
   font-weight: bold;
   line-height: 1;
 }
-.fb__todo__done--value {
+.fb__todo__done .done__value {
   font-size: 18px;
   line-height: 1;
   color: #999999;

@@ -72,18 +72,22 @@
             display: inline-block;
             margin-right: 22px;
 
-            &--name {
-                margin-right: 5px;
-                font-size: 18px;
-                font-weight: bold;
-                line-height: 1;
+            .total {
+
+                &__name {
+                    margin-right: 5px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    line-height: 1;
+                }
+    
+                &__value {
+                    font-size: 18px;
+                    line-height: 1;
+                    color: #999999;
+                }
             }
 
-            &--value {
-                font-size: 18px;
-                line-height: 1;
-                color: #999999;
-            }
         }
 
         &__doing {
@@ -91,36 +95,44 @@
             margin-right: 22px;
             font-size: 0;
 
-            &--name {
-                margin-right: 5px;
-                font-size: 18px;
-                font-weight: bold;
-                line-height: 1;
+            .doing {
+
+                &__name {
+                    margin-right: 5px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    line-height: 1;
+                }
+                
+                &__value {
+                    font-size: 18px;
+                    line-height: 1;
+                    color: #999999;
+                }
             }
-            
-            &--value {
-                font-size: 18px;
-                line-height: 1;
-                color: #999999;
-            }
+
         }
 
         &__done {
             display: inline-block;
             font-size: 0;
 
-            &--name {
-                margin-right: 5px;
-                font-size: 18px;
-                font-weight: bold;
-                line-height: 1;
+            .done {
+
+                &__name {
+                    margin-right: 5px;
+                    font-size: 18px;
+                    font-weight: bold;
+                    line-height: 1;
+                }
+    
+                &__value {
+                    font-size: 18px;
+                    line-height: 1;
+                    color: #999999;
+                }   
             }
 
-            &--value {
-                font-size: 18px;
-                line-height: 1;
-                color: #999999;
-            }   
         }
 
         &__content {

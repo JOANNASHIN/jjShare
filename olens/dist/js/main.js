@@ -58412,11 +58412,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-const todoList = () => {
 
+
+const todoList = () => {
     const $document = $(document);
-    
+
     // 전체글 진행글 진행완료 갯수 카운트
     const count = () => {
         let _total = $(".fb__todo__list").length;
@@ -58428,7 +58431,6 @@ const todoList = () => {
         $(".js__doing").text(_doing);
     }
 
-    
     // 진행 완료 처리
     const checked = (value) => {
         let _doneLength = 0;
@@ -58450,79 +58452,136 @@ const todoList = () => {
     
     // 수정 * 취소 * 삭제하기
     const rewrite = () => {
-        const $formUpdate = $(".fb__todo__update")
         $document
         .on("click", ".js__controller__rewrite", function () {
-                let _thisParent = $(this).parent();
-                let _target = _thisParent.siblings($formUpdate);
-                let _thisParentSiblings = _thisParent.siblings();
-                let _targetText = _thisParentSiblings.children(".js__text");
+            let _thisParent = $(this).parent();  //fb__todo__controller
+            let _formTarget = _thisParent.siblings(".fb__todo__update")
+            let _formInput = _formTarget.children("input");
+            
+            _formTarget.addClass("show");
+            
+            // 해당 인풋에게 기존 텍스트 넣어주기
+            let _textTarget = _thisParent.siblings(".fb__todo__inner").children(".js__text");
+            let _textCopy = _textTarget.text().trim();
+            
+            _formInput.val(_textCopy);
+            
+            // 수정된 내용 반영하기
+            newVal(_textCopy);
+        })
 
-                let _textCopy = _targetText.text();
+        .on("click", ".js__update__cancel", function () {
+            let _target = $(this).parent(".fb__todo__update")
+    
+            _target.removeClass("show");
+        })
+    
+        .on("click", ".js__controller__delete", function () {
+            let _target = $(this).closest(".fb__todo__list")
+    
+            _target.remove();
+            count();
+        })
+    }
 
-                // 해당 인풋에게 텍스트 넣어주기
+    const newVal = function (_oldVal) {
 
-                console.log(_PastTarget);
+        $document.on("click", ".js__update__push", function () {
+            let _targetForm = $(this).parent();
+            let _currentVal = $(this).siblings("input").val().trim();
+            let _targetText = $(this).parent().siblings().children(".js__text");
 
-                _target.addClass("show");
-
-            })
-            .on("click", ".js__update__cancel", function () {
-                let _target = $(this).parent($formUpdate)
-
-                _target.removeClass("show");
-            })
-            .on("click", ".js__controller__delete", function () {
-                let _target = $(this).closest(".fb__todo__list")
-
-                _target.remove();
-                count();
-            })
+            if( _oldVal == _currentVal ){
+                alert("수정된 내용이 없습니다.")
+            }
+            else {
+                _targetForm.removeClass("show");
+                _targetText.text(_currentVal);
+            } 
+        })
     }
 
     // 오늘 날짜 구하기
     const today = () => {
         let today = new Date();
-        let year = today.getFullYear();
-        let month = (today.getMonth() + 1);
-        let date = today.getDate();
-        let day = today.getDay();
+        let _year = today.getFullYear();
+        let _month = (today.getMonth() + 1);
+        let _date = today.getDate();
+        let _day = today.getDay();
 
-        if ( day == 1 ){
-            day = "월요일"
+        if ( _day == 1 ){
+            _day = "월요일";
         } 
-        else if ( day == 2 ){
-            day = "화요일"
+        else if ( _day == 2 ){
+            _day = "화요일";
         }  
-        else if ( day == 3 ){
-            day = "수요일"
+        else if ( _day == 3 ){
+            _day = "수요일";
         } 
-        else if ( day == 4 ){
-            day = "목요일"
+        else if ( _day == 4 ){
+            _day = "목요일";
         }
-        else {
-            day = "금요일"
+        else if ( _day == 5 ){
+            _day = "금요일";
+        } 
+		else if ( _day == 6 ){
+            _day = "토요일";
         }
+		else {
+			_day = "일요일";
+		}
+		
 
-        $(".today__year").text(year + ".");
-        $(".today__month").text(month + ".");
-        $(".today__date").text(date + ".");                
-        $(".today__day").text(day);
+		let _today = `${_year}.${_month}.${_date} ${_day}`;
+
+		$(".fb__todo__today").text(_today);
+        return _today;
     } 
 
+    // 리스트 추가하기
+    const addList = function () {
+        $document.on("click", ".js__addlist__add", function () {
+            let _target = $(this).siblings("input");
+            let _text = _target.val();
+            let _today = today()
+            
+            if( ! _text == "" ){
+                let _html = "<dl class='fb__todo__list'>";
+						_html += "<dt class='fb__todo__inner'>";
+							_html += `<p class='fb__todo__text js__text test'>${_text}</p>`;
+							_html += `<span class='fb__todo__date'>${_today}</span>`;
+						_html += "</dt>";
+						_html += "<dd class='fb__todo__controller'>";
+							_html += "<button class='fb__todo__controller--rewrite js__controller__rewrite'>수정</button>";
+							_html += "<button class='fb__todo__controller--delete js__controller__delete'>삭제</button>";
+						_html += "</dd>";
+						_html += "<form class='fb__todo__update'>";
+							_html += "<input type='text' value=''>";
+							_html += "<button type='button' class='fb__button js__update__push'>확인</button>";
+							_html += "<button type='button' class='fb__button js__update__cancel'>취소</button>";
+						_html += "</form>";
+					_html += "</dl>";
+               
+                $(".fb__todo__scroll").prepend(_html);
+    
+                count()
+            }
+            else {
+                alert("일정을 입력해주십시오.")
+            }
+        });
+
+    }
     
     // ** 할 것
-    // 1. '추가' 누르면 input 내용으로 하나 더 list 만들기 (날짜 캡처)
-    // 2. '수정' 누르면 해당 내용 고대로 담기
-    // 3. '수정' 에서 또 '수정' 누르면 해당 내용 반영하기 
-    // ** html 클래스 네이밍
-
+	// 공통함수 묶기
 
     const init = () => {
         today(); //오늘 날짜 구하기
         checked(); //체크 처리하기
         count(); //갯수 카운트
         rewrite(); //리스트 수정 * 취소 * 삭제하기
+        addList(); //리스트 추가하기
     }
 
     init();
