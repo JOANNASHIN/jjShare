@@ -1963,5 +1963,49 @@ html, body {
   background: #fff;
   color: #000;
 }
+.fb__todo__feedback .fb__todo__count .count__box {
+  display: inline-block;
+  margin-right: 22px;
+}
+.fb__todo__feedback .fb__todo__count .count__title {
+  margin-right: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+.fb__todo__feedback .fb__todo__count .count__value {
+  font-size: 18px;
+  line-height: 1;
+  color: #999999;
+}
+.fb__todo__feedback .fb__todo__cont {
+  overflow-y: hidden;
+  max-height: auto;
+  margin-top: 0;
+}
+.fb__todo__feedback .fb__todo__scroll {
+  overflow-y: auto;
+  max-height: 710px;
+  margin-top: 20px;
+  height: 100%;
+}
+.fb__todo__feedback .fb__todo__list.done {
+  opacity: 0.3;
+}
+.fb__todo__feedback .fb__todo__list.done .fb__todo__text {
+  text-decoration: line-through;
+}
+.fb__todo__feedback .fb__todo__text {
+  cursor: pointer;
+}
+.fb__todo__feedback .fb__todo__empty {
+  display: none;
+  padding: 100px 0;
+  font-size: 20px;
+  text-align: center;
+}
+.fb__todo__feedback .fb__todo__empty.show {
+  display: block;
+}
 
 /*# sourceMappingURL=main.css.map*/

@@ -49,7 +49,6 @@
         }
 
         &__addlist {
-
             margin-top: 44px;
             font-size: 0;
             line-height: 0;
@@ -243,6 +242,73 @@
                 background: #fff;
                 color: #000;
             } 
+        }
+
+
+        //피드백반영
+        &__feedback {
+            .fb__todo {
+                &__count {
+                    .count {
+                        &__box {
+                            display: inline-block;
+                            margin-right: 22px;
+                        }
+
+                        &__title {
+                            margin-right: 5px;
+                            font-size: 18px;
+                            font-weight: bold;
+                            line-height: 1;
+                        }
+
+                        &__value {
+                            font-size: 18px;
+                            line-height: 1;
+                            color: #999999;
+                        }
+                    }
+                }
+
+                &__cont {
+                    overflow-y: hidden;
+                    max-height: auto;
+                    margin-top: 0;
+                }
+        
+                &__scroll {
+                    overflow-y: auto;
+                    max-height: 710px;
+                    margin-top: 20px;
+                    height: 100%;
+                }
+                
+                &__list {
+                    &.done {
+                        opacity: 0.3;
+        
+                        .fb__todo__text {
+                            text-decoration: line-through;
+                        }
+                    }
+                }
+        
+                &__text {
+                    cursor: pointer;
+                }
+        
+                &__empty {
+                    display: none;
+                    padding: 100px 0;
+                    font-size: 20px;
+                    text-align: center;
+        
+                    &.show {
+                        display: block;
+                    }
+                }
+            }
+        
         }
     }
 }
