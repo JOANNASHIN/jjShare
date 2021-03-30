@@ -67,81 +67,37 @@
             font-size: 0;
         }
 
-        &__total {
-            display: inline-block;
-            margin-right: 22px;
-
-            .total {
-
-                &__name {
-                    margin-right: 5px;
-                    font-size: 18px;
-                    font-weight: bold;
-                    line-height: 1;
-                }
-    
-                &__value {
-                    font-size: 18px;
-                    line-height: 1;
-                    color: #999999;
-                }
-            }
-
-        }
-
-        &__doing {
+        .count {
             display: inline-block;
             margin-right: 22px;
             font-size: 0;
 
-            .doing {
 
-                &__name {
-                    margin-right: 5px;
-                    font-size: 18px;
-                    font-weight: bold;
-                    line-height: 1;
-                }
-                
-                &__value {
-                    font-size: 18px;
-                    line-height: 1;
-                    color: #999999;
-                }
+            &:last-child {
+                margin-right: 0;
             }
 
-        }
-
-        &__done {
-            display: inline-block;
-            font-size: 0;
-
-            .done {
-
-                &__name {
-                    margin-right: 5px;
-                    font-size: 18px;
-                    font-weight: bold;
-                    line-height: 1;
-                }
-    
-                &__value {
-                    font-size: 18px;
-                    line-height: 1;
-                    color: #999999;
-                }   
+            &__name {
+                margin-right: 5px;
+                font-size: 18px;
+                font-weight: bold;
+                line-height: 1;
             }
 
+            &__value {
+                font-size: 18px;
+                line-height: 1;
+                color: #999999;
+            }
         }
 
         &__content {
-            overflow-y: auto;
-            max-height: 710px;
             margin-top: 20px;
         }
 
         &__scroll {
-            height: 100%;
+            overflow-y: auto;
+            max-height: 710px;
         }
 
         &__list {
@@ -168,7 +124,7 @@
             }
         }
 
-        &__inner {
+        &__textWrap {
             float: left;
             width: 564px;
         }
@@ -269,18 +225,11 @@
                         }
                     }
                 }
-
-                &__cont {
-                    overflow-y: hidden;
-                    max-height: auto;
-                    margin-top: 0;
-                }
         
                 &__scroll {
                     overflow-y: auto;
                     max-height: 710px;
                     margin-top: 20px;
-                    height: 100%;
                 }
                 
                 &__list {
