@@ -58450,38 +58450,71 @@ const todoList = () => {
         })
     }
     
-    // 수정 * 취소 * 삭제하기
+    // 리스트 추가, 수정, 취소, 삭제하기
     const rewrite = () => {
         $document
-        .on("click", ".js__controller__rewrite", function () {
-            let _thisParent = $(this).parent();  //fb__todo__controller
-            let _formTarget = _thisParent.siblings(".fb__todo__update")
-            let _formInput = _formTarget.children("input");
-            
-            _formTarget.addClass("show");
-            
-            // 해당 인풋에게 기존 텍스트 넣어주기
-            let _textTarget = _thisParent.siblings(".fb__todo__inner").children(".js__text");
-            let _textCopy = _textTarget.text().trim();
-            
-            _formInput.val(_textCopy);
-            
-            // 수정된 내용 반영하기
-            newVal(_textCopy);
-        })
-
-        .on("click", ".js__update__cancel", function () {
-            let _target = $(this).parent(".fb__todo__update")
-    
-            _target.removeClass("show");
-        })
-    
-        .on("click", ".js__controller__delete", function () {
-            let _target = $(this).closest(".fb__todo__list")
-    
-            _target.remove();
-            count();
-        })
+            // 추가
+            .on("click", ".js__addlist__add", function () {
+                let _target = $(this).siblings("input");
+                let _text = _target.val();
+                let _today = today()
+                
+                if( ! _text == "" ){
+                    let _html = "<dl class='fb__todo__list'>";
+                            _html += "<dt class='fb__todo__inner'>";
+                                _html += `<p class='fb__todo__text js__text test'>${_text}</p>`;
+                                _html += `<span class='fb__todo__date'>${_today}</span>`;
+                            _html += "</dt>";
+                            _html += "<dd class='fb__todo__controller'>";
+                                _html += "<button class='fb__todo__controller--rewrite js__controller__rewrite'>수정</button>";
+                                _html += "<button class='fb__todo__controller--delete js__controller__delete'>삭제</button>";
+                            _html += "</dd>";
+                            _html += "<form class='fb__todo__update'>";
+                                _html += "<input type='text' value=''>";
+                                _html += "<button type='button' class='fb__button js__update__push'>확인</button>";
+                                _html += "<button type='button' class='fb__button js__update__cancel'>취소</button>";
+                            _html += "</form>";
+                        _html += "</dl>";
+                
+                    $(".fb__todo__scroll").prepend(_html);
+                    
+                    _target.val("");  //리스트 추가 후 인풋 비우기
+                    count()  
+                }
+                else {
+                    alert("일정을 입력해주십시오.")
+                }
+            })
+            // 수정
+            .on("click", ".js__controller__rewrite", function () {
+                let _thisParent = $(this).parent();  
+                let _formTarget = _thisParent.siblings(".fb__todo__update")
+                let _formInput = _formTarget.children("input");
+                
+                _formTarget.addClass("show");
+                
+                // 해당 인풋에게 기존 텍스트 넣어주기
+                let _textTarget = _thisParent.siblings(".fb__todo__inner").children(".js__text");
+                let _textCopy = _textTarget.text().trim();
+                
+                _formInput.val(_textCopy);
+                
+                // 수정된 내용 반영하기
+                newVal(_textCopy);
+            })
+            // 취소
+            .on("click", ".js__update__cancel", function () {
+                let _target = $(this).parent(".fb__todo__update")
+        
+                _target.removeClass("show");
+            })
+            // 삭제
+            .on("click", ".js__controller__delete", function () {
+                let _target = $(this).closest(".fb__todo__list")
+        
+                _target.remove();
+                count();
+            });
     }
 
     // 수정된 내용 반영하기
@@ -58531,7 +58564,6 @@ const todoList = () => {
 		else {
 			_day = "일요일";
 		}
-		
 
 		let _today = `${_year}.${_month}.${_date} ${_day}`;
 
@@ -58539,51 +58571,11 @@ const todoList = () => {
         return _today;
     } 
 
-    // 리스트 추가하기
-    const addList = function () {
-        $document.on("click", ".js__addlist__add", function () {
-            let _target = $(this).siblings("input");
-            let _text = _target.val();
-            let _today = today()
-            
-            if( ! _text == "" ){
-                let _html = "<dl class='fb__todo__list'>";
-						_html += "<dt class='fb__todo__inner'>";
-							_html += `<p class='fb__todo__text js__text test'>${_text}</p>`;
-							_html += `<span class='fb__todo__date'>${_today}</span>`;
-						_html += "</dt>";
-						_html += "<dd class='fb__todo__controller'>";
-							_html += "<button class='fb__todo__controller--rewrite js__controller__rewrite'>수정</button>";
-							_html += "<button class='fb__todo__controller--delete js__controller__delete'>삭제</button>";
-						_html += "</dd>";
-						_html += "<form class='fb__todo__update'>";
-							_html += "<input type='text' value=''>";
-							_html += "<button type='button' class='fb__button js__update__push'>확인</button>";
-							_html += "<button type='button' class='fb__button js__update__cancel'>취소</button>";
-						_html += "</form>";
-					_html += "</dl>";
-               
-                $(".fb__todo__scroll").prepend(_html);
-                
-                _target.val("");  //리스트 추가 후 인풋 비우기
-                count()  
-            }
-            else {
-                alert("일정을 입력해주십시오.")
-            }
-        });
-
-    }
-    
-    // ** 할 것
-	// 공통함수 묶기
-
     const init = () => {
         today(); //오늘 날짜 구하기
-        checked(); //체크 처리하기
         count(); //갯수 카운트
-        rewrite(); //리스트 수정 * 취소 * 삭제하기
-        addList(); //리스트 추가하기
+        checked(); //체크 처리하기
+        rewrite(); //리스트 추가, 수정, 취소, 삭제
     }
 
     init();
