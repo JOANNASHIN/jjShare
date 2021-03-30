@@ -58484,6 +58484,7 @@ const todoList = () => {
         })
     }
 
+    // 수정된 내용 반영하기
     const newVal = function (_oldVal) {
 
         $document.on("click", ".js__update__push", function () {
@@ -58563,8 +58564,9 @@ const todoList = () => {
 					_html += "</dl>";
                
                 $(".fb__todo__scroll").prepend(_html);
-    
-                count()
+                
+                _target.val("");  //리스트 추가 후 인풋 비우기
+                count()  
             }
             else {
                 alert("일정을 입력해주십시오.")
