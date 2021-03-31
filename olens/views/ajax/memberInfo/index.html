@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script>
+		$(document).ready(function(){
+			var searchValue = 0;
+			$('#searchbtn').click(function(){
+				searchValue = $('#searchinput').val();
+				if(searchValue=='id1'){
+					searchValue=0;
+				}		
+				else if(searchValue=='id2'){
+					searchValue=1;
+				}
+				else if(searchValue=='id3'){
+					searchValue=2;
+				}
+				else if(searchValue=='id4'){
+					searchValue=3;
+				}
+				else if(searchValue=='id5'){
+					searchValue=4;
+				}
+			
+				//json에 저장된 정보 불러오기
+				$.getJSON('./memberInfo.json',
+					function(data){
+						var htmlarr = [];
+						$.each(data, function(i, person){
+							htmlarr.push('<div>');
+							htmlarr.push('<h1>'+person[searchValue].idnum+'</h1>');
+							htmlarr.push('<p>'+person[searchValue].username+'</p>');
+							htmlarr.push('<p>'+person[searchValue].address+'</p>');
+							htmlarr.push('<p>'+person[searchValue].gender+'</p>');
+							htmlarr.push('<p>'+person[searchValue].phoneNumber+'</p>');
+							htmlarr.push('</div>');
+						});
+				//출력하기
+				$('#printArea').html(htmlarr.join(''));
+				});
+			});
+		});
+
+	</script>
+</head>
+<body>
+	<input type="text" id="searchinput">
+	<input type="button" value="검색" id="searchbtn">
+	<div id="printArea">
+		
+	</div>
+</body>
+</html>

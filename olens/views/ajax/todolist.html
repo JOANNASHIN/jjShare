@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 할일</title>
+     <!-- css -->
+     <link rel="stylesheet" href="/dist/css/main.css">
+     <!-- 내부 js -->
+     <script src="/dist/js/main.js"></script>
+</head>
+<body class="fb" id="todoJSON">
+    <section class="fb__todo fb__todo__feedback">
+        <div class="fb__todo__header">
+            <h2 class="fb__todo__title">TODOLIST</h2>
+            <p class="fb__todo__today js__today">2021.03.25 목요일</p>
+            <div class="fb__todo__addlist js__todo__add-area">
+                <input type="text" value="">
+                <button class="fb__button js__todo__add">추가</button>
+            </div>
+            <ul class="fb__todo__count js__todo__count"> 
+                <li class="count__box">
+                    <span class="count__title">전체</span>
+                    <em class="count__value">0</em>
+                </li>
+                <li class="count__box">
+                    <span class="count__title">진행중</span>
+                    <em class="count__value">0</em>
+                </li>
+                <li class="count__box">
+                    <span class="count__title">진행완료</span>
+                    <em class="count__value">0</em>
+                </li>
+            </ul>
+        </div>
+
+        <div class="fb__todo__content">
+
+            <!-- 없는케이스 -->
+            <div class="fb__todo__case fb__todo__empty show">
+                    TODOLIST가 없습니다.
+            </div>
+
+            <!-- 라스트 있는 케이스 -->
+            <div class="fb__todo__case fb__todo__scroll js__todo__list"></div>
+        </div>
+    </section>
+</body>
+</html>

@@ -19,6 +19,7 @@ import olensMobileSlide from "./divide/olensMobileSlide";
 import quest from "./divide/quest";
 import todoList from "./divide/todoList";
 import todoFeedback from "./divide/todoFeedback";
+import todoJSON from "./divide/todoJSON";
 
 const swiper = new Swiper;
 const htmlDoc = document.documentElement;
@@ -47,7 +48,8 @@ const appMethods = {
     quest,
     olensMobileSlide,
     todoList,
-    todoFeedback
+    todoFeedback,
+    todoJSON,
 }
 
 const appInit = () => {
