@@ -33,14 +33,13 @@
                 </li>
             </ul>
         </div>
-        <div class="fb__todo__content">
-            <div class="fb__todo__scroll">
-                <!-- 이렇게 되면 TODOLIST를 모두  삭제했을 때 안나옴 수정 필요! -->
-                <ul class="fb__todo__list null">
-                    <p>TODOLIST가 없습니다.</p>
-                </ul>
-            </div>
+        <!-- TODOLIST가 없는 경우 -->
+        <div class="fb__todo__content--null">
+            <p class="fb__todo__text">TODOLIST가 없습니다.</p>
         </div>
+
+        <!-- TODOLIST가 있는 경우 -->
+        <div class="fb__todo__content"></div>
     </section>
 </body>
 </html>

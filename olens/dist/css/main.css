@@ -1846,7 +1846,21 @@ html, body {
   color: #999999;
 }
 .fb__todo__content {
+  display: none;
   margin-top: 20px;
+}
+.fb__todo__content.show {
+  display: block;
+}
+.fb__todo__content--null {
+  display: none;
+}
+.fb__todo__content--null.show {
+  display: block;
+}
+.fb__todo__content--null .fb__todo__text {
+  padding-top: 50px;
+  text-align: center;
 }
 .fb__todo__scroll {
   overflow-y: auto;
@@ -1871,6 +1885,12 @@ html, body {
 .fb__todo__list:last-child {
   border-bottom: none;
 }
+.fb__todo__list.checked {
+  opacity: 0.4;
+}
+.fb__todo__list.checked .fb__todo__text {
+  text-decoration: line-through;
+}
 .fb__todo__textWrap {
   float: left;
   width: 564px;
@@ -1880,9 +1900,6 @@ html, body {
   font-size: 18px;
   line-height: 20px;
   cursor: pointer;
-}
-.fb__todo__text.checked {
-  text-decoration: line-through;
 }
 .fb__todo__date {
   display: block;

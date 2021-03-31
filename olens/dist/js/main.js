@@ -58865,7 +58865,9 @@ const todoList = () => {
     const $document = $(document);
 
     // 전체글 진행글 진행완료 갯수 카운트
-    const count = () => {
+    const listCount = () => {
+        const $content = $(".fb__todo__content");
+        const $nullContent = $(".fb__todo__content--null");
         const _total = $(".fb__todo__list").length;
         const _done = $(".js__text.checked").length;
         const _doing = (_total - _done);
@@ -58873,26 +58875,43 @@ const todoList = () => {
         $(".js__total").text(_total);
         $(".js__done").text(_done);
         $(".js__doing").text(_doing);
+
+        // 리스트 유무에 따른 콘텐츠 처리
+        if ( !_total == 0 ){
+            $nullContent.removeClass("show")
+            $content.addClass("show")
+        }
+        else {
+            $content.removeClass("show")
+            $nullContent.addClass("show")
+        }
     }
 
     // 진행 완료 처리
-    const checked = () => {
+    const listChecked = () => {
         $document.on("click", ".js__text", function () {
+            const $this = $(this);
+            const $todoList = $this.closest(".fb__todo__list");
+            const $target = $todoList.find(".fb__todo__controller button");
 
-            if ( !$(this).hasClass("checked") ){
-                $(this).addClass("checked");
+            $todoList.toggleClass("checked");
+
+            if ( $todoList.hasClass("checked") ){
+                $target.prop("disabled", true);
             }
             else {
-                $(this).removeClass("checked");
+                $target.prop("disabled", false);
             }
 
-            count();
+            listCount();
         })
     }
     
-    // 리스트 추가, 수정, 취소, 삭제하기
-    const rewrite = () => {
+    // 리스트 상태변경
+    const listEvent = () => {
         $document
+
+            //리스트 추가하기 
             .on("click", ".js__addlist__add", function () {
                 const $this = $(this);
                 const $target = $this.closest(".fb__todo__addlist").find("input");
@@ -58900,38 +58919,37 @@ const todoList = () => {
                 const _today = today()
                 
                 if (_text != ""){
-
                     const _html = 
-                            `<ul class="fb__todo__list">
-                                <li class="fb__todo__textWrap">
-                                    <p class="fb__todo__text js__text">${_text}</p>
-                                    <span class="fb__todo__date">${_today}</span>
-                                </li>
-                                <li class="fb__todo__controller">
-                                    <button type="button" class="fb__todo__controller--rewrite js__controller__rewrite">수정</button>
-                                    <button type="button" class="fb__todo__controller--delete js__controller__delete">삭제</button>
-                                </li>
-                                <li>
-                                    <form class="fb__todo__update">
-                                        <input type="text" value="">
-                                        <button type="button" class="fb__button js__update__push">확인</button>
-                                        <button type="button" class="fb__button js__update__cancel">취소</button>
-                                    </form>
-                                </li>
-                            </ul>`
+                            `<div class="fb__todo__scroll">
+                                <ul class="fb__todo__list">
+                                    <li class="fb__todo__textWrap">
+                                        <p class="fb__todo__text js__text">${_text}</p>
+                                        <span class="fb__todo__date">${_today}</span>
+                                    </li>
+                                    <li class="fb__todo__controller">
+                                        <button type="button" class="fb__todo__controller--rewrite js__controller__rewrite">수정</button>
+                                        <button type="button" class="fb__todo__controller--delete js__controller__delete">삭제</button>
+                                    </li>
+                                    <li>
+                                        <form class="fb__todo__update">
+                                            <input type="text" value="">
+                                            <button type="button" class="fb__button js__update__push">확인</button>
+                                            <button type="button" class="fb__button js__update__cancel">취소</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>`
                 
-                    $(".fb__todo__scroll").prepend(_html);
-                    
-                    // listLength 카운트에서 다루게끔 수정 필요!
-                    $(".fb__todo__list.null").remove();  //null 지우기
+                    $(".fb__todo__content").prepend(_html);
                     $target.val("");  //리스트 추가 후 인풋 비우기
-                    count()
+                    listCount()
                 }
                 else {
                     alert("일정을 입력해주십시오.")
                 }
             })
 
+            // 리스트 수정하기
             .on("click", ".js__controller__rewrite", function () {
                 const $this = $(this);
                 const $todoList = $this.closest(".fb__todo__list");
@@ -58944,21 +58962,23 @@ const todoList = () => {
                 
                 // 해당 인풋에게 기존 텍스트 넣어주기
                 $formInput.val(_textCopy);
-                return false;  //form태그 refresh 방지
+                // return false;  //form태그 refresh 방지
             })
 
+            // 리스트 수정 취소하기
             .on("click", ".js__update__cancel", function () {
                 const $target = $(this).closest(".fb__todo__update")
         
                 $target.removeClass("show");
-                return false;  //form태그 refresh 방지
+                // return false;  //form태그 refresh 방지
             })
 
+            // 리스트 삭제하기
             .on("click", ".js__controller__delete", function () {
                 const $target = $(this).closest(".fb__todo__list")
         
                 $target.remove();
-                count();
+                listCount();
             });
     }
 
@@ -58984,7 +59004,6 @@ const todoList = () => {
 
     // 오늘 날짜 구하기 **npm install moment
     const today = () => {
-
         const today = new Date();
         const moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
         const $thisDay = moment();
@@ -58997,9 +59016,9 @@ const todoList = () => {
 
     const init = () => {
         today(); //오늘 날짜 구하기
-        count(); //갯수 카운트
-        checked(); //체크 처리하기
-        rewrite(); //리스트 추가, 수정, 취소, 삭제
+        listCount(); //갯수 카운트
+        listChecked(); //체크 처리하기
+        listEvent(); //리스트 상태 변경
         newVal() //수정된 내용 반영하기
     }
 

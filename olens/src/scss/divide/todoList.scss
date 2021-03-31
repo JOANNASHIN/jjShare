@@ -92,7 +92,25 @@
         }
 
         &__content {
+            display: none;
             margin-top: 20px;
+
+            &.show {
+                display: block;
+            }
+
+            &--null {
+                display: none;
+                
+                &.show {
+                    display: block;
+                }
+
+                .fb__todo__text {
+                    padding-top: 50px;
+                    text-align: center;
+                }
+            }
         }
 
         &__scroll {
@@ -104,10 +122,6 @@
             position: relative;
             padding: 20px 0;
             border-bottom: 1px solid #aaa;
-
-            &.null {
-                
-            }
 
             &:after {
                 display: block;
@@ -126,6 +140,14 @@
             &:last-child {
                 border-bottom: none;
             }
+
+            &.checked {
+                opacity: 0.4;
+
+                .fb__todo__text {
+                    text-decoration: line-through;
+                }
+            }
         }
 
         &__textWrap {
@@ -138,10 +160,6 @@
             font-size: 18px;
             line-height: 20px;
             cursor: pointer;
-
-            &.checked {
-                text-decoration: line-through;
-            }
         }
 
         &__date {

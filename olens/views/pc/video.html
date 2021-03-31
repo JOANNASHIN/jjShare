@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+    
+    <div class="swiper-container test__slider">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+                <video controls width="250"  autoplay  preload >
+            
+                    <source src="http://uaemeqorpioa6321307.gcdn.ntruss.com/video/20200117.mp4" type="video/mp4">
+                
+                    <!-- <source src="/media/cc0-videos/flower.mp4"
+                            type="video/mp4"> -->
+                
+                    <!-- Sorry, your browser doesn't support embedded videos. -->
+                </video>
+            </li>
+            <li class="swiper-slide">
+                <figure>
+                    <img src="https://www.ui4u.go.kr/depart/img/content/sub03/img_con03030100_01.jpg" alt="">
+                </figure>
+            </li>
+            <li class="swiper-slide">
+                <figure>
+                    <img src="https://www.ui4u.go.kr/depart/img/content/sub03/img_con03030100_01.jpg" alt="">
+                </figure>
+            </li>
+            <li class="swiper-slide">
+                <video controls width="250"  autoplay muted preload >
+            
+                    <source src="http://uaemeqorpioa6321307.gcdn.ntruss.com/video/20200117.mp4" type="video/mp4">
+                
+                    <!-- <source src="/media/cc0-videos/flower.mp4"
+                            type="video/mp4"> -->
+                
+                    <!-- Sorry, your browser doesn't support embedded videos. -->
+                </video>
+            </li>
+        </ul>
+
+    </div>
+
+    <script>
+        new Swiper(".test__slider", {
+            loop: false,
+
+        }) 
+
+    </script>
+</body>
+</html>
