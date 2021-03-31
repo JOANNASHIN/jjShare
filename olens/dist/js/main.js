@@ -58671,6 +58671,8 @@ const todoList = () => {
                 
                     $(".fb__todo__scroll").prepend(_html);
                     
+                    // listLength 카운트에서 다루게끔 수정 필요!
+                    $(".fb__todo__list.null").remove();  //null 지우기
                     $target.val("");  //리스트 추가 후 인풋 비우기
                     count()
                 }
@@ -58729,40 +58731,16 @@ const todoList = () => {
         })
     }
 
-    // 오늘 날짜 구하기
+    // 오늘 날짜 구하기 **npm install moment
     const today = () => {
-        let _today = "";
+
         const today = new Date();
-        const _year = today.getFullYear();
-        const _month = today.getMonth() + 1;
-        const _date = today.getDate();
-        let _day = today.getDay();
+        const moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+        const $thisDay = moment();
+        const $dayArray = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"]
+        const _today =  ( $thisDay.format("YYYY.MM.DD") + " " + $dayArray[today.getDay()]);
 
-        if ( _day == 1 ) {
-            _day = "월요일";
-        } 
-        else if ( _day == 2 ) {
-            _day = "화요일";
-        }  
-        else if ( _day == 3 ) {
-            _day = "수요일";
-        } 
-        else if ( _day == 4 ) {
-            _day = "목요일";
-        }
-        else if ( _day == 5 ) {
-            _day = "금요일";
-        } 
-		else if ( _day == 6 ) {
-            _day = "토요일";
-        }
-		else {
-			_day = "일요일";
-		}
-
-		_today = `${_year}.${_month}.${_date} ${_day}`;
-
-		$(".fb__todo__today").text(_today);
+        $(".fb__todo__today").text(_today);
         return _today;
     } 
 
@@ -58779,6 +58757,8 @@ const todoList = () => {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (todoList);
+
+
 
 
 
