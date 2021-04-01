@@ -20,6 +20,7 @@ import quest from "./divide/quest";
 import todoList from "./divide/todoList";
 import todoFeedback from "./divide/todoFeedback";
 import todoJSON from "./divide/todoJSON";
+import tableJSON from "./divide/tableJSON";
 
 const swiper = new Swiper;
 const htmlDoc = document.documentElement;
@@ -50,6 +51,7 @@ const appMethods = {
     todoList,
     todoFeedback,
     todoJSON,
+    tableJSON,
 }
 
 const appInit = () => {
