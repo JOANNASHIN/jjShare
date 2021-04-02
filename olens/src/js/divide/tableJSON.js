@@ -46,7 +46,7 @@ const tableJSON = () => {
         });
 
         $("li").each( (index, ele) => { 
-            console.log("이거이거", $(this) ) //화살표함수와 함수식의 차이: 화살표함수 $(this) 못찾음 
+            // console.log("이거이거", $(this) ) //화살표함수와 함수식의 차이: 화살표함수 $(this) 못찾음 
             $(ele).addClass("canUseArrow");
             if (index == 2) return false;
         })
@@ -74,14 +74,14 @@ const tableJSON = () => {
         // const words = [ "a", "b", "c", "d", "e" ]  // 통과 요소가 없다면 빈 배열
         const result = words.filter( word => word.length > 6 );
         
-        console.log("글자수 제한 filter", result);
+        // console.log("글자수 제한 filter", result);
 
         function isBigEnough(value) {
             return value >= 10;
         }
 
         let filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
-        console.log("숫자 비교 filter", filtered)
+        // console.log("숫자 비교 filter", filtered)
 
     }
     const testFind = () => {
@@ -90,7 +90,7 @@ const tableJSON = () => {
         const array1 = [5, 12, 8, 130, 44];
         const found = array1.find(element => element > 10);
 
-        console.log("크기비교 find", found)
+        // console.log("크기비교 find", found)
 
         const inventory = [
             {name: "apples", quantity: 2},
@@ -103,7 +103,7 @@ const tableJSON = () => {
             return fruit.name === "cherries";
         }
 
-        console.log( inventory.find(findCherries) ) //첫번째로 일치한 객체반환
+        // console.log( inventory.find(findCherries) ) //첫번째로 일치한 객체반환
     }
 
     const testSome = () => {
@@ -121,16 +121,16 @@ const tableJSON = () => {
         }
 
         const test = array.some(even);
-        console.log("some 짝수", test); //true
+        // console.log("some 짝수", test); //true
 
-        console.log("some 5이상", array.some(biggerThan5)) //false
+        // console.log("some 5이상", array.some(biggerThan5)) //false
     }
 
 
     const array = [1,2,3,4,5];
     const even = (num) => num % 2 === 0;
 
-    console.log(array.some(even));
+    // console.log(array.some(even));
 
     const test = "어쩌구저쩌구 누가 말했습니다.\"\"";
 
@@ -144,6 +144,10 @@ const tableJSON = () => {
          * 
          * test exec >>> 검사 
          * test함수는 boolean / exec 함수는 내가찾는 단어를 return
+         * 
+         * 
+         * [] 문자 하나 덩어리
+         * - range
          * 
          * /바보/.test("임지원바보") >> true
          * /바보/.exec("임지원바보") >> 바보
@@ -159,6 +163,19 @@ const tableJSON = () => {
          * split > 잘라냄 (자른 부분 삭제)
          * 
          * 
+         * join() 메서드는 배열의 모든 요소를 연결해 하나의 문자열로 만듭니다.
+            const elements = ['Fire', 'Air', 'Water'];
+
+            console.log(elements.join());
+            // expected output: "Fire,Air,Water"
+
+            console.log(elements.join(''));
+            // expected output: "FireAirWater"
+
+            console.log(elements.join('-'));
+            // expected output: "Fire-Air-Water"
+         * 
+         * 
          * \d > 숫자
          * \w > 문자
          * \s >공백문자
@@ -169,21 +186,24 @@ const tableJSON = () => {
          * 
          * 
          * ^   시작 
-         * $   끝   
-         * [^\]  제외 -- [^\d] 숫자 제외
+         * $   끝 
+         * [^\]  제외 -- [^\d] 숫자 제외 -- [^\a-z] 소문자 제외
+         * | 파이프 or  
+         * (Mon|Tues|Fri)day 공통부모
+         * 
          * 
         */
         const str = "table football"
         const regex = new RegExp("foo*") // foo가 있거나 없거나 여러번 있거나
         
-        console.log(regex.test(str)); //true
-        console.log('canal'.lastIndexOf('a')) //3 
+        // console.log(regex.test(str)); //true
+        // console.log('canal'.lastIndexOf('a')) //3 
         // lastIndex : 문자열 내에서 searchValue가 마지막으로 등장하는 인덱스. 등장하지 않으면 -1.
         
         const str2 = "jiwon, Hello world!"
         const result = /^hello/i.test(str2); //^~는 ~로 시작하는 문자
 
-        console.log(result); //true
+        // console.log(result); //true
     }
 
     const init = () => {
