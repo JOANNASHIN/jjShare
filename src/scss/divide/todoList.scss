@@ -222,7 +222,6 @@
             } 
         }
 
-
         //피드백반영
         &__feedback {
             .fb__todo {
@@ -247,6 +246,10 @@
                         }
                     }
                 }
+
+                &__content {
+                    display: block;
+                }
         
                 &__scroll {
                     overflow-y: auto;
@@ -263,7 +266,12 @@
                         }
                     }
                 }
-        
+       
+                &__inner {
+                    float: left;
+                    width: 564px;
+                }
+
                 &__text {
                     cursor: pointer;
                 }

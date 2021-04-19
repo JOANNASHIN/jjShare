@@ -4,6 +4,7 @@ const todoJSON = () => {
     const requestTodoList = () => {
         $.getJSON("./json/todolist.json", (data) => {
             const todo = data.todo;
+            
             if (!todo || !todo.length) return false;
 
             todo.forEach(list => drawAdd(list));
