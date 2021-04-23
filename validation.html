@@ -1,0 +1,116 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+    <h3>카드사 유효성 검사</h3>
+    <!-- 인풋에 카드 번호를 넣으면 어떤 카드인지 return -->
+    <!-- 이카드는 ~입니다. -->
+
+    <form class="card__form">
+        <input id="card__check" type="text" placeholder="조회하고자 하는 카드의 숫자를 입력하십시오.">
+        <button class="card__button" type="button">확인</button>
+        <p class="card__answer">다음의 빈칸에 조회하고자 하는 카드 번호를 입력하십시오.</p>
+    </form>
+
+
+    <!-- <h3>주민등록번호 유효성 검사</h3> -->
+    <!-- false/true -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const $document = $(document);
+
+        const valueCheck = () => {
+            
+            // 카드사 유효성 검사
+            const cardCheck = () => {
+                $document.on("click", ".card__button", function () {
+                    const _number = /^[\d]+$/;
+                    const $input = $("#card__check");
+                    let _inputVal = $input.val();
+
+                    console.log(_inputVal.match(_number));
+                    
+                    // 원래 소스
+                    if ( _inputVal == null || !_inputVal.match(_number)) {
+                        alert("카드번호의 숫자를 입력하여 주십시오.");
+                        $input.val("");
+                        return ;
+                    }
+                    
+                    let _matchVal = checkValidation(_inputVal);
+                    drawResult(_matchVal);
+                });
+            }
+
+            //유효성 검사
+            const checkValidation = (_inputVal) => {
+                const _bcRegExp = /^94\d{12}$/; 
+                const _visaRegExp = /^4\d{11}$|^4\d{15}$/; 
+                const _masterRegExp = /^(5[1|2|3|4|5]\d{14}$)/; 
+                const _discoverRegExp = /^(6011\d{12})$|^(5\d{14}$)/; 
+                const _americanRegExp = /^3[4|7][0-9]{13}$/; 
+                const _dinersRegExp = /^(30[0-5]{1}[0-9]{11}$)|^(3[6|8][0-9]{12}$)/; 
+                const _jcbRegExp = /^(2131\d{11}$|1800\d{11}$)|^(35\d{14}$)/; 
+                let _matchVal = "";
+
+                //유효성검사 하는곳
+                if ( _inputVal.match(_bcRegExp) ) {
+                    _matchVal = "BC"; 
+                } 
+                else if ( _inputVal.match(_visaRegExp) ) {
+                    _matchVal = "Visa"; 
+                } 
+                else if ( _inputVal.match(_masterRegExp) ) {
+                    _matchVal = "MasterCard"; 
+                } 
+                else if ( _inputVal.match(_discoverRegExp) ) {
+                    _matchVal = "Discover"; 
+                } 
+                else if ( _inputVal.match(_americanRegExp) ) {
+                    _matchVal = "American Express"; 
+                } 
+                else if ( _inputVal.match(_dinersRegExp) ) {
+                    _matchVal = "Diners Club"; 
+                } 
+                else if ( _inputVal.match(_jcbRegExp) ) {
+                    _matchVal = "JCB"; 
+                } 
+                else {
+                    _matchVal = "";
+                }
+
+                return _matchVal;
+            }
+
+            //결과 그리는 곳
+            const drawResult = (_matchVal) => {
+                const $answerVal = $(".card__answer");
+
+                if (!_matchVal) {
+                    $answerVal.text("해당 카드의 회사를 찾을 수 없습니다.");
+                }
+                else {
+                    $answerVal.text("찾고자 하는 카드의 회사는 " + _matchVal + "입니다.");
+                }
+            }
+
+            // 주민번호 유효성 검사
+            const init = () => {
+                cardCheck();
+            } 
+
+            init()
+        }
+
+        $document.ready(function () {
+            valueCheck();
+        })
+    </script>
+
+    </body>
+</html>
+
+
