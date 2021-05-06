@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <!-- css -->
+    <link rel="stylesheet" href="/dist/css/main.css">
+    <!-- 내부 js -->
+    <script src="/dist/js/main.js"></script>
+</head>
+<body id="joinUs" class="fb fb__join">
+    <section class="fb__join__wrapper">
+        <h2 class="fb__title">Create New Account</h2>
+        <ul class="fb__join__userInfo">
+
+            <!-- 이름:성 -->
+            <li class="fb__join__firstName">
+                <p class="fb__join__subTitle required">First Name</p>
+
+                <label>
+                    <input required type="text" class="firstName__input">
+                </label>
+
+                <strong class="fb__join__alert firstName__alert">이름을 확인하여주십시오.</strong>
+            </li>
+            
+            <!-- 이름 -->
+            <li class="fb__join__lastName">
+                <p class="fb__join__subTitle required">Last NAme</p>
+
+                <label>
+                    <input required type="text" class="lastName__input">
+                </label>
+
+                <strong class="fb__join__alert lastName__alert">성을 확인하여주십시오.</strong>
+            </li>
+
+            <!-- 이메일 -->
+            <li class="fb__join__eMail">
+                <p class="fb__join__subTitle required">Email</p>
+
+                <label>
+                    <input required type="text" class="eMail__input">
+                </label>
+
+                <strong class="fb__join__alert eMail__alert">이메일을 확인하여주십시오.</strong>
+
+                <p class="fb__join__desc">
+                    We strongly recommend to use gmail account to receive all emails from us.
+                </p>
+            </li>
+
+            <!-- 비밀번호 -->
+            <li class="fb__join__password">
+                <p class="fb__join__subTitle required">Password</p>
+
+                <label>
+                    <input required type="password" class="password__input">
+                </label>
+
+                <strong class="fb__join__alert password__alert">비밀번호를 확인하여주십시오.</strong>
+                <ul class="fb__join__desc">
+                    <li>Password must be 8-20 characters, including: at least one alphabet letter, one number, and one special character.</li>
+                    <li>[- ! @ # $ % ^ & * ( ) _ +]</li>
+                </ul>
+            </li>
+    
+            <!-- 비밀번호 확인 -->
+            <li class="fb__join__pwConfirm">
+
+                <p class="fb__join__subTitle required">Confirm Password</p>
+
+                <label>
+                    <input required type="password" class="pwConfirm__input">
+                </label>
+
+                <strong class="fb__join__alert pwConfirm__alert">비밀번호가 일치하지 않습니다.</strong>
+            </li>
+
+            <!-- 국가 -->
+            <li class="fb__join__country">
+
+                <p class="fb__join__subTitle required">Country</p>
+
+                <select required class="country__selectBox">
+                    <option value="">---국가선택---</option>
+                    <option value="대한민국">대한민국</option>
+                    <option value="중국">중국</option>
+                    <option value="일본">일본</option>
+                    <option value="대만">대만</option>
+                    <option value="태국">태국</option>
+                    <option value="싱가폴">싱가폴</option>
+                </select>
+
+                <strong class="fb__join__alert country__alert">국가를 확인하여주십시오.</strong>
+            </li>
+
+            <!-- 생년월일 -->
+            <li class="fb__join__birth">
+
+                <p class="fb__join__subTitle required">Birthday</p>
+
+                <div class="birth__selectBox">
+                    <select required class="birth__month">
+                        <!-- for문으로 -->
+                        <option value="">---월---</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                    </select>
+                    <select required class="birth__day">
+                        <!-- for문으로 -->
+                        <option value="">---일---</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                    </select>
+                    <select required class="birth__year">
+                        <!-- for문으로 -->
+                        <option value="">---년---</option>
+                        <option value="1010">1010</option>
+                        <option value="1020">1020</option>
+                        <option value="1030">1030</option>
+                        <option value="1040">1010</option>
+                    </select>
+                </div>
+
+                <strong class="fb__join__alert birth__alert">생년월일을 확인하여 주십시오.</strong>
+
+                <ul class="fb__join__desc">
+                    <li class="desc__list">You can get a coupon every year on your birthday.</li>
+                    <li class="desc__list">Birthday info cannot be changed after first entry.</li>
+                </ul>
+            </li>
+
+            <!-- 성별 -->
+            <li class="fb__join__gender"> 
+
+                <p class="fb__join__subTitle">Gender</p>
+
+                <label class="gender__label">
+                    <input type="radio" name="gender" class="gender__female">
+                    <span class="gender__text">Female</span>
+                </label>
+                <label class="gender__label">
+                    <input type="radio" name="gender" class="gender__male">
+                    <span class="gender__text">Male</span>
+                </label>
+            </li>
+        </ul>
+
+        <button class="fb__join__button js__join__button">Create Account</button>
+
+    </section>
+</body>
+</html>

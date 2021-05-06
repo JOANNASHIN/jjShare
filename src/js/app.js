@@ -21,6 +21,7 @@ import todoList from "./divide/todoList";
 import todoFeedback from "./divide/todoFeedback";
 import todoJSON from "./divide/todoJSON";
 import tableJSON from "./divide/tableJSON";
+import joinUs from "./divide/joinUs";
 
 const swiper = new Swiper;
 const htmlDoc = document.documentElement;
@@ -52,6 +53,7 @@ const appMethods = {
     todoFeedback,
     todoJSON,
     tableJSON,
+    joinUs,
 }
 
 const appInit = () => {

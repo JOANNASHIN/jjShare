@@ -1,0 +1,233 @@
+<html>
+    <head>
+
+    </head>
+    <style>
+        input {
+            width: 500px;
+        }
+
+        .card__input__desc {
+            display: none;
+        }
+
+        .card__input__desc.show {
+            display: block;
+        }
+
+        .regNum__wrapper {
+            display: block;
+        }
+
+        .regNum__input__desc {
+            display: none;
+        }
+
+        .regNum__input__desc.show {
+            display: block;
+        }
+    </style>
+    <body>
+        
+    <h3>카드사 유효성 검사</h3>
+    <form class="card__form">
+        <input class="card__check limit__num" type="text"  placeholder="조회하고자 하는 카드의 숫자를 입력하십시오.">
+        <button class="card__button" type="button">확인</button>
+        <p class="card__input__desc">입력하신 번호는 <span class="card__input__value"></span>입니다.</p>
+        <p class="card__result">다음의 빈칸에 조회하고자 하는 카드 번호를 입력하십시오.</p>
+    </form>
+
+    <hr>
+
+    <!-- false/true -->
+    <h3>주민등록번호 유효성 검사</h3>
+    <label class="regNum__wrapper">
+        <input class="regNum__check limit__num" type="password" maxlength="13" placeholder="'-'를 제외한 주민등록번호 13자리를 입력하십시오.">
+        <button class="regNum__button" type="button">확인</button>
+        <p class="regNum__result">다음의 빈칸에 주민등록번호를 입력하여 본인인증을 완료하십시오.</p> 
+    </label>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const $document = $(document);
+
+        const valueCheck = () => {
+
+            // 공통: 인풋에 숫자만 입력되도록 설정
+            const inputLimit = () => {
+                $(".limit__num").on("input", function () {
+                    const $this = $(this);
+                    $this.val($this.val().replace(/[^0-9]/g, ''));
+                });
+            }
+
+            // 공통: 리셋
+            const reset = (data) => {
+                data.val("");
+            }
+            
+            // 카드정보 확인
+            const cardCheck = () => {
+                
+                // 확인 버튼을 클릭하면
+                $document.on("click", ".card__button", function () {
+                    const $input = $(".card__check");
+                    const _inputVal = $input.val();
+                    
+                    cardValidation(_inputVal);  //입력한 값 전달 
+                    reset($input);  //input 비우기
+                });
+                
+                // 카드사 정보
+                const cardValidation = (_inputVal) => {
+                    const validation = [
+                        {
+                            name: "BC",
+                            regExp: /^94\d{12}$/,
+                        },
+                        {
+                            name: "Visa",
+                            regExp: /^4\d{11}$|^4\d{15}$/,
+                        },
+                        {
+                            name: "Master",
+                            regExp: /^(5[1|2|3|4|5]\d{14}$)/,
+                        },
+                        {
+                            name: "Discover",
+                            regExp: /^(6011\d{12})$|^(5\d{14}$)/,
+                        },
+                        {
+                            name: "American Express",
+                            regExp: /^3[4|7][0-9]{13}$/,
+                        },
+                        {
+                            name: "Diners Club",
+                            regExp: /^(30[0-5]{1}[0-9]{11}$)|^(3[6|8][0-9]{12}$)/,
+                        },
+                        {
+                            name: "JCB",
+                            regExp: /^(2131\d{11}$|1800\d{11}$)|^(35\d{14}$)/,
+                        }
+                    ];
+                    
+                    let _matchValue = validation.find( ele => {
+                        if( _inputVal.match(ele.regExp) ){
+                            return ele;
+                        } else {
+                            return "";
+                        }
+                    })
+    
+                    // 입력한 값, 매치된 카드사 정보 넘김
+                    cardDrowResult(_matchValue);
+                } 
+                
+                // 결과 그리는 곳 
+                const cardDrowResult = (_matchValue) => {
+    
+                    const $cardAnswer = $(".card__result");
+        
+                    if( _matchValue ){
+                        $cardAnswer.text("찾고자 하는 카드의 회사는 " + _matchValue.name + "입니다.");
+                        return;
+                    } else {
+                        $cardAnswer.text("해당 카드의 회사를 찾을 수 없습니다.");
+                    }
+                }
+            }
+       
+            // 주민등록번호 확인
+            const regNumCheck = () => {
+                const $regNumResult = $(".regNum__result");
+                
+                // 확인 버튼을 클릭하면
+                $document.on("click", ".regNum__button", function () {
+                    const $input = $(".regNum__check");
+                    const _inputVal = $input.val();
+                    const _eachVal = _inputVal.split(""); //배열로 받기
+                    const _boolean = calcEachNum(_eachVal); //실행과 동시에 리턴값 받기
+
+                    reset($input);
+                    regNumDrowResult($input, _inputVal, _boolean);
+                });
+                
+                
+                // 계산식 함수
+                const calcEachNum = (_eachVal) => {
+                    const _array = [2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5] //비교할 값
+                    const _lastValue = _eachVal[12] //입력한 주민번호 마지막 값
+                    let _multi = ""; //곱셈 결과값 저장
+                    let _sum = ""; //덧셈 결과값 저장
+                    let _result =""; //최종 결과값 저장
+                    
+                    // 입력한 값이 13자리가 아닌 경우
+                    if( !_eachVal || _eachVal.length != 13 ){
+                        $regNumResult.text("주민등록번호 13자리를 확인하여 주십시오.");
+                        return;
+                    } 
+                    
+                    // 입력한 값과 비교값 각각 곱한뒤 모두 더한 값
+                    for (let i = 0; i < 12; i++ ){
+                        _multi = _array[i] * _eachVal[i]
+                        _sum = Number(_sum) + Number(_multi);
+                    }
+                    
+                    let _value = Number(_sum % 11); //결과값 11로 나눈 나머지값
+
+                    if ( String(_value).length == 1 ){
+                        if ( _value == 0 ){
+                            _result = 1;
+                        } else {
+                            _result = 11 - _value;
+                        }
+                    } else {
+                        _result = _value % 10;
+                    }
+
+                    // 마지막 값과 비교하여 true/false return;
+                    if( _result == _lastValue ) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } 
+                        
+                        
+                // 결과 그리는 곳
+                const regNumDrowResult = ($input, _inputVal, _boolean) => {
+                    
+                    $(".regNum__input__desc").addClass("show");
+                    $(".regNum__input__value").text(_inputVal);
+                    
+                    if( _inputVal.length != 13 ){
+                        $regNumResult.text("주민등록번호 13자리를 확인하여 주십시오.");
+                        return;
+                    } else {
+                        if ( _boolean ) {
+                            $regNumResult.text("인증에 성공하였습니다.");
+                        } else {
+                            $regNumResult.text("인증에 실패하였습니다. 입력하신 주민등록번호를 확인하여주십시오.");
+                        }
+                    }
+                }
+            }
+
+            const init = () => {
+                inputLimit(); //인풋에 숫자만 입력되도록 설정
+                cardCheck(); //카드정보 확인
+                regNumCheck(); //주민등록번호 확인
+            } 
+ 
+            init()
+        }
+ 
+        $document.ready(function () {
+            valueCheck();
+        })
+    </script>
+
+    </body>
+</html>
+
+

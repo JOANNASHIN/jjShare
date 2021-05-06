@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>스크롤 예제</title>
+    <style>
+
+        /* reset */
+        body {
+            margin: 0;
+        }
+
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            font-style: normal;
+        }
+
+        /* layout */
+        .fb {
+            position: relative;
+            margin: 0 auto;
+            padding-top: 120px;
+            width: 1200px;
+        }
+
+        .fb__title--hidden {
+            font-size: 0;
+            line-height: 0;
+        }
+
+        .fb__contents {
+            position: relative;
+            margin-top: 100px;
+        }
+
+        .fb__contents:after {
+            display: block;
+            clear: both;
+            content: "";
+        }
+
+        .fb__sub__title {
+            display: inline-block;
+            margin: 0;
+            width: 100%;
+            padding: 20px 15px;
+            border-bottom: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        .fb__header__sticky {
+            width: 1200px;
+            height: 120px;
+        }
+
+        .fb__header {
+            width: 1200px;
+            height: 120px;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            background: #eee;
+        }
+
+        .fb__contents__center {
+            float: left;
+            width: 650px;
+            height: 1300px;
+            margin: 0 50px 0 0;
+            background: #f6f6f6;
+        }
+
+        .fb__contents__sticky {
+            float: right;
+            width: 500px;
+        }
+
+        .fb__contents__side {
+            width: 500px;
+            height: 300px;
+            background: #f6f6f6;
+        }
+
+        .fb__contents__side.fixed {
+            position: fixed;
+            top: 120px;
+        }
+
+        .fb__contents__side.active {
+            position: absolute;
+            top: auto;
+            right: 0;
+            bottom: 0;
+        }
+
+        .fb__footer {
+            clear: both;
+            height: 800px;
+            margin-top: 100px;
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <section class="fb">
+        <h2 class="fb__title--hidden">스크롤 예제입니다.</h2>
+        <header class="fb__header">header</header>
+
+        <main class="fb__contents">
+
+            <div class="fb__contents__center">
+                <h3 class="fb__sub__title">고정 항목</h3>
+            </div>
+            <ul class="fb__contents__sticky">
+                <li class="fb__contents__side">
+                    <h3 class="fb__sub__title">따라가는 항목</h3>
+                </li>
+            </ul>
+        
+        </main>
+        <footer class="fb__footer">footer</footer>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        
+        // 윈도우 스크롤값과 타겟의 offsetTop값을 구함
+        
+        const $target = $(".fb__contents__side");
+        const $footer = $(".fb__footer");
+        const _footerMargin = 100;
+        const _headerHeight = 120;
+        const _targetOffset = $target.offset().top - _headerHeight;
+        const _footerOffset = $footer.offset().top - _footerMargin
+        
+        $(window).scroll( function () { 
+            let _scrollValue = $(document).scrollTop();
+            let _targetScroll = _scrollValue + $target.outerHeight() + _headerHeight;
+
+            // if (스크롤 시작되는 지점부터~~~){ 
+            //     if () {
+            //         //fixed
+            //     }
+            //     else {
+            //         // 풋터
+            //     }
+            // }
+            // else {
+            //     //아무것도없음
+            // }
+           
+            // 스크롤값 > 타겟오프셋이 아니거나,  타겟스크롤 > 푸터오프셋 fixed 지움, 아니면 추가
+            if ( !(_scrollValue > _targetOffset) || (_targetScroll > _footerOffset) ){
+                $target.removeClass("fixed");
+            } else {
+                $target.addClass("fixed");
+            }
+
+            // 타겟스크롤 > 푸터오프셋 아니거나, 타겟오프셋 > 스크롤값 active 지움, 아니면 추가
+            if ( !(_targetScroll > _footerOffset) || (_targetOffset > _scrollValue) ){
+                $target.removeClass("active");
+            } else {
+                $target.addClass("active");
+            }
+        });
+
+    </script>
+</body>
+</html>
+
+
+<!-- 매니저님이 주신 소스 -->
+/**
+     * 우측 또는 좌측 fixed 메뉴 공통 스크립트
+     * 예시)
+     * fixTarget - $(".js__sticky")
+     * startTarget - $(".layout-left")
+     * 
+     * @param {element} fixTarget [필수]
+     * @param {element} startTarget [필수]
+     * @param {element} bottomTarget [필수아님] (없으면 #container 하단 기준)
+     */
+    const sideScrollFix = (fixTarget, startTarget, bottomTarget) => {
+        
+        if (!fixTarget || !startTarget) return ;
+
+        // header가 fixed 인지 아닌지 여부(프로젝트 별 상이하므로 Boolean값 변경 필요)
+        let headerFix = true; 
+
+        //element
+        const $header = $("#header");
+        const $bottom = bottomTarget ? bottomTarget : $("#container");
+        const $start = startTarget;
+        const $StickyNav  = fixTarget;
+
+        //height
+        const _headerHeight = headerFix ? $header.outerHeight() : 0;
+        const _stickyHeight = $StickyNav.outerHeight();
+
+        const customStyle = {
+            _reset: {
+                "position": "",
+                "top": "",
+                "bottom": ""
+            },
+            
+            _absolute: {
+                "position": "absolute",
+                "top": "auto",
+                "bottom": 0
+            },
+
+            _fixed: {
+                "position": "fixed",
+                "top": _headerHeight,
+                "bottom": "auto"
+            }
+        }
+
+        $window.on("scroll", e => {
+            const _current = $window.scrollTop(); //현재 스크롤위치
+            const _start = $start.offset().top - _headerHeight; //시작위치
+            const _bottom = ($bottom.offset().top + $bottom.height() - _headerHeight); //하단위치
+            
+           if ( _current >= _start ) { //fix 시작되는 시점
+                $StickyNav.css(customStyle._fixed)
+
+                // 내려가다가 하단에 닿았을 경우
+                if ( _bottom <= _current + _stickyHeight ) $StickyNav.css(customStyle._absolute);
+            } 
+            else { //기본 default 상태 
+                $StickyNav.css(customStyle._reset)
+            }
+        })
+    }

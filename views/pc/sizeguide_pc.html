@@ -1,0 +1,183 @@
+<style>
+    
+    .guideContent .swiper-button-disabled {
+            display: none;
+        }
+
+        .guideContent img {
+            max-width: 100%;
+        }
+
+        .guideContent {
+            font-size: 0;
+        }
+
+        .guideContent__slider {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .guideContent__slider__wrapper {
+            white-space: nowrap;
+        }
+
+        .guideContent__slider__item {
+            display: inline-block;
+        }
+
+        .guideContent__slider__nav button {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            width: 27.5px;
+            height: 98px;
+            border: none;
+            background: none;
+            font-size: 0;
+            transform: translate(0, -50%);
+            cursor: pointer;
+        }
+
+        .guideContent__slider__nav img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .guideContent__slider__nav span {
+            font-size: 0;
+        }
+
+        .guideContent__slider__nav--prev {
+            display: none;
+            left: 25px;
+        }
+
+        .guideContent__slider__nav--prev.show{
+            display: block;
+        }
+
+        .guideContent__slider__nav--next {
+            right: 25px;
+        }
+       
+        .guideContent__bottom {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .guideContent__bottom .bottom__box {
+            display: inline-block;
+        }
+
+</style>
+<section class="guideContent">
+    <h2 class="fb__title--hidden">사이즈가이드 팝업 콘텐츠 PC</h2>
+    <div class="guideContent__wrapper">
+        <!-- 상단 info -->
+        <figure class="guideContent__info">
+            <img alt="" src="/data/olens_data/images/upfile//0001-dd97bc0b-60933c5a-c87c-52576423.png" style="width: 1080px; height: 612px;" />
+        </figure>
+        
+        <!-- 중앙 슬라이더 -->
+        <div class="guideContent__slider swiper-container">
+            <ul class="guideContent__slider__wrapper swiper-wrapper">
+                <li class="guideContent__slider__item swiper-slide">
+                    <figure class="guideContent__slider__image">
+                         <img alt="" src="/data/olens_data/images/upfile//0001-dd97bc0b-60910c21-80c6-b2da3945.jpg" style="width: 1080px; height: 630px;" />
+                    </figure>
+                </li>
+                <li class="guideContent__slider__item swiper-slide">
+                    <figure class="guideContent__slider__image">
+                        <img alt="" src="/data/olens_data/images/upfile//0001-dd97bc0b-60910c5e-8a85-7a29684e.jpg" style="width: 1080px; height: 630px;" />
+
+                    </figure>
+                </li>
+                <li class="guideContent__slider__item swiper-slide">
+                    <figure class="guideContent__slider__image">
+                        <img alt="" src="/data/olens_data/images/upfile//0001-dd97bc0b-60910c71-f813-5c5214bc.jpg" style="width: 1080px; height: 630px;" />
+                    </figure>
+                </li>
+                <li class="guideContent__slider__item swiper-slide">
+                    <figure class="guideContent__slider__image">
+                        <img alt="" src="/data/olens_data/images/upfile//0001-dd97bc0b-60910c95-3a8d-17da09b0.jpg" style="width: 1080px; height: 630px;" />
+                    </figure>
+                </li>
+            </ul>
+
+            <nav class="guideContent__slider__nav">
+                <button class="guideContent__slider__nav--prev">
+                    <img alt="" src="/data/olens_data/images/upfile//0001-dd97bc0b-60910d9c-84e5-f9c1a320.png" style="width: 55px; height: 98px;" />
+                    <span>prev</span>
+                </button>
+                <button class="guideContent__slider__nav--next">
+                    <img alt="" src="/data/olens_data/images/upfile//0001-dd97bc0b-60910d6a-97ec-40968c04.png" style="width: 55px; height: 98px;" />
+                    <span>next</span>
+                </button>
+            </nav>
+        </div>
+
+        <!-- 하단 텍스트 -->
+        <div class="guideContent__bottom">
+            <dl class="bottom__box show">
+                <dt class="fb__title--hidden">X-SMALL</dt>
+                <dd class="bottom__box__content">
+                    <figure class="bottom__box__image">
+                        <img alt="" src="/data/olens_data/images/upfile//0001-dd97bc0b-60910cc3-a255-b40908f8.jpg" style="width: 1080px; height: 418px;" />
+                    </figure>
+                </dd>
+            </dl>
+            <dl class="bottom__box">
+                <dt class="fb__title--hidden">X-SMALL</dt>
+                <dd class="bottom__box__content">
+                    <figure class="bottom__box__image">
+                        <img alt="" src="/data/olens_data/images/upfile//0001-dd97bc0b-60910cda-ad03-a72c5080.jpg" style="width: 1080px; height: 418px;" />
+                    </figure>
+                </dd>
+            </dl>
+            <dl class="bottom__box">
+                <dt class="fb__title--hidden">X-SMALL</dt>
+                <dd class="bottom__box__content">
+                    <figure class="bottom__box__image">
+                        <img alt="" src="/data/olens_data/images/upfile//0001-dd97bc0b-60910ce9-0de5-0ed2c106.jpg" style="width: 1080px; height: 418px;" />
+                    </figure>
+                </dd>
+            </dl>
+            <dl class="bottom__box">
+                <dt class="fb__title--hidden">X-SMALL</dt>
+                <dd class="bottom__box__content">
+                    <figure class="bottom__box__image">
+                        <img alt="" src="/data/olens_data/images/upfile//0001-dd97bc0b-60910cf6-95f8-ec8aed06.jpg" style="width: 1080px; height: 418px;" />
+                    </figure>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</section>
+<script>
+     const sizeguideSlider = function () {
+
+        $(".guideContent__slider__nav--prev").addClass("show");
+
+        new Swiper(".guideContent__slider", {
+            loop: false,
+            slidesPerView: "auto",
+            navigation: {
+                prevEl: ".guideContent__slider__nav--prev",
+                nextEl: ".guideContent__slider__nav--next"
+            },
+            on: {
+                slideChange() {
+                    var index = this.realIndex;
+                    var preIndex = Number(index) - 1;
+
+                    $(".bottom__box").eq(preIndex).fadeOut(300);
+                    $(".bottom__box").eq(index).fadeIn(300);
+                },
+            }
+        });
+    }
+
+    $(document).on("click", ".js__sizeGuidePop__init", function () {
+        setTimeout(sizeguideSlider, 500)
+    })
+</script>
