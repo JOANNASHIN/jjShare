@@ -4,11 +4,12 @@ const joinUs = () => {
     // 버튼 눌렀을 때,
     const buttonClick = () => {
         $document.on("click", ".js__join__button", function () {
-            const isPass = joinValidation(); 
+            const isPass = joinValidation()
 
+            console.log(isPass, "알럿 띄우는 곳")
             if (isPass) {
-                // 함수의 결과값 true이면 회원가입 진행
-            }
+                alert("회원가입이 완료되었습니다!");
+            } 
         })
     }
 
@@ -17,97 +18,118 @@ const joinUs = () => {
 
         const valueCheck = [
             {
-                value: $(".firstName__input"),
+                name: "firstName", 
+                valueTarget: "firstName__input",
                 regExp: "",
-                message:$(".firstName__alert"),
+                messageTarget: "firstName__alert",
+            },
+            {   name: "lastName",
+                valueTarget: "lastName__input",
+                regExp: "",
+                messageTarget: "lastName__alert",
             },
             {
-                value: $(".lastName__input"),
-                regExp: "",
-                message:$(".lastName__alert"),
-            },
-            {
-                value: $(".eMail__input"),
+                name: "eMail",
+                valueTarget: "eMail__input",
                 regExp: /[\da-zA-Z]+-?_?@[\da-zA-Z]+-?_?\.[\da-zA-Z]{2,3}/g,
-                message:$(".eMail__alert"),
+                messageTarget: "eMail__alert",
             },
             {
-                value: $(".password__input"),
+                name: "password",
+                valueTarget: "password__input",
                 regExp: /[\da-zA-z]{8,12}[\*\?\!\,\.\~]+/g,
-                message:$(".password__alert"),
+                messageTarget: "password__alert",
             },
             {
-                value: $(".pwConfirm__input"),
+                name: "pwConfirm", 
+                valueTarget: "pwConfirm__input",
                 regExp: "",
-                message:$(".pwConfirm__alert"),
+                messageTarget: "pwConfirm__alert",
             },
             {
-                value: $(".country__selectBox").prop("selected", "true"),
+                name: "country",
+                valueTarget: "country__selectBox option:selected", 
                 regExp: "",
-                message:$(".country__alert"),
+                messageTarget: "country__alert",
             },
             {
-                value: $(".birth__month").prop("selected", "true"),
+                name: "birth__month",
+                valueTarget: "birth__month option:selected",
                 regExp: "",
-                message:$(".birth__alert"),
+                messageTarget: "birth__alert",
             },
             {
-                value: $(".birth__day").prop("selected", "true"),
+                name: "birth__day",
+                valueTarget: "birth__day option:selected",
                 regExp: "",
-                message:$(".birth__alert"),
+                messageTarget: "birth__alert",
             },
             {
-                value: $(".birth__year").prop("selected", "true"),
+                name: "birth__year",
+                valueTarget: "birth__year option:selected", 
                 regExp: "",
-                message:$(".birth__alert"),
+                messageTarget: "birth__alert",
             },
         ]
 
+
         valueCheck.forEach( ele => {
 
-            // ele.value.val().trim(); //입력한 값의 공백 제거
-
-            // if ( ele.value ) { //공백이면,
-            //     resultValidation(false)
-            //     return;
-            // } else if (ele.regExp && ele.regExp.test(ele.value)) { //공백아니고, regExp가 있으면서, 통과하면
-            //     resultValidation(true);
-            // } else if (!ele.regExp && ) { //공백 아니고, regExp가 없으면서 !!!여기!!!!!!!!!!!!!!
-
-            // }
-            // else { // 그냥 공백아니면
-            //     console.log("공백아니면")
-            // }
+            const $password = $(".password__input").val().trim();
+            const $pwConfirm = $(".pwConfirm__input").val().trim();
+            let $value = $("." + ele.valueTarget).val().trim();
+            let $regExp = ele.regExp;
+            let $message = $("." + ele.messageTarget); 
             
-            // console.log("return의 유효성") 
-            
-            
-            // if ( !ele.value ) { 
-            //     resultValidation(ele.message, false, "확인하세요")
-            //     isPass = false;
-            // }
-            // else if (ele.regExp && ele.regExp.test(ele.value)) { 
-            //     resultValidation(ele.message, false, "확인하세요")
-            //     isPass = false;
-            // }
-            // // else if (  ) {
+           
+            //공백이면
+            if(!$value) { 
+                resultValidation(false, $message) 
+                return;
+            }
 
-            // // }
-            // else { //공백이 아니면
-            //     resultValidation(ele.message, true);
-            // }
+            //공백 아닐 때,
+            if ($value && $regExp) { //정규식테스트
+                if ($regExp.test($value)){ 
+                    resultValidation(true, $message);
+                } 
+                else {
+                    resultValidation(false, $message);
+                }
+            } 
+            else if ($value && ele.name == "pwConfirm") { //비번 확인
+                const boolean =  isSameValue($password, $pwConfirm);
+                resultValidation(boolean, $message)
+            } 
+            else { //공백만 아니면 
+                resultValidation(true, $message);
+            }
             
         });
 
-        function resultValidation($message, isPass) {
+        // 값 비교하는 함수
+        function isSameValue ( value1, value2) {
+            if (value1 == value2) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // 조건식 결과에 따른 경고메시지
+        function resultValidation(isPass, $message) {
             if (isPass) { //통과
                 $message.removeClass("show");
             }
             else { //불통과
                 $message.addClass("show");
             }
-        }
 
+            console.log(isPass, "결과그리는곳")
+            return isPass;
+        }
+        
+        console.log("여기는 왜 계속 true얌", isPass)
         return isPass;
     }
     
@@ -121,7 +143,9 @@ const joinUs = () => {
 export default joinUs;
 
 
-// // 성별
+        // --------------------------------------------------------------------기존소스 
+        //
+        // // 성별
         // if ($(".gender__female").is(":checked")) {
         //     // true면 여자
         // } 
