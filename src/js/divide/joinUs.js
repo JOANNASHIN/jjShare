@@ -2,20 +2,21 @@ const joinUs = () => {
     const $document = $(document);
 
     // 버튼 눌렀을 때,
-    const buttonClick = () => {
+    const createAccount = () => {
         $document.on("click", ".js__join__button", function () {
-            const isPass = joinValidation()
+            const isPass = joinValidation();
 
-            console.log(isPass, "알럿 띄우는 곳")
             if (isPass) {
+                // 회원가잆 api 요청
                 alert("회원가입이 완료되었습니다!");
-            } 
+            }
         })
     }
 
     const joinValidation = () => {
         let isPass = true;
 
+        // 체크할 데이터 담긴 곳
         const valueCheck = [
             {
                 name: "firstName", 
@@ -25,116 +26,116 @@ const joinUs = () => {
             },
             {   name: "lastName",
                 valueTarget: "lastName__input",
-                regExp: "",
+                joinRegexp: "",
                 messageTarget: "lastName__alert",
             },
             {
                 name: "eMail",
                 valueTarget: "eMail__input",
-                regExp: /[\da-zA-Z]+-?_?@[\da-zA-Z]+-?_?\.[\da-zA-Z]{2,3}/g,
+                joinRegexp: /[\da-zA-Z]+-?_?@[\da-zA-Z]+-?_?\.[\da-zA-Z]{2,3}/g,
                 messageTarget: "eMail__alert",
             },
             {
                 name: "password",
                 valueTarget: "password__input",
-                regExp: /[\da-zA-z]{8,12}[\*\?\!\,\.\~]+/g,
+                joinRegexp: /[\da-zA-z]{8,12}[\*\?\!\,\.\~]+/g,
                 messageTarget: "password__alert",
             },
             {
                 name: "pwConfirm", 
                 valueTarget: "pwConfirm__input",
-                regExp: "",
+                joinRegexp: "",
                 messageTarget: "pwConfirm__alert",
             },
             {
                 name: "country",
                 valueTarget: "country__selectBox option:selected", 
-                regExp: "",
+                joinRegexp: "",
                 messageTarget: "country__alert",
             },
             {
                 name: "birth__month",
                 valueTarget: "birth__month option:selected",
-                regExp: "",
+                joinRegexp: "",
                 messageTarget: "birth__alert",
             },
             {
                 name: "birth__day",
                 valueTarget: "birth__day option:selected",
-                regExp: "",
+                joinRegexp: "",
                 messageTarget: "birth__alert",
             },
             {
                 name: "birth__year",
                 valueTarget: "birth__year option:selected", 
-                regExp: "",
+                joinRegexp: "",
                 messageTarget: "birth__alert",
             },
         ]
 
-
-        valueCheck.forEach( ele => {
-
-            const $password = $(".password__input").val().trim();
-            const $pwConfirm = $(".pwConfirm__input").val().trim();
-            let $value = $("." + ele.valueTarget).val().trim();
-            let $regExp = ele.regExp;
-            let $message = $("." + ele.messageTarget); 
-            
-           
-            //공백이면
-            if(!$value) { 
-                resultValidation(false, $message) 
-                return;
-            }
-
-            //공백 아닐 때,
-            if ($value && $regExp) { //정규식테스트
-                if ($regExp.test($value)){ 
-                    resultValidation(true, $message);
-                } 
-                else {
-                    resultValidation(false, $message);
-                }
-            } 
-            else if ($value && ele.name == "pwConfirm") { //비번 확인
-                const boolean =  isSameValue($password, $pwConfirm);
-                resultValidation(boolean, $message)
-            } 
-            else { //공백만 아니면 
-                resultValidation(true, $message);
-            }
-            
-        });
-
         // 값 비교하는 함수
-        function isSameValue ( value1, value2) {
+        const isSameValue = (value1, value2) => {
             if (value1 == value2) {
                 return true;
-            } else {
+            } 
+            else {
                 return false;
             }
         }
 
-        // 조건식 결과에 따른 경고메시지
-        function resultValidation(isPass, $message) {
-            if (isPass) { //통과
+        // 결과 그리는 곳
+        const resultValidation = (res, $message) => {
+            if (typeof res != "boolean" || !$message.length) return ;
+            
+            if (res) { //통과
                 $message.removeClass("show");
             }
             else { //불통과
                 $message.addClass("show");
             }
 
-            console.log(isPass, "결과그리는곳")
-            return isPass;
+            isPass = res;
         }
-        
-        console.log("여기는 왜 계속 true얌", isPass)
+
+        // 값 체크하는 곳
+        valueCheck.forEach( ele => {
+            let _value = $("." + ele.valueTarget).val().trim();
+            let joinRegexp = ele.joinRegexp;
+            let $message = $("." + ele.messageTarget); 
+
+            //공백이면
+            if (!_value) { 
+                resultValidation(false, $message) 
+            }
+
+            //공백 아닐 때,
+            else if (joinRegexp) { //정규식테스트
+                if (joinRegexp.test(_value)){ 
+                    resultValidation(true, $message);
+                } 
+                else {
+                    resultValidation(false, $message);
+                }
+            } 
+
+            //비번 확인
+            else if (ele.name == "pwConfirm") { 
+                const _password = $(".password__input").val().trim();
+                const _boolean =  isSameValue(_password, _value);
+                resultValidation(_boolean, $message);
+            } 
+
+            //정상케이스
+            else {
+                resultValidation(true, $message);
+            }
+        });
+
         return isPass;
     }
     
     const init = () => {
-        buttonClick();
+        createAccount();
     }
 
     init();
