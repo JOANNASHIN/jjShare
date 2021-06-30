@@ -2088,4 +2088,117 @@ html, body {
   color: #fff;
 }
 
+.fb {
+  width: 720px;
+}
+.fb__title--hidden {
+  font-size: 0;
+  line-height: 0;
+}
+.fb__filter {
+  background: #fff;
+}
+.fb__filter__cont {
+  padding: 0 40px;
+}
+.fb__filter__wrapper:not(:first-child) {
+  margin-top: 72px;
+}
+.fb__filter__title {
+  color: #111;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 48px;
+}
+.fb__filter__inner {
+  font-size: 0;
+}
+.fb__filter__list {
+  display: inline-block;
+  width: 50%;
+  color: #ccc;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 36px;
+  box-sizing: border-box;
+}
+.fb__filter__list input:checked + span {
+  color: #111;
+}
+.fb__filter__textBox {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #ccc;
+}
+.fb__filter__textBox.show {
+  display: flex;
+}
+.fb__filter__textBox .textBox__inner {
+  display: inline-block;
+}
+.fb__filter__textBox .textBox__inner input {
+  width: 200px;
+  height: auto;
+  padding: 24px 32px;
+  border: 1px solid #ccc;
+  color: #111;
+  font-weight: 200;
+  font-size: 28px;
+  line-height: 40px;
+  box-sizing: border-box;
+}
+.fb__filter__textBox .textBox__inner:not(:first-of-type):before {
+  display: inline-block;
+  margin: 0 16px;
+  font-weight: 200;
+  font-size: 28px;
+  line-height: 40px;
+  vertical-align: middle;
+  content: "~";
+}
+.fb__filter__textBox .textBox__button {
+  padding: 24px 26px;
+  background: #ccc;
+  color: #fff;
+  font-weight: 200;
+  font-size: 28px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+.fb__filter__print {
+  overflow: hidden;
+  overflow-x: scroll;
+  margin-top: 50px;
+  padding: 24px 40px;
+  background: #eee;
+  white-space: nowrap;
+}
+.fb__filter__print .print__list {
+  display: inline-block;
+  position: relative;
+  padding: 8px 40px 8px 16px;
+  background: #000;
+  color: #fff;
+  font-weight: 200;
+  font-size: 22px;
+  line-height: 32px;
+}
+.fb__filter__print .print__list:not(:last-child) {
+  margin-right: 4px;
+}
+.fb__filter__print .print__delete {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  font-size: 0;
+  transform: translate(0, -50%);
+}
+
 /*# sourceMappingURL=main.css.map*/

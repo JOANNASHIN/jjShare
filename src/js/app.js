@@ -22,6 +22,8 @@ import todoFeedback from "./divide/todoFeedback";
 import todoJSON from "./divide/todoJSON";
 import tableJSON from "./divide/tableJSON";
 import joinUs from "./divide/joinUs";
+import getDate from "./divide/getDate";
+import filter from "./divide/filter";
 
 const swiper = new Swiper;
 const htmlDoc = document.documentElement;
@@ -54,6 +56,8 @@ const appMethods = {
     todoJSON,
     tableJSON,
     joinUs,
+    getDate,
+    filter,
 }
 
 const appInit = () => {

@@ -57274,6 +57274,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _divide_todoJSON__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./divide/todoJSON */ "./src/js/divide/todoJSON.js");
 /* harmony import */ var _divide_tableJSON__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./divide/tableJSON */ "./src/js/divide/tableJSON.js");
 /* harmony import */ var _divide_joinUs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./divide/joinUs */ "./src/js/divide/joinUs.js");
+/* harmony import */ var _divide_getDate__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./divide/getDate */ "./src/js/divide/getDate.js");
+/* harmony import */ var _divide_filter__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./divide/filter */ "./src/js/divide/filter.js");
 /* provided dependency */ var __webpack_provided_window_dot_$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
@@ -57289,6 +57291,8 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
 
 
 // 페이지
+
+
 
 
 
@@ -57331,6 +57335,8 @@ const appMethods = {
     todoJSON: _divide_todoJSON__WEBPACK_IMPORTED_MODULE_14__.default,
     tableJSON: _divide_tableJSON__WEBPACK_IMPORTED_MODULE_15__.default,
     joinUs: _divide_joinUs__WEBPACK_IMPORTED_MODULE_16__.default,
+    getDate: _divide_getDate__WEBPACK_IMPORTED_MODULE_17__.default,
+    filter: _divide_filter__WEBPACK_IMPORTED_MODULE_18__.default,
 }
 
 const appInit = () => {
@@ -57452,6 +57458,137 @@ const common = () => {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (common);
+
+/***/ }),
+
+/***/ "./src/js/divide/filter.js":
+/*!*********************************!*\
+  !*** ./src/js/divide/filter.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+const filter = () => {
+    const $document = $(document);
+
+    /*
+        @todo : 지원
+        가격 인풋 type="radio"
+        + 정규식, toLocaleString() 사용하여 입력한 값 한국 지폐단위로 변경
+
+        카테고리 type="checkbox"
+
+    */
+
+    const filterChange = () => {
+        $(document).on("change", "input", function() {
+            const $this = $(this);
+            const $targetCont = $(".js__inputSelf__cont");
+            const $thisParents = $this.closest(".js__filter__list");
+            const _thisValue = $thisParents.find("span").text();
+
+            if ($this.attr("type") == "text") return ;
+
+            if ($this.hasClass("js__inputSelf__open")) {
+                $targetCont.addClass("show");
+                return ;
+            } else {
+                $targetCont.removeClass("show");
+            }
+
+            valuePrint($this, _thisValue);
+        });
+        
+    }
+    
+    const valuePrint = ($this, _thisValue) => {
+        const $filterPrint = $(".js__filter__print");
+        const _addValue = `
+                        <li class="print__list js__filter__list">
+                            ${_thisValue}
+                            <button type="button" class="print__delete js__print__delete">삭제</button>
+                        </li>
+            `
+
+        // @todo 지원 : 이 부분 다시해야함 체크되면 그려지고, 체크박스 풀리면 사라져야함
+        if( $this.attr("type") == "radio" ){
+            $filterPrint.append(_addValue);
+        } else {
+            $filterPrint.append(_addValue);
+        }
+    }
+
+    $document.on("click", ".js__print__delete", function() {
+        const $this = $(this);
+        const $thisParents = $this.closest(".js__filter__list");
+
+        $thisParents.remove();
+    })
+   
+    
+    const init = () => {
+        filterChange();
+    }
+
+    init();
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (filter);
+
+/***/ }),
+
+/***/ "./src/js/divide/getDate.js":
+/*!**********************************!*\
+  !*** ./src/js/divide/getDate.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+
+
+const inputTest = () => {
+    // 21.00.00 요일 10일전
+    // input으로 날짜 입력하면 입력한 값의 10일 전 날짜를 구하자.
+    // @todo 지원 : 요일은 해결했으니 날짜 해결 필요 (60일, -50일 등)
+
+    const _getNow = new Date();
+    
+    // 오늘 기준, 알고싶은 날짜
+    const _targetDayNum = 10;
+
+    // 년/월/일/요일 구하는 공식
+    const _getYear = _getNow.getFullYear();
+    const _getMonth = _getNow.getMonth() + 1;
+    const _getDate = _getNow.getDate() + _targetDayNum;
+    const _getDay = _getNow.getDay() - 1;
+    const _targetDay = (_getDay  + _targetDayNum) % 7;
+    let dayArray = "";
+    
+    if( _targetDayNum > 0 ) {
+        // 양수일 때 케이스
+        console.log("양수")
+        dayArray = ["월", "화", "수", "목", "금", "토", "일"];
+    } 
+    else {
+        // 음수일 때 케이스
+        console.log("음수")
+        dayArray = ["월", "일", "토", "금", "목", "수", "화"];
+    }
+    console.log(_getYear + "." + _getMonth + "." + _getDate + "." + dayArray[Math.abs(_targetDay)] + "요일");
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (inputTest);
 
 /***/ }),
 
