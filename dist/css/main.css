@@ -2170,24 +2170,37 @@ html, body {
 }
 .fb__filter__print {
   overflow: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
+  padding: 0 24px;
   margin-top: 50px;
-  padding: 24px 40px;
   background: #eee;
+  font-size: 0;
   white-space: nowrap;
+}
+.fb__filter__print .print__inner {
+  display: inline-block;
+}
+.fb__filter__print .print__inner:not(:last-child) {
+  margin-right: 4px;
 }
 .fb__filter__print .print__list {
   display: inline-block;
   position: relative;
+  margin: 24px 0;
   padding: 8px 40px 8px 16px;
   background: #000;
+  font-size: 0;
+}
+.fb__filter__print .print__list:not(:last-child) {
+  margin-right: 4px;
+}
+.fb__filter__print .print__value {
+  display: inline-block;
   color: #fff;
   font-weight: 200;
   font-size: 22px;
   line-height: 32px;
-}
-.fb__filter__print .print__list:not(:last-child) {
-  margin-right: 4px;
+  vertical-align: middle;
 }
 .fb__filter__print .print__delete {
   position: absolute;
