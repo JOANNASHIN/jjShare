@@ -1846,9 +1846,9 @@ input[type=button] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 86%;
   margin: 0 auto;
-  padding: 50px 30px;
+  padding: 50px 0px 40px;
   border-radius: 10px;
 }
 .fb__minjuTodo .todo__title {
@@ -1858,7 +1858,7 @@ input[type=button] {
 }
 .fb__minjuTodo .todo__today {
   display: inline-block;
-  color: #666;
+  color: #111;
   font-size: 20px;
   font-weight: bold;
 }
@@ -1882,7 +1882,7 @@ input[type=button] {
   font-size: 20px;
 }
 .fb__minjuTodo .todo__situation {
-  padding: 30px 50px;
+  padding: 20px 50px;
   font-size: 0;
 }
 .fb__minjuTodo .todo__situation__box {
@@ -1896,18 +1896,15 @@ input[type=button] {
   color: #333;
   font-size: 18px;
   font-weight: bold;
-  vertical-align: middle;
 }
 .fb__minjuTodo .todo__situation__box .cnt-value {
   color: #999;
-  vertical-align: middle;
 }
 .fb__minjuTodo .todo__list__box {
   overflow: hidden;
   overflow-y: auto;
   height: 840px;
   border-top: 2px solid #111;
-  border-bottom: 2px solid #111;
 }
 .fb__minjuTodo .todo__list__row {
   position: relative;
@@ -1916,6 +1913,9 @@ input[type=button] {
   padding: 30px 50px;
   border-bottom: 1px solid #ccc;
   cursor: pointer;
+}
+.fb__minjuTodo .todo__list__row.dim {
+  background: rgba(0, 0, 0, 0.1);
 }
 .fb__minjuTodo .todo__list__row.dim .cont {
   text-decoration: line-through;
@@ -1934,24 +1934,27 @@ input[type=button] {
   position: absolute;
   left: 50px;
   bottom: 30px;
-  margin-top: 20px;
   color: #999;
   font-size: 16px;
   font-weight: bold;
+}
+.fb__minjuTodo .todo__list__row .cont-box .edit {
+  width: 650px;
 }
 .fb__minjuTodo .todo__list__row .btn-box {
   position: absolute;
   top: 30px;
   right: 50px;
-  font-size: 14px;
+  font-size: 0;
 }
 .fb__minjuTodo .todo__list__row .btn-box .btnEdit {
-  display: block;
+  display: inline-block;
   width: 70px;
   height: 35px;
   border: 1px solid #111;
   border-radius: 10px;
   color: #111;
+  font-size: 14px;
 }
 .fb__minjuTodo .todo__list__row .btn-box .btnRemove {
   display: block;
@@ -1961,6 +1964,31 @@ input[type=button] {
   background: #222;
   border-radius: 10px;
   color: #fff;
+  font-size: 14px;
+}
+.fb__minjuTodo .todo__list__row .btn-box .btnCancle {
+  display: inline-block;
+  width: 70px;
+  height: 35px;
+  margin-top: 10px;
+  background: #222;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+}
+.fb__minjuTodo .todo__btnAllDelete {
+  display: none;
+  width: 110px;
+  height: 50px;
+  margin: 33px auto;
+  background: #344d61;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.fb__minjuTodo .todo__btnAllDelete.show {
+  display: block;
 }
 
 /* [MOBILE] */
