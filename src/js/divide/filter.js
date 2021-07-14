@@ -1,17 +1,6 @@
 const filter = () => {
     const $document = $(document);
 
-    /*
-        @todo : 지원
-        
-        1. 클릭했을 때 체크가 되면 list 프린트 되고, 
-                       체크가 아니면 list 삭제
-        1-1. 라디오만 따로 처리
-        1-2. 프린트/삭제 함수 따로 처리
-
-        3. 정규식, toLocaleString() 사용하여 입력한 값 한국 지폐단위로 변경
-    */
-
     // radio 체인지 이벤트
     const radioChange = () => {
         $document.on("change", "input[type=radio]", function() {
@@ -31,6 +20,7 @@ const filter = () => {
             else if (_thisValue == "직접입력") {
                 $inputCont.addClass("show");
                 // @todo 지원 : 적용버튼 누르면 그 값 입력하기 
+                // 정규식, toLocaleString() 사용하여 입력한 값 한국 지폐단위로 변경
             }
             else {
                 valuePrint(_thisValue, $printBox);
@@ -77,7 +67,7 @@ const filter = () => {
         }
     }
 
-    // 삭제버튼 누르면
+    // 삭제버튼 누르기
     $document.on("click", ".js__print__delete", function() {
         const $targetList = $(this).closest(".js__print__list");
         const $targetText = $targetList.find("span").text();
@@ -85,20 +75,25 @@ const filter = () => {
 
         $targetList.remove();
 
+        // 가격 선택사항 없으면 무조건 "전체" 선택
         if ($targetInput.closest(".js__filter__wrapper").attr("data-title") == "price") {
             $(".js__filter__list[data-list=전체]").find("input").prop("checked", true);
             return ;
         }
         
         $targetInput.prop("checked", false);
-
-        // @todo 지원 : 뭐는 span으로 찾고 뭐는 data 타겟으로 찾음 통일해서 찾자!
-        // @todo 지원 : input type 으로 구분 짓는게 아니라 data-title로 구분짓자
     });
+
+    // 체크된 인풋의 갯수 체크 
+    const checkLength = () => {
+        const $target = $("input").prop("chekced");
+        console.log($target);
+    }
     
     const init = () => {
         radioChange();
         checkboxChange();
+        // checkLength();
     }
 
     init();

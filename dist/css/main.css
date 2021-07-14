@@ -2219,10 +2219,6 @@ html, body {
   color: #fff;
 }
 
-.fb__title--hidden {
-  font-size: 0;
-  line-height: 0;
-}
 .fb__filter {
   width: 720px;
 }
@@ -2238,10 +2234,11 @@ html, body {
 .fb__filter__title {
   color: #111;
   font-weight: 600;
-  font-size: 34px;
+  font-size: 30px;
   line-height: 48px;
 }
 .fb__filter__inner {
+  margin-top: 20px;
   font-size: 0;
 }
 .fb__filter__list {
@@ -2343,6 +2340,33 @@ html, body {
   border-radius: 50%;
   font-size: 0;
   transform: translate(0, -50%);
+}
+.fb__filter__button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.fb__filter__button button {
+  padding: 30px 0;
+  font-size: 30px;
+}
+.fb__filter__reset {
+  flex: 1 1 30% !important;
+  background: #323232;
+  color: #a0a0a0;
+}
+.fb__filter__submit {
+  flex: 1 1 70%;
+  background: #111;
+  color: #fff;
+}
+.fb__filter__submit span, .fb__filter__submit em {
+  display: inline-block;
+  font-size: 30px;
+  line-height: 1;
+  vertical-align: middle;
 }
 
 /*# sourceMappingURL=main.css.map*/
