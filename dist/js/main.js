@@ -57264,19 +57264,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper/core */ "./node_modules/swiper/esm/components/navigation/navigation.js");
 /* harmony import */ var swiper_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/core */ "./node_modules/swiper/esm/components/pagination/pagination.js");
 /* harmony import */ var _divide_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./divide/common */ "./src/js/divide/common.js");
-/* harmony import */ var _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./divide/olenzFreegift */ "./src/js/divide/olenzFreegift.js");
-/* harmony import */ var _divide_olenzReview__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./divide/olenzReview */ "./src/js/divide/olenzReview.js");
-/* harmony import */ var _divide_olenzReview2__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./divide/olenzReview2 */ "./src/js/divide/olenzReview2.js");
-/* harmony import */ var _divide_olensMobileSlide__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./divide/olensMobileSlide */ "./src/js/divide/olensMobileSlide.js");
-/* harmony import */ var _divide_quest__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./divide/quest */ "./src/js/divide/quest.js");
-/* harmony import */ var _divide_todoList__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./divide/todoList */ "./src/js/divide/todoList.js");
-/* harmony import */ var _divide_todoFeedback__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./divide/todoFeedback */ "./src/js/divide/todoFeedback.js");
-/* harmony import */ var _divide_todoJSON__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./divide/todoJSON */ "./src/js/divide/todoJSON.js");
-/* harmony import */ var _divide_tableJSON__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./divide/tableJSON */ "./src/js/divide/tableJSON.js");
-/* harmony import */ var _divide_joinUs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./divide/joinUs */ "./src/js/divide/joinUs.js");
-/* harmony import */ var _divide_getDate__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./divide/getDate */ "./src/js/divide/getDate.js");
-/* harmony import */ var _divide_filter__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./divide/filter */ "./src/js/divide/filter.js");
-/* harmony import */ var _divide_minjuTodo__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./divide/minjuTodo */ "./src/js/divide/minjuTodo.js");
+/* harmony import */ var _divide_todoJSON__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./divide/todoJSON */ "./src/js/divide/todoJSON.js");
+/* harmony import */ var _divide_tableJSON__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./divide/tableJSON */ "./src/js/divide/tableJSON.js");
+/* harmony import */ var _divide_mobileJieunOlensSlide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./divide/mobileJieunOlensSlide */ "./src/js/divide/mobileJieunOlensSlide.js");
+/* harmony import */ var _divide_pcOlensFreegift__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./divide/pcOlensFreegift */ "./src/js/divide/pcOlensFreegift.js");
+/* harmony import */ var _divide_pcOlensReview__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./divide/pcOlensReview */ "./src/js/divide/pcOlensReview.js");
+/* harmony import */ var _divide_pcJieunOlensReviewFeedback__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./divide/pcJieunOlensReviewFeedback */ "./src/js/divide/pcJieunOlensReviewFeedback.js");
+/* harmony import */ var _divide_pcJieunTodoFeedback__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./divide/pcJieunTodoFeedback */ "./src/js/divide/pcJieunTodoFeedback.js");
+/* harmony import */ var _divide_pcJiwonTodo__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./divide/pcJiwonTodo */ "./src/js/divide/pcJiwonTodo.js");
+/* harmony import */ var _divide_pcJiwonQuest__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./divide/pcJiwonQuest */ "./src/js/divide/pcJiwonQuest.js");
+/* harmony import */ var _divide_pcJiwonJoinUs__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./divide/pcJiwonJoinUs */ "./src/js/divide/pcJiwonJoinUs.js");
+/* harmony import */ var _divide_pcJiwonGetDate__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./divide/pcJiwonGetDate */ "./src/js/divide/pcJiwonGetDate.js");
+/* harmony import */ var _divide_pcJiwonFilter__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./divide/pcJiwonFilter */ "./src/js/divide/pcJiwonFilter.js");
+/* harmony import */ var _divide_pcMinjuTodo__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./divide/pcMinjuTodo */ "./src/js/divide/pcMinjuTodo.js");
 /* provided dependency */ var __webpack_provided_window_dot_$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 
@@ -57291,7 +57291,12 @@ window.moment = (moment__WEBPACK_IMPORTED_MODULE_2___default());
 //공통
 
 
+
+
 // 페이지
+
+
+
 
 
 
@@ -57329,19 +57334,24 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(window).on("resize", function(e) {
 
 const appMethods = {
     common: _divide_common__WEBPACK_IMPORTED_MODULE_6__.default,
-    olenzFreegift: _divide_olenzFreegift__WEBPACK_IMPORTED_MODULE_7__.default,
-    olenzReview: _divide_olenzReview__WEBPACK_IMPORTED_MODULE_8__.default,
-    olenzReview2: _divide_olenzReview2__WEBPACK_IMPORTED_MODULE_9__.default,
-    quest: _divide_quest__WEBPACK_IMPORTED_MODULE_11__.default,
-    olensMobileSlide: _divide_olensMobileSlide__WEBPACK_IMPORTED_MODULE_10__.default,
-    todoList: _divide_todoList__WEBPACK_IMPORTED_MODULE_12__.default,
-    todoFeedback: _divide_todoFeedback__WEBPACK_IMPORTED_MODULE_13__.default,
-    todoJSON: _divide_todoJSON__WEBPACK_IMPORTED_MODULE_14__.default,
-    tableJSON: _divide_tableJSON__WEBPACK_IMPORTED_MODULE_15__.default,
-    joinUs: _divide_joinUs__WEBPACK_IMPORTED_MODULE_16__.default,
-    getDate: _divide_getDate__WEBPACK_IMPORTED_MODULE_17__.default,
-    filter: _divide_filter__WEBPACK_IMPORTED_MODULE_18__.default,
-    minjuTodo: _divide_minjuTodo__WEBPACK_IMPORTED_MODULE_19__.default,
+    tableJSON: _divide_tableJSON__WEBPACK_IMPORTED_MODULE_8__.default,
+    todoJSON: _divide_todoJSON__WEBPACK_IMPORTED_MODULE_7__.default,
+
+    mobileJieunOlensSlide: _divide_mobileJieunOlensSlide__WEBPACK_IMPORTED_MODULE_9__.default,
+
+    pcOlensFreegift: _divide_pcOlensFreegift__WEBPACK_IMPORTED_MODULE_10__.default,
+    pcOlensReview: _divide_pcOlensReview__WEBPACK_IMPORTED_MODULE_11__.default,
+
+    pcJieunOlensReviewFeedback: _divide_pcJieunOlensReviewFeedback__WEBPACK_IMPORTED_MODULE_12__.default,
+    pcJieunTodoFeedback: _divide_pcJieunTodoFeedback__WEBPACK_IMPORTED_MODULE_13__.default,
+
+    pcJiwonTodo: _divide_pcJiwonTodo__WEBPACK_IMPORTED_MODULE_14__.default,
+    pcJiwonQuest: _divide_pcJiwonQuest__WEBPACK_IMPORTED_MODULE_15__.default,
+    pcJiwonJoinUs: _divide_pcJiwonJoinUs__WEBPACK_IMPORTED_MODULE_16__.default,
+    pcJiwonGetDate: _divide_pcJiwonGetDate__WEBPACK_IMPORTED_MODULE_17__.default,
+    pcJiwonFilter: _divide_pcJiwonFilter__WEBPACK_IMPORTED_MODULE_18__.default,
+
+    pcMinjuTodo: _divide_pcMinjuTodo__WEBPACK_IMPORTED_MODULE_19__.default,
 }
 
 const appInit = () => {
@@ -57466,10 +57476,462 @@ const common = () => {
 
 /***/ }),
 
-/***/ "./src/js/divide/filter.js":
-/*!*********************************!*\
-  !*** ./src/js/divide/filter.js ***!
-  \*********************************/
+/***/ "./src/js/divide/mobileJieunOlensSlide.js":
+/*!************************************************!*\
+  !*** ./src/js/divide/mobileJieunOlensSlide.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/core/core-class.js");
+
+
+const mobileJieunOlensSlide = () => {
+    const slideInit = () => {
+        new swiper__WEBPACK_IMPORTED_MODULE_0__.default(".fb__slidetest__slider", {
+            loop: true,
+            slidesPerView: "auto"
+        })
+    }
+
+    const init = () => {
+        slideInit();
+    }
+
+    init();
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mobileJieunOlensSlide);
+
+/***/ }),
+
+/***/ "./src/js/divide/pcJieunOlensReviewFeedback.js":
+/*!*****************************************************!*\
+  !*** ./src/js/divide/pcJieunOlensReviewFeedback.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/core/core-class.js");
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+
+const pcOlensReviewFeedback = () => {
+    const $document = $(document);
+    
+    //레이어 관련 이벤트
+    const layerEvents = function () {
+        const $layer = $(".fb__reviewPop");
+
+        $document
+            //팝업열기
+            .on("click", ".js__slide__layerOpen", function () {
+                const _index = $(this).data("index");
+
+                isLayerShow($layer, true);
+                fnPopupPhoto.photoPopupSlider(_index);                
+            })
+            //팝업닫기
+            .on("click", ".fb__reviewPop__close", function () {
+                isLayerShow($layer, false);
+            })
+    }
+
+    //layer show/hide
+    const isLayerShow = function ($layer, isShow) {
+        if (isShow) $layer.addClass("show");
+        else $layer.removeClass("show");
+    }
+
+    //슬라이드 실행여부 확인
+    const canMakeSlider = function ($slides, minLength) {
+        let isPass = true;
+
+        if ($slides.length < minLength) {
+            isPass = false;
+        }
+
+        return isPass; //슬라이드 만들거면 true / 아니면 false
+    }
+
+    //첫번째 슬라이드 만들기 (페이지슬라이드)
+    const photoSlider = function () {
+        const $area = $(".js__photoSlider__area");
+        const $slides = $area.find(".swiper-slide");
+        const minLength = 6;
+
+        if (!canMakeSlider($slides, minLength)) return ;
+
+        $area.find(".js__slider__nav").addClass("show");
+
+        new swiper__WEBPACK_IMPORTED_MODULE_0__.default(".js__photoSlider__area .swiper-container", {
+            loop: true,
+            slidesPerView: "auto",
+            navigation: {
+                prevEl: '.reviewPage__button--prev',
+                nextEl: '.reviewPage__button--next',
+            },
+        })
+    }
+
+    // 팝업 안 함수 모음 (팝업 슬라이드 포함)
+    const fnPopupPhoto = {
+        //팝업 슬라이드 객체
+        photoPopupSlideObj: null,
+
+        //상단 포토 팝업 슬라이드
+        photoPopupSlider(_index) {
+            const self = this;
+            const $area = $(".js__photoPopupSlider__area");
+            const $slides = $area.find(".swiper-slide");
+            const minLength = 6;
+
+            //선택한 슬라이드에 active
+            self.addActiveClass(_index);
+            
+            //리뷰상세 api요청
+            self.requestphotoPopupDetail(_index);
+            
+            if (!canMakeSlider($slides, minLength)) return ;
+
+            $area.find(".js__slider__nav").addClass("show");
+    
+            self.photoPopupSlideObj = new swiper__WEBPACK_IMPORTED_MODULE_0__.default(".js__photoPopupSlider__area .swiper-container", {
+                slidesPerView: "auto",
+                centeredSlides: true,
+                centeredSlidesBounds: true,
+                navigation: {
+                    prevEl: '.allReview__button--prev',
+                    nextEl: '.allReview__button--next',
+                },
+
+                on: {
+                    init() {
+                        //해당 슬라이드로 이동
+                        this.slideToLoop(Number(_index));
+                    }
+                }
+            })
+        },
+
+        changeReview() {
+            const self = this;
+
+            $document.on("click", ".allReview__slide", function() {
+                const slideObj = self.photoPopupSlideObj;
+                let _clickedIndex = $(this).data("index");
+    
+                //갈수있는 슬라이드가 남아있는지 체크
+                if (slideObj) {
+                    slideObj.slideToLoop(Number(_clickedIndex), 1000, true)
+                }
+    
+                //선택한 슬라이드에 active
+                self.addActiveClass(_clickedIndex);
+                self.requestphotoPopupDetail(_clickedIndex);
+            });
+        },
+
+        //클릭한애 active 클래스 주기
+        addActiveClass(_index){
+            const $area = $(".js__photoPopupSlider__area");
+            if (!$area) return ;
+    
+            $area.find(".swiper-slide").removeClass("active");
+            $area.find(".swiper-slide").eq(_index).addClass("active");
+        },
+
+        //리뷰상세 포토 슬라이드
+        requestphotoPopupDetail(_index) {
+            //api연동 필요 
+    
+            const $area = $(".js__photoDetail__area");
+            const $slides = $area.find(".swiper-slide");
+            const minLength = 1;
+    
+            if (!canMakeSlider($slides, minLength)) return ;
+    
+            $area.find(".js__slider__nav").addClass("show");
+            
+            new swiper__WEBPACK_IMPORTED_MODULE_0__.default('.js__photoDetail__area .swiper-container', {
+                pagination: {
+                    el: '.selectReview__pagination',
+                    type: 'fraction',
+                },
+                navigation: {
+                    prevEl: '.selectReview__button--prev',
+                    nextEl: '.selectReview__button--next',
+                },
+            });
+        }
+    }
+
+    const init = () => {
+        photoSlider();
+        layerEvents(); //팝업 오픈
+        fnPopupPhoto.changeReview();
+    }
+    
+    init();
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pcOlensReviewFeedback);
+
+
+
+/***/ }),
+
+/***/ "./src/js/divide/pcJieunTodoFeedback.js":
+/*!**********************************************!*\
+  !*** ./src/js/divide/pcJieunTodoFeedback.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+const todoFeedback = () => {
+    const $document = $(document);
+    
+    //날짜계산
+    const getDate = () => {
+        const dayList = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+        return moment(new Date()).format("YYYY.MM.DD") + " " + dayList[new Date().getDay()];
+    }
+
+    //날짜그리기
+    const drawToday = () => {
+        const date = getDate();
+        $(".js__today").html(date);
+    }
+
+    //counting
+    const updateCount = () => {
+        const $empty = $(".fb__todo__empty");
+        const $countBox = $(".js__todo__count");
+
+        let _totalCount = $(".js__todo__list").find("dl").length; //전체
+        let _ingCount = $(".js__todo__list").find("dl:not(.done)").length; //진행중
+        let _doneCount = $(".js__todo__list").find("dl.done").length; //완료
+
+        //상단 숫자 변경
+        $countBox.html(`
+            <li class="count__box">
+                <span class="count__title">전체</span>
+                <em class="count__value">${_totalCount}</em>
+            </li>
+            <li class="count__box">
+                <span class="count__title">진행중</span>
+                <em class="count__value">${_ingCount}</em>
+            </li>
+            <li class="count__box">
+                <span class="count__title">진행완료</span>
+                <em class="count__value">${_doneCount}</em>
+            </li>
+        `)
+
+        //empty case
+        if (_totalCount == 0) {
+            $empty.addClass("show");
+        } 
+        else {
+            $empty.removeClass("show");
+        }
+    }
+
+    //해당 타겟 박스 return
+    const returnTarget = ($this) => {
+        const $todoBox = $this.closest(".js__todo__each"); //각각의 todo
+        const $updateBox = $todoBox.find(".fb__todo__update"); //각각의 수정input
+
+        return {
+            $todoBox,
+            $updateBox
+        };
+    }
+
+    //todo이벤트1: 추가하기
+    const addEvents = () => {
+        const bindEvents = () => {
+            $document
+                .on("keyup", ".js__todo__add-area input", function (e) {
+                    if (e.keyCode === 13) tryToAdd($(this));
+                })
+                
+                .on("click", ".js__todo__add", function () {
+                    tryToAdd($(this));
+                })
+        }
+
+        const tryToAdd = ($this) => {
+            const $area = $this.closest(".js__todo__add-area");
+            const $input = $area.find("input");
+            
+            if ($input.val().trim() == "") {
+                alert("한글자 이상 입력해주세요.");
+                return ;
+            }
+
+            const todoData = {
+                content: $input.val(),
+                date: getDate()
+            }
+
+            $input.val(" ");
+            drawAdd(todoData);
+
+            return false;
+        }
+        
+        //추가하기 실제 push
+        const drawAdd = (todoData) => {
+            const $list = $(".js__todo__list");
+    
+            $list.prepend(`
+                <dl class="fb__todo__list js__todo__each">
+                    <dt class="fb__todo__inner">
+                        <p class="fb__todo__text js__todo__title">${todoData.content}</p>
+                        <span class="fb__todo__date js__todo__date">${todoData.date}</span>
+                    </dt>
+                    <dd class="fb__todo__controller">
+                        <button class="fb__todo__controller--rewrite js__todo__rewrite">수정</button>
+                        <button class="fb__todo__controller--delete js__todo__delete">삭제</button>
+                    </dd>
+                    <div class="fb__todo__update">
+                        <input type="text" value="">
+                        <button class="fb__button js__update__push">수정</button>
+                        <button class="fb__button js__update__cancel">취소</button>
+                    </div>
+                </dl>
+            `)
+    
+            //count update
+            updateCount();
+        }
+
+        bindEvents();
+    }
+
+    //todo이벤트2: 삭제하기
+    const deleteEvent = () => {
+        $document.on("click", ".js__todo__delete", function () {
+            const $this = $(this);
+            const {$todoBox} = returnTarget($this);
+
+            $todoBox.remove();
+
+            //count update
+            updateCount();
+        })  
+    }
+
+    //todo이벤트3: 수정하기
+    const updateEvents = () => {
+        const bindEvents = () => {
+            $document
+                //수정input박스 보이기
+                .on("click", ".js__todo__rewrite", function () {
+                    const $this = $(this);
+                    const {$todoBox, $updateBox} = returnTarget($this);
+                    const _oriValue = $todoBox.find(".js__todo__title").html(); //원본값
+    
+                    $updateBox.addClass("show");
+                    $updateBox.find("input").val(_oriValue);
+                })
+    
+                //수정이벤트 (수정 버튼)
+                .on("click", ".js__update__push", function () {
+                    pushUpdate($(this));
+                })
+    
+                //수정이벤트 (수정 enter 키)
+                .on("keyup", ".fb__todo__update input", function (e) {
+                    if (e.keyCode === 13) pushUpdate($(this));
+                })
+    
+                //수정이벤트 (취소)
+                .on("click", ".js__update__cancel", function () {
+                    const $this = $(this);
+                    const {$updateBox} = returnTarget($this);
+    
+                    $updateBox.removeClass("show");
+                })
+        }
+
+        const pushUpdate = ($this) => {
+            const {$todoBox, $updateBox} = returnTarget($this);
+            
+            let _updateContent = $updateBox.find("input").val();
+
+            if (_updateContent == "") {
+                alert("한글자 이상 입력해주세요.");
+                return ;
+            }
+
+            $todoBox.find(".js__todo__title").html(_updateContent);
+            $todoBox.find(".js__todo__date").html(getDate());
+            $updateBox.removeClass("show");
+        }
+
+        bindEvents();
+    }
+
+    //todo이벤트4: 상태변경하기
+    const ChangeStatus = () => {
+        $document.on("click", ".js__todo__title", function () {
+            const $this = $(this);
+            const {$todoBox} = returnTarget($this);
+
+            $todoBox.toggleClass("done");
+
+            if ($todoBox.hasClass("done")) {
+                $todoBox.find("button").prop("disabled", true);
+            }
+            else {
+                $todoBox.find("button").prop("disabled", false);
+            }
+    
+            //count update
+            updateCount();
+        })
+    }
+
+    const init = () => {
+        //날짜init
+        drawToday();
+        
+        //events
+        addEvents();
+        deleteEvent();
+        updateEvents();
+
+        //상태변경
+        ChangeStatus();
+    }   
+    
+    init();
+
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (todoFeedback);
+
+/***/ }),
+
+/***/ "./src/js/divide/pcJiwonFilter.js":
+/*!****************************************!*\
+  !*** ./src/js/divide/pcJiwonFilter.js ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -57535,6 +57997,7 @@ const filter = () => {
                         </li>
                         `
         $printBox.append(_addValue);
+        checkLength();
     }
     
     // 체크 풀린 리스트 삭제하기
@@ -57545,6 +58008,8 @@ const filter = () => {
         if (_delTargetVal == _thisValue) {
             $delTarget.remove();
         }
+
+        checkLength();
     }
 
     // 삭제버튼 누르기
@@ -57558,22 +58023,33 @@ const filter = () => {
         // 가격 선택사항 없으면 무조건 "전체" 선택
         if ($targetInput.closest(".js__filter__wrapper").attr("data-title") == "price") {
             $(".js__filter__list[data-list=전체]").find("input").prop("checked", true);
+
+            checkLength();
             return ;
         }
         
         $targetInput.prop("checked", false);
+        checkLength();
     });
 
     // 체크된 인풋의 갯수 체크 
     const checkLength = () => {
-        const $target = $("input").prop("chekced");
-        console.log($target);
+        const _targetLength = $(".js__print__wrapper").find(".js__print__list").length + 1;
+
+        $(".js__checked__length").text(_targetLength);
+    }
+
+    // 초기화 버튼
+    const deleteAll = () => {
+        $document.on("click", ".js__filter__reset", function() {
+            $(".")
+        });
     }
     
     const init = () => {
         radioChange();
         checkboxChange();
-        // checkLength();
+        deleteAll();
     }
 
     init();
@@ -57583,10 +58059,10 @@ const filter = () => {
 
 /***/ }),
 
-/***/ "./src/js/divide/getDate.js":
-/*!**********************************!*\
-  !*** ./src/js/divide/getDate.js ***!
-  \**********************************/
+/***/ "./src/js/divide/pcJiwonGetDate.js":
+/*!*****************************************!*\
+  !*** ./src/js/divide/pcJiwonGetDate.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -57633,10 +58109,10 @@ const inputTest = () => {
 
 /***/ }),
 
-/***/ "./src/js/divide/joinUs.js":
-/*!*********************************!*\
-  !*** ./src/js/divide/joinUs.js ***!
-  \*********************************/
+/***/ "./src/js/divide/pcJiwonJoinUs.js":
+/*!****************************************!*\
+  !*** ./src/js/divide/pcJiwonJoinUs.js ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -57900,10 +58376,410 @@ const joinUs = () => {
 
 /***/ }),
 
-/***/ "./src/js/divide/minjuTodo.js":
-/*!************************************!*\
-  !*** ./src/js/divide/minjuTodo.js ***!
-  \************************************/
+/***/ "./src/js/divide/pcJiwonQuest.js":
+/*!***************************************!*\
+  !*** ./src/js/divide/pcJiwonQuest.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+const $document = $(document);
+
+const quest = () => {
+   
+    // 짝수의 합
+    const sumEven = () => {
+        let sum = 0;
+        for( let i = 1; i <= 10; i++ ){
+            
+            if( i % 2 == 0 ){
+                sum = sum + i;
+            }
+        }
+        document.write(sum + "<br>");
+    }
+
+    // 이중for문 ( 5*5 )
+    const password = () => {
+        let star = "*"
+        let space = "<br>"
+        for( let i = 1; i <= 5; i++ ){
+            
+            for( let s = 1; s <= 5; s++ ){
+                document.write(star);
+            }
+            document.write(space);
+        }
+    }
+
+    // 삼각형
+    const triangle = () => {
+        let zero = "0";
+        let sum = "";
+        for( let i = 1; i <= 30; i++ ){
+            sum += zero;
+            document.write(sum + "<br>");
+        }
+    }
+
+    // 빈 삼각형 - 이중for문
+    const nullTriangle = () => {
+        let zero = "0"
+        let sum = "";
+        let nullvalue = "-";
+
+        for( let i = 1; i <= 30; i++ ){
+            for(let t = 1; t <= 1; t++ ){
+                document.write(sum);
+            }
+            sum = sum + nullvalue;
+            document.write( zero + "<br>")
+        } 
+    }
+
+    // 5:5 대각선 5개만 0, 나머지는 빈 값
+    const nullBox = () => {
+        let zero = "*"
+        let sum = "";
+        let nullvalue = "-";
+
+        for( let i = 1; i <= 5; i++ ){
+            for(let t = 1; t <= 5; t++){
+
+                if( i == t ){
+                    document.write(zero);
+                } else {
+                    document.write(nullvalue);
+                }
+            } 
+            document.write("<br>")
+        } 
+    }
+
+    // 역삼각형으로 만들어보기
+    const test = () => {
+        let zero = "*"
+        let sum = "";
+        let nullvalue = " ";
+
+        document.write("<pre>")
+        for( let i = 1; i <= 5; i++ ){
+            for(let t = 1; t <= 5; t++){
+
+                if( i > t ){
+                    document.write(nullvalue);
+                } else {
+                    document.write(zero);
+                }
+            } 
+            document.write("<br>")
+        } 
+
+        document.write("</pre>")
+    }
+
+    // 다이아몬드
+    const diamond = () => {
+        
+        // let $null = " ";
+        // let $star = "*";
+        // for ( let i = 1; i <= 5; i++ ) {
+        //     for ( let t = 1; t <= 5; t++) {
+        //         // i와 t가 3보다 작거나 같을 때, i + t의 값이 3보다 크다
+        //         let $standard = 3;
+
+        //         if ((i <= $standard && t <= $standard)
+        //             && (i + t) > $standard 
+        //         ) { 
+        //             document.write($star);
+        //         } 
+        //         else {
+        //             document.write($null)
+        //         }
+                
+        //     //    if( t == 3 || i == 3 && t % 2 == 0 ){
+        //     //        console.log( i*t == Math.pow(2) );                                  
+        //     //        document.write($star);
+        //     //    } else {
+        //     //        document.write($null)
+        //     //    }
+        //     }
+        //     document.write("<br>")
+        // }
+
+        //   *
+        //  ***
+        // *****
+        //  ***
+        //   *
+        // 별:     1 3 5 3 5
+        // 빈공간: 2 1 0 1 2
+        // "5를 기준으로 절댓값"
+        // 별      4 2 0 -2 -4
+        // 빈공간: (4 2 0 -2 -4 ) / 2
+        let n = 4;
+        while ( n >= -4 ){
+            console.log( " " .repeat(Math.abs(n) / 2) +  "*" .repeat(5 - Math.abs(n)));
+            n -= 2;
+        }
+
+        let j = 4;
+        while ( n >= -4 ){
+            // document.write(" ")
+            n -= 2;
+        }
+
+
+    }
+
+    const init = () => {
+        diamond();
+        sumEven();
+        password();
+        triangle();
+        nullTriangle();
+        nullBox();
+        test();
+    }
+
+    init();
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (quest);
+
+/***/ }),
+
+/***/ "./src/js/divide/pcJiwonTodo.js":
+/*!**************************************!*\
+  !*** ./src/js/divide/pcJiwonTodo.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+const todoList = () => {
+    const $document = $(document);
+
+    // 전체글 진행글 진행완료 갯수 카운트
+    const listCount = () => {
+        const $content = $(".fb__todo__content");
+        const $nullContent = $(".fb__todo__content--null");
+        const _total = $(".fb__todo__list").length;
+        const _done = $(".js__text.checked").length;
+        const _doing = (_total - _done);
+        
+        $(".js__total").text(_total);
+        $(".js__done").text(_done);
+        $(".js__doing").text(_doing);
+
+        // 리스트 유무에 따른 콘텐츠 처리
+        if ( !_total == 0 ){
+            $nullContent.removeClass("show")
+            $content.addClass("show")
+        }
+        else {
+            $content.removeClass("show")
+            $nullContent.addClass("show")
+        }
+    }
+
+    // 진행 완료 처리
+    const listChecked = () => {
+        $document.on("click", ".js__text", function () {
+            const $this = $(this);
+            const $todoList = $this.closest(".fb__todo__list");
+            const $target = $todoList.find(".fb__todo__controller button");
+
+            $todoList.toggleClass("checked");
+
+            if ( $todoList.hasClass("checked") ){
+                $target.prop("disabled", true);
+            }
+            else {
+                $target.prop("disabled", false);
+            }
+
+            listCount();
+        })
+    }
+    
+    // 리스트 상태변경
+    const listEvent = () => {
+        $document
+
+            //리스트 추가하기 
+            .on("click", ".js__addlist__add", function () {
+                const $this = $(this);
+                const $target = $this.closest(".fb__todo__addlist").find("input");
+                const _text = $target.val().trim();
+                const _today = today()
+                
+                if (_text != ""){
+                    const _html = 
+                            `<div class="fb__todo__scroll">
+                                <ul class="fb__todo__list">
+                                    <li class="fb__todo__textWrap">
+                                        <p class="fb__todo__text js__text">${_text}</p>
+                                        <span class="fb__todo__date">${_today}</span>
+                                    </li>
+                                    <li class="fb__todo__controller">
+                                        <button type="button" class="fb__todo__controller--rewrite js__controller__rewrite">수정</button>
+                                        <button type="button" class="fb__todo__controller--delete js__controller__delete">삭제</button>
+                                    </li>
+                                    <li>
+                                        <form class="fb__todo__update">
+                                            <input type="text" value="">
+                                            <button type="button" class="fb__button js__update__push">확인</button>
+                                            <button type="button" class="fb__button js__update__cancel">취소</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>`
+                
+                    $(".fb__todo__content").prepend(_html);
+                    $target.val("");  //리스트 추가 후 인풋 비우기
+                    listCount()
+                }
+                else {
+                    alert("일정을 입력해주십시오.")
+                }
+            })
+
+            // 리스트 수정하기
+            .on("click", ".js__controller__rewrite", function () {
+                const $this = $(this);
+                const $todoList = $this.closest(".fb__todo__list");
+                const $formTarget = $todoList.find(".fb__todo__update");
+                const $formInput = $formTarget.find("input");
+                const $textTarget = $todoList.find(".js__text");
+                const _textCopy = $textTarget.text();
+                
+                $formTarget.addClass("show");
+                
+                // 해당 인풋에게 기존 텍스트 넣어주기
+                $formInput.val(_textCopy);
+                // return false;  //form태그 refresh 방지
+            })
+
+            // 리스트 수정 취소하기
+            .on("click", ".js__update__cancel", function () {
+                const $target = $(this).closest(".fb__todo__update")
+        
+                $target.removeClass("show");
+                // return false;  //form태그 refresh 방지
+            })
+
+            // 리스트 삭제하기
+            .on("click", ".js__controller__delete", function () {
+                const $target = $(this).closest(".fb__todo__list")
+        
+                $target.remove();
+                listCount();
+            });
+    }
+
+    // 수정된 내용 반영하기
+    const newVal = function () {
+
+        $document.on("click", ".js__update__push", function () {
+            const $this = $(this);
+            const $todoList = $this.closest(".fb__todo__list");
+            const $targetForm = $this.closest(".fb__todo__update");
+            const $targetText = $todoList.find(".js__text");
+            const _currentVal = $targetForm.find("input").val().trim();
+
+            if( _currentVal != "") {
+                $targetForm.removeClass("show");
+                $targetText.text(_currentVal);
+            } 
+            else {
+                alert("수정할 내용을 입력해주십시오.")    ; 
+            }
+        })
+    }
+
+    // 오늘 날짜 구하기 **npm install moment
+    const today = () => {
+        const today = new Date();
+        const moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+        const $thisDay = moment();
+        const $dayArray = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"]
+        const _today =  ( $thisDay.format("YYYY.MM.DD") + " " + $dayArray[today.getDay()]);
+
+        $(".fb__todo__today").text(_today);
+        return _today;
+    } 
+
+    const init = () => {
+        today(); //오늘 날짜 구하기
+        listCount(); //갯수 카운트
+        listChecked(); //체크 처리하기
+        listEvent(); //리스트 상태 변경
+        newVal() //수정된 내용 반영하기
+    }
+
+    init();
+
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (todoList);
+
+
+
+
+
+// // 오늘 날짜 구하기 **original
+// const today = () => {
+//     let _today = "";
+//     const today = new Date();
+//     const _year = today.getFullYear();
+//     const _month = today.getMonth() + 1;
+//     const _date = today.getDate();
+//     let _day = today.getDay();
+
+//     if ( _day == 1 ) {
+//         _day = "월요일";
+//     } 
+//     else if ( _day == 2 ) {
+//         _day = "화요일";
+//     }  
+//     else if ( _day == 3 ) {
+//         _day = "수요일";
+//     } 
+//     else if ( _day == 4 ) {
+//         _day = "목요일";
+//     }
+//     else if ( _day == 5 ) {
+//         _day = "금요일";
+//     } 
+//     else if ( _day == 6 ) {
+//         _day = "토요일";
+//     }
+//     else {
+//         _day = "일요일";
+//     }
+
+//     _today = `${_year}.${_month}.${_date} ${_day}`;
+
+//     $(".fb__todo__today").text(_today);
+//     return _today;
+// } 
+
+/***/ }),
+
+/***/ "./src/js/divide/pcMinjuTodo.js":
+/*!**************************************!*\
+  !*** ./src/js/divide/pcMinjuTodo.js ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -57998,43 +58874,10 @@ const minjuTodo = () => {
 
 /***/ }),
 
-/***/ "./src/js/divide/olensMobileSlide.js":
-/*!*******************************************!*\
-  !*** ./src/js/divide/olensMobileSlide.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/core/core-class.js");
-
-
-const olensMobileSlide = () => {
-    const slideInit = () => {
-        new swiper__WEBPACK_IMPORTED_MODULE_0__.default(".fb__slidetest__slider", {
-            loop: true,
-            slidesPerView: "auto"
-        })
-    }
-
-    const init = () => {
-        slideInit();
-    }
-
-    init();
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (olensMobileSlide);
-
-/***/ }),
-
-/***/ "./src/js/divide/olenzFreegift.js":
-/*!****************************************!*\
-  !*** ./src/js/divide/olenzFreegift.js ***!
-  \****************************************/
+/***/ "./src/js/divide/pcOlensFreegift.js":
+/*!******************************************!*\
+  !*** ./src/js/divide/pcOlensFreegift.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -58043,7 +58886,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-const olenzFreegift = () => {
+const olensFreegift = () => {
 
     const $document = $(document) 
 
@@ -58085,14 +58928,14 @@ const olenzFreegift = () => {
 
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (olenzFreegift);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (olensFreegift);
 
 /***/ }),
 
-/***/ "./src/js/divide/olenzReview.js":
-/*!**************************************!*\
-  !*** ./src/js/divide/olenzReview.js ***!
-  \**************************************/
+/***/ "./src/js/divide/pcOlensReview.js":
+/*!****************************************!*\
+  !*** ./src/js/divide/pcOlensReview.js ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -58553,364 +59396,6 @@ const olenzReview = () => {
 
 /***/ }),
 
-/***/ "./src/js/divide/olenzReview2.js":
-/*!***************************************!*\
-  !*** ./src/js/divide/olenzReview2.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/esm/components/core/core-class.js");
-/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
-
-const olenzReview2 = () => {
-    const $document = $(document);
-    
-    //레이어 관련 이벤트
-    const layerEvents = function () {
-        const $layer = $(".fb__reviewPop");
-
-        $document
-            //팝업열기
-            .on("click", ".js__slide__layerOpen", function () {
-                const _index = $(this).data("index");
-
-                isLayerShow($layer, true);
-                fnPopupPhoto.photoPopupSlider(_index);                
-            })
-            //팝업닫기
-            .on("click", ".fb__reviewPop__close", function () {
-                isLayerShow($layer, false);
-            })
-    }
-
-    //layer show/hide
-    const isLayerShow = function ($layer, isShow) {
-        if (isShow) $layer.addClass("show");
-        else $layer.removeClass("show");
-    }
-
-    //슬라이드 실행여부 확인
-    const canMakeSlider = function ($slides, minLength) {
-        let isPass = true;
-
-        if ($slides.length < minLength) {
-            isPass = false;
-        }
-
-        return isPass; //슬라이드 만들거면 true / 아니면 false
-    }
-
-    //첫번째 슬라이드 만들기 (페이지슬라이드)
-    const photoSlider = function () {
-        const $area = $(".js__photoSlider__area");
-        const $slides = $area.find(".swiper-slide");
-        const minLength = 6;
-
-        if (!canMakeSlider($slides, minLength)) return ;
-
-        $area.find(".js__slider__nav").addClass("show");
-
-        new swiper__WEBPACK_IMPORTED_MODULE_0__.default(".js__photoSlider__area .swiper-container", {
-            loop: true,
-            slidesPerView: "auto",
-            navigation: {
-                prevEl: '.reviewPage__button--prev',
-                nextEl: '.reviewPage__button--next',
-            },
-        })
-    }
-
-    // 팝업 안 함수 모음 (팝업 슬라이드 포함)
-    const fnPopupPhoto = {
-        //팝업 슬라이드 객체
-        photoPopupSlideObj: null,
-
-        //상단 포토 팝업 슬라이드
-        photoPopupSlider(_index) {
-            const self = this;
-            const $area = $(".js__photoPopupSlider__area");
-            const $slides = $area.find(".swiper-slide");
-            const minLength = 6;
-
-            //선택한 슬라이드에 active
-            self.addActiveClass(_index);
-            
-            //리뷰상세 api요청
-            self.requestphotoPopupDetail(_index);
-            
-            if (!canMakeSlider($slides, minLength)) return ;
-
-            $area.find(".js__slider__nav").addClass("show");
-    
-            self.photoPopupSlideObj = new swiper__WEBPACK_IMPORTED_MODULE_0__.default(".js__photoPopupSlider__area .swiper-container", {
-                slidesPerView: "auto",
-                centeredSlides: true,
-                centeredSlidesBounds: true,
-                navigation: {
-                    prevEl: '.allReview__button--prev',
-                    nextEl: '.allReview__button--next',
-                },
-
-                on: {
-                    init() {
-                        //해당 슬라이드로 이동
-                        this.slideToLoop(Number(_index));
-                    }
-                }
-            })
-        },
-
-        changeReview() {
-            const self = this;
-
-            $document.on("click", ".allReview__slide", function() {
-                const slideObj = self.photoPopupSlideObj;
-                let _clickedIndex = $(this).data("index");
-    
-                //갈수있는 슬라이드가 남아있는지 체크
-                if (slideObj) {
-                    slideObj.slideToLoop(Number(_clickedIndex), 1000, true)
-                }
-    
-                //선택한 슬라이드에 active
-                self.addActiveClass(_clickedIndex);
-                self.requestphotoPopupDetail(_clickedIndex);
-            });
-        },
-
-        //클릭한애 active 클래스 주기
-        addActiveClass(_index){
-            const $area = $(".js__photoPopupSlider__area");
-            if (!$area) return ;
-    
-            $area.find(".swiper-slide").removeClass("active");
-            $area.find(".swiper-slide").eq(_index).addClass("active");
-        },
-
-        //리뷰상세 포토 슬라이드
-        requestphotoPopupDetail(_index) {
-            //api연동 필요 
-    
-            const $area = $(".js__photoDetail__area");
-            const $slides = $area.find(".swiper-slide");
-            const minLength = 1;
-    
-            if (!canMakeSlider($slides, minLength)) return ;
-    
-            $area.find(".js__slider__nav").addClass("show");
-            
-            new swiper__WEBPACK_IMPORTED_MODULE_0__.default('.js__photoDetail__area .swiper-container', {
-                pagination: {
-                    el: '.selectReview__pagination',
-                    type: 'fraction',
-                },
-                navigation: {
-                    prevEl: '.selectReview__button--prev',
-                    nextEl: '.selectReview__button--next',
-                },
-            });
-        }
-    }
-
-    const init = () => {
-        photoSlider();
-        layerEvents(); //팝업 오픈
-        fnPopupPhoto.changeReview();
-    }
-    
-    init();
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (olenzReview2);
-
-
-
-/***/ }),
-
-/***/ "./src/js/divide/quest.js":
-/*!********************************!*\
-  !*** ./src/js/divide/quest.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-const $document = $(document);
-
-const quest = () => {
-   
-    // 짝수의 합
-    const sumEven = () => {
-        let sum = 0;
-        for( let i = 1; i <= 10; i++ ){
-            
-            if( i % 2 == 0 ){
-                sum = sum + i;
-            }
-        }
-        document.write(sum + "<br>");
-    }
-
-    // 이중for문 ( 5*5 )
-    const password = () => {
-        let star = "*"
-        let space = "<br>"
-        for( let i = 1; i <= 5; i++ ){
-            
-            for( let s = 1; s <= 5; s++ ){
-                document.write(star);
-            }
-            document.write(space);
-        }
-    }
-
-    // 삼각형
-    const triangle = () => {
-        let zero = "0";
-        let sum = "";
-        for( let i = 1; i <= 30; i++ ){
-            sum += zero;
-            document.write(sum + "<br>");
-        }
-    }
-
-    // 빈 삼각형 - 이중for문
-    const nullTriangle = () => {
-        let zero = "0"
-        let sum = "";
-        let nullvalue = "-";
-
-        for( let i = 1; i <= 30; i++ ){
-            for(let t = 1; t <= 1; t++ ){
-                document.write(sum);
-            }
-            sum = sum + nullvalue;
-            document.write( zero + "<br>")
-        } 
-    }
-
-    // 5:5 대각선 5개만 0, 나머지는 빈 값
-    const nullBox = () => {
-        let zero = "*"
-        let sum = "";
-        let nullvalue = "-";
-
-        for( let i = 1; i <= 5; i++ ){
-            for(let t = 1; t <= 5; t++){
-
-                if( i == t ){
-                    document.write(zero);
-                } else {
-                    document.write(nullvalue);
-                }
-            } 
-            document.write("<br>")
-        } 
-    }
-
-    // 역삼각형으로 만들어보기
-    const test = () => {
-        let zero = "*"
-        let sum = "";
-        let nullvalue = " ";
-
-        document.write("<pre>")
-        for( let i = 1; i <= 5; i++ ){
-            for(let t = 1; t <= 5; t++){
-
-                if( i > t ){
-                    document.write(nullvalue);
-                } else {
-                    document.write(zero);
-                }
-            } 
-            document.write("<br>")
-        } 
-
-        document.write("</pre>")
-    }
-
-    // 다이아몬드
-    const diamond = () => {
-        
-        // let $null = " ";
-        // let $star = "*";
-        // for ( let i = 1; i <= 5; i++ ) {
-        //     for ( let t = 1; t <= 5; t++) {
-        //         // i와 t가 3보다 작거나 같을 때, i + t의 값이 3보다 크다
-        //         let $standard = 3;
-
-        //         if ((i <= $standard && t <= $standard)
-        //             && (i + t) > $standard 
-        //         ) { 
-        //             document.write($star);
-        //         } 
-        //         else {
-        //             document.write($null)
-        //         }
-                
-        //     //    if( t == 3 || i == 3 && t % 2 == 0 ){
-        //     //        console.log( i*t == Math.pow(2) );                                  
-        //     //        document.write($star);
-        //     //    } else {
-        //     //        document.write($null)
-        //     //    }
-        //     }
-        //     document.write("<br>")
-        // }
-
-        //   *
-        //  ***
-        // *****
-        //  ***
-        //   *
-        // 별:     1 3 5 3 5
-        // 빈공간: 2 1 0 1 2
-        // "5를 기준으로 절댓값"
-        // 별      4 2 0 -2 -4
-        // 빈공간: (4 2 0 -2 -4 ) / 2
-        let n = 4;
-        while ( n >= -4 ){
-            console.log( " " .repeat(Math.abs(n) / 2) +  "*" .repeat(5 - Math.abs(n)));
-            n -= 2;
-        }
-
-        let j = 4;
-        while ( n >= -4 ){
-            // document.write(" ")
-            n -= 2;
-        }
-
-
-    }
-
-    const init = () => {
-        diamond();
-        sumEven();
-        password();
-        triangle();
-        nullTriangle();
-        nullBox();
-        test();
-    }
-
-    init();
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (quest);
-
-/***/ }),
-
 /***/ "./src/js/divide/tableJSON.js":
 /*!************************************!*\
   !*** ./src/js/divide/tableJSON.js ***!
@@ -59147,245 +59632,6 @@ const tableJSON = () => {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (tableJSON);
-
-/***/ }),
-
-/***/ "./src/js/divide/todoFeedback.js":
-/*!***************************************!*\
-  !*** ./src/js/divide/todoFeedback.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-const todoFeedback = () => {
-    const $document = $(document);
-    
-    //날짜계산
-    const getDate = () => {
-        const dayList = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
-        return moment(new Date()).format("YYYY.MM.DD") + " " + dayList[new Date().getDay()];
-    }
-
-    //날짜그리기
-    const drawToday = () => {
-        const date = getDate();
-        $(".js__today").html(date);
-    }
-
-    //counting
-    const updateCount = () => {
-        const $empty = $(".fb__todo__empty");
-        const $countBox = $(".js__todo__count");
-
-        let _totalCount = $(".js__todo__list").find("dl").length; //전체
-        let _ingCount = $(".js__todo__list").find("dl:not(.done)").length; //진행중
-        let _doneCount = $(".js__todo__list").find("dl.done").length; //완료
-
-        //상단 숫자 변경
-        $countBox.html(`
-            <li class="count__box">
-                <span class="count__title">전체</span>
-                <em class="count__value">${_totalCount}</em>
-            </li>
-            <li class="count__box">
-                <span class="count__title">진행중</span>
-                <em class="count__value">${_ingCount}</em>
-            </li>
-            <li class="count__box">
-                <span class="count__title">진행완료</span>
-                <em class="count__value">${_doneCount}</em>
-            </li>
-        `)
-
-        //empty case
-        if (_totalCount == 0) {
-            $empty.addClass("show");
-        } 
-        else {
-            $empty.removeClass("show");
-        }
-    }
-
-    //해당 타겟 박스 return
-    const returnTarget = ($this) => {
-        const $todoBox = $this.closest(".js__todo__each"); //각각의 todo
-        const $updateBox = $todoBox.find(".fb__todo__update"); //각각의 수정input
-
-        return {
-            $todoBox,
-            $updateBox
-        };
-    }
-
-    //todo이벤트1: 추가하기
-    const addEvents = () => {
-        const bindEvents = () => {
-            $document
-                .on("keyup", ".js__todo__add-area input", function (e) {
-                    if (e.keyCode === 13) tryToAdd($(this));
-                })
-                
-                .on("click", ".js__todo__add", function () {
-                    tryToAdd($(this));
-                })
-        }
-
-        const tryToAdd = ($this) => {
-            const $area = $this.closest(".js__todo__add-area");
-            const $input = $area.find("input");
-            
-            if ($input.val().trim() == "") {
-                alert("한글자 이상 입력해주세요.");
-                return ;
-            }
-
-            const todoData = {
-                content: $input.val(),
-                date: getDate()
-            }
-
-            $input.val(" ");
-            drawAdd(todoData);
-
-            return false;
-        }
-        
-        //추가하기 실제 push
-        const drawAdd = (todoData) => {
-            const $list = $(".js__todo__list");
-    
-            $list.prepend(`
-                <dl class="fb__todo__list js__todo__each">
-                    <dt class="fb__todo__inner">
-                        <p class="fb__todo__text js__todo__title">${todoData.content}</p>
-                        <span class="fb__todo__date js__todo__date">${todoData.date}</span>
-                    </dt>
-                    <dd class="fb__todo__controller">
-                        <button class="fb__todo__controller--rewrite js__todo__rewrite">수정</button>
-                        <button class="fb__todo__controller--delete js__todo__delete">삭제</button>
-                    </dd>
-                    <div class="fb__todo__update">
-                        <input type="text" value="">
-                        <button class="fb__button js__update__push">수정</button>
-                        <button class="fb__button js__update__cancel">취소</button>
-                    </div>
-                </dl>
-            `)
-    
-            //count update
-            updateCount();
-        }
-
-        bindEvents();
-    }
-
-    //todo이벤트2: 삭제하기
-    const deleteEvent = () => {
-        $document.on("click", ".js__todo__delete", function () {
-            const $this = $(this);
-            const {$todoBox} = returnTarget($this);
-
-            $todoBox.remove();
-
-            //count update
-            updateCount();
-        })  
-    }
-
-    //todo이벤트3: 수정하기
-    const updateEvents = () => {
-        const bindEvents = () => {
-            $document
-                //수정input박스 보이기
-                .on("click", ".js__todo__rewrite", function () {
-                    const $this = $(this);
-                    const {$todoBox, $updateBox} = returnTarget($this);
-                    const _oriValue = $todoBox.find(".js__todo__title").html(); //원본값
-    
-                    $updateBox.addClass("show");
-                    $updateBox.find("input").val(_oriValue);
-                })
-    
-                //수정이벤트 (수정 버튼)
-                .on("click", ".js__update__push", function () {
-                    pushUpdate($(this));
-                })
-    
-                //수정이벤트 (수정 enter 키)
-                .on("keyup", ".fb__todo__update input", function (e) {
-                    if (e.keyCode === 13) pushUpdate($(this));
-                })
-    
-                //수정이벤트 (취소)
-                .on("click", ".js__update__cancel", function () {
-                    const $this = $(this);
-                    const {$updateBox} = returnTarget($this);
-    
-                    $updateBox.removeClass("show");
-                })
-        }
-
-        const pushUpdate = ($this) => {
-            const {$todoBox, $updateBox} = returnTarget($this);
-            
-            let _updateContent = $updateBox.find("input").val();
-
-            if (_updateContent == "") {
-                alert("한글자 이상 입력해주세요.");
-                return ;
-            }
-
-            $todoBox.find(".js__todo__title").html(_updateContent);
-            $todoBox.find(".js__todo__date").html(getDate());
-            $updateBox.removeClass("show");
-        }
-
-        bindEvents();
-    }
-
-    //todo이벤트4: 상태변경하기
-    const ChangeStatus = () => {
-        $document.on("click", ".js__todo__title", function () {
-            const $this = $(this);
-            const {$todoBox} = returnTarget($this);
-
-            $todoBox.toggleClass("done");
-
-            if ($todoBox.hasClass("done")) {
-                $todoBox.find("button").prop("disabled", true);
-            }
-            else {
-                $todoBox.find("button").prop("disabled", false);
-            }
-    
-            //count update
-            updateCount();
-        })
-    }
-
-    const init = () => {
-        //날짜init
-        drawToday();
-        
-        //events
-        addEvents();
-        deleteEvent();
-        updateEvents();
-
-        //상태변경
-        ChangeStatus();
-    }   
-    
-    init();
-
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (todoFeedback);
 
 /***/ }),
 
@@ -59635,228 +59881,6 @@ const todoJSON = () => {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (todoJSON);
-
-/***/ }),
-
-/***/ "./src/js/divide/todoList.js":
-/*!***********************************!*\
-  !*** ./src/js/divide/todoList.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-const todoList = () => {
-    const $document = $(document);
-
-    // 전체글 진행글 진행완료 갯수 카운트
-    const listCount = () => {
-        const $content = $(".fb__todo__content");
-        const $nullContent = $(".fb__todo__content--null");
-        const _total = $(".fb__todo__list").length;
-        const _done = $(".js__text.checked").length;
-        const _doing = (_total - _done);
-        
-        $(".js__total").text(_total);
-        $(".js__done").text(_done);
-        $(".js__doing").text(_doing);
-
-        // 리스트 유무에 따른 콘텐츠 처리
-        if ( !_total == 0 ){
-            $nullContent.removeClass("show")
-            $content.addClass("show")
-        }
-        else {
-            $content.removeClass("show")
-            $nullContent.addClass("show")
-        }
-    }
-
-    // 진행 완료 처리
-    const listChecked = () => {
-        $document.on("click", ".js__text", function () {
-            const $this = $(this);
-            const $todoList = $this.closest(".fb__todo__list");
-            const $target = $todoList.find(".fb__todo__controller button");
-
-            $todoList.toggleClass("checked");
-
-            if ( $todoList.hasClass("checked") ){
-                $target.prop("disabled", true);
-            }
-            else {
-                $target.prop("disabled", false);
-            }
-
-            listCount();
-        })
-    }
-    
-    // 리스트 상태변경
-    const listEvent = () => {
-        $document
-
-            //리스트 추가하기 
-            .on("click", ".js__addlist__add", function () {
-                const $this = $(this);
-                const $target = $this.closest(".fb__todo__addlist").find("input");
-                const _text = $target.val().trim();
-                const _today = today()
-                
-                if (_text != ""){
-                    const _html = 
-                            `<div class="fb__todo__scroll">
-                                <ul class="fb__todo__list">
-                                    <li class="fb__todo__textWrap">
-                                        <p class="fb__todo__text js__text">${_text}</p>
-                                        <span class="fb__todo__date">${_today}</span>
-                                    </li>
-                                    <li class="fb__todo__controller">
-                                        <button type="button" class="fb__todo__controller--rewrite js__controller__rewrite">수정</button>
-                                        <button type="button" class="fb__todo__controller--delete js__controller__delete">삭제</button>
-                                    </li>
-                                    <li>
-                                        <form class="fb__todo__update">
-                                            <input type="text" value="">
-                                            <button type="button" class="fb__button js__update__push">확인</button>
-                                            <button type="button" class="fb__button js__update__cancel">취소</button>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>`
-                
-                    $(".fb__todo__content").prepend(_html);
-                    $target.val("");  //리스트 추가 후 인풋 비우기
-                    listCount()
-                }
-                else {
-                    alert("일정을 입력해주십시오.")
-                }
-            })
-
-            // 리스트 수정하기
-            .on("click", ".js__controller__rewrite", function () {
-                const $this = $(this);
-                const $todoList = $this.closest(".fb__todo__list");
-                const $formTarget = $todoList.find(".fb__todo__update");
-                const $formInput = $formTarget.find("input");
-                const $textTarget = $todoList.find(".js__text");
-                const _textCopy = $textTarget.text();
-                
-                $formTarget.addClass("show");
-                
-                // 해당 인풋에게 기존 텍스트 넣어주기
-                $formInput.val(_textCopy);
-                // return false;  //form태그 refresh 방지
-            })
-
-            // 리스트 수정 취소하기
-            .on("click", ".js__update__cancel", function () {
-                const $target = $(this).closest(".fb__todo__update")
-        
-                $target.removeClass("show");
-                // return false;  //form태그 refresh 방지
-            })
-
-            // 리스트 삭제하기
-            .on("click", ".js__controller__delete", function () {
-                const $target = $(this).closest(".fb__todo__list")
-        
-                $target.remove();
-                listCount();
-            });
-    }
-
-    // 수정된 내용 반영하기
-    const newVal = function () {
-
-        $document.on("click", ".js__update__push", function () {
-            const $this = $(this);
-            const $todoList = $this.closest(".fb__todo__list");
-            const $targetForm = $this.closest(".fb__todo__update");
-            const $targetText = $todoList.find(".js__text");
-            const _currentVal = $targetForm.find("input").val().trim();
-
-            if( _currentVal != "") {
-                $targetForm.removeClass("show");
-                $targetText.text(_currentVal);
-            } 
-            else {
-                alert("수정할 내용을 입력해주십시오.")    ; 
-            }
-        })
-    }
-
-    // 오늘 날짜 구하기 **npm install moment
-    const today = () => {
-        const today = new Date();
-        const moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-        const $thisDay = moment();
-        const $dayArray = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"]
-        const _today =  ( $thisDay.format("YYYY.MM.DD") + " " + $dayArray[today.getDay()]);
-
-        $(".fb__todo__today").text(_today);
-        return _today;
-    } 
-
-    const init = () => {
-        today(); //오늘 날짜 구하기
-        listCount(); //갯수 카운트
-        listChecked(); //체크 처리하기
-        listEvent(); //리스트 상태 변경
-        newVal() //수정된 내용 반영하기
-    }
-
-    init();
-
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (todoList);
-
-
-
-
-
-// // 오늘 날짜 구하기 **original
-// const today = () => {
-//     let _today = "";
-//     const today = new Date();
-//     const _year = today.getFullYear();
-//     const _month = today.getMonth() + 1;
-//     const _date = today.getDate();
-//     let _day = today.getDay();
-
-//     if ( _day == 1 ) {
-//         _day = "월요일";
-//     } 
-//     else if ( _day == 2 ) {
-//         _day = "화요일";
-//     }  
-//     else if ( _day == 3 ) {
-//         _day = "수요일";
-//     } 
-//     else if ( _day == 4 ) {
-//         _day = "목요일";
-//     }
-//     else if ( _day == 5 ) {
-//         _day = "금요일";
-//     } 
-//     else if ( _day == 6 ) {
-//         _day = "토요일";
-//     }
-//     else {
-//         _day = "일요일";
-//     }
-
-//     _today = `${_year}.${_month}.${_date} ${_day}`;
-
-//     $(".fb__todo__today").text(_today);
-//     return _today;
-// } 
 
 /***/ })
 

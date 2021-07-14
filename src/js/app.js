@@ -10,21 +10,26 @@ window.moment = moment;
 
 //공통
 import common from "./divide/common";
-
-// 페이지
-import olenzFreegift from "./divide/olenzFreegift";
-import olenzReview from "./divide/olenzReview";
-import olenzReview2 from "./divide/olenzReview2";
-import olensMobileSlide from "./divide/olensMobileSlide";
-import quest from "./divide/quest";
-import todoList from "./divide/todoList";
-import todoFeedback from "./divide/todoFeedback";
 import todoJSON from "./divide/todoJSON";
 import tableJSON from "./divide/tableJSON";
-import joinUs from "./divide/joinUs";
-import getDate from "./divide/getDate";
-import filter from "./divide/filter";
-import minjuTodo from "./divide/minjuTodo";
+
+// 페이지
+import mobileJieunOlensSlide from "./divide/mobileJieunOlensSlide";
+
+import pcOlensFreegift from "./divide/pcOlensFreegift";
+import pcOlensReview from "./divide/pcOlensReview";
+
+import pcJieunOlensReviewFeedback from "./divide/pcJieunOlensReviewFeedback";
+import pcJieunTodoFeedback from "./divide/pcJieunTodoFeedback";
+
+import pcJiwonTodo from "./divide/pcJiwonTodo";
+import pcJiwonQuest from "./divide/pcJiwonQuest";
+import pcJiwonJoinUs from "./divide/pcJiwonJoinUs";
+import pcJiwonGetDate from "./divide/pcJiwonGetDate";
+import pcJiwonFilter from "./divide/pcJiwonFilter";
+
+import pcMinjuTodo from "./divide/pcMinjuTodo";
+
 
 const swiper = new Swiper;
 const htmlDoc = document.documentElement;
@@ -49,19 +54,24 @@ $(window).on("resize", function(e) {
 
 const appMethods = {
     common,
-    olenzFreegift,
-    olenzReview,
-    olenzReview2,
-    quest,
-    olensMobileSlide,
-    todoList,
-    todoFeedback,
-    todoJSON,
     tableJSON,
-    joinUs,
-    getDate,
-    filter,
-    minjuTodo,
+    todoJSON,
+
+    mobileJieunOlensSlide,
+
+    pcOlensFreegift,
+    pcOlensReview,
+
+    pcJieunOlensReviewFeedback,
+    pcJieunTodoFeedback,
+
+    pcJiwonTodo,
+    pcJiwonQuest,
+    pcJiwonJoinUs,
+    pcJiwonGetDate,
+    pcJiwonFilter,
+
+    pcMinjuTodo,
 }
 
 const appInit = () => {

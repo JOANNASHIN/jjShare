@@ -55,6 +55,7 @@ const filter = () => {
                         </li>
                         `
         $printBox.append(_addValue);
+        checkLength();
     }
     
     // 체크 풀린 리스트 삭제하기
@@ -65,6 +66,8 @@ const filter = () => {
         if (_delTargetVal == _thisValue) {
             $delTarget.remove();
         }
+
+        checkLength();
     }
 
     // 삭제버튼 누르기
@@ -78,22 +81,33 @@ const filter = () => {
         // 가격 선택사항 없으면 무조건 "전체" 선택
         if ($targetInput.closest(".js__filter__wrapper").attr("data-title") == "price") {
             $(".js__filter__list[data-list=전체]").find("input").prop("checked", true);
+
+            checkLength();
             return ;
         }
         
         $targetInput.prop("checked", false);
+        checkLength();
     });
 
     // 체크된 인풋의 갯수 체크 
     const checkLength = () => {
-        const $target = $("input").prop("chekced");
-        console.log($target);
+        const _targetLength = $(".js__print__wrapper").find(".js__print__list").length + 1;
+
+        $(".js__checked__length").text(_targetLength);
+    }
+
+    // 초기화 버튼
+    const deleteAll = () => {
+        $document.on("click", ".js__filter__reset", function() {
+            $(".")
+        });
     }
     
     const init = () => {
         radioChange();
         checkboxChange();
-        // checkLength();
+        deleteAll();
     }
 
     init();

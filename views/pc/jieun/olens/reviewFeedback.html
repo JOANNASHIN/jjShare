@@ -9,15 +9,15 @@
         <!-- 내부 js -->
         <script src="/dist/js/main.js"></script>
     </head>
-    <body id="olenzReview" class="fb">
+    <body id="pcJieunOlensReviewFeedback" class="fb">
         <section class="fb__reviewPage">
-            <div class="fb__reviewPage__box js__review">
+            <div class="fb__reviewPage__box js__photoSlider__area">
                 <nav class="reviewPage__button js__slider__nav">
                     <button class="reviewPage__button--prev">이전</button>
                     <button class="reviewPage__button--next">다음</button>
                 </nav> 
                 
-                <div class="reviewPage__container js__reviewPage__slider swiper-container">
+                <div class="reviewPage__container swiper-container">
                     <ul class="reviewPage__slider swiper-wrapper">
                         <li class="reviewPage__slide swiper-slide js__slide__layerOpen" data-index="0">
                             <a href="#" class="reviewPage__link">
@@ -137,7 +137,7 @@
                 </header>
 
                 <main class="fb__reviewPop__main">
-                    <div class="fb__reviewPop__allReview js__review js__allReview">
+                    <div class="fb__reviewPop__allReview js__photoPopupSlider__area">
                         <nav class="allReview__button js__slider__nav">
                             <button class="allReview__button--prev">이전</button>
                             <button class="allReview__button--next">다음</button>
@@ -249,14 +249,22 @@
                                         </figure>
                                     </a>
                                 </li>
+                                <li class="allReview__slide swiper-slide" data-index="13">
+                                    <a href="#" class="allReview__link">
+                                        <figure class="allReview__image">
+                                            <span>13</span>
+                                            <img src="../../src/images/olenz/thumbnail.png">  
+                                        </figure>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     
-                    <div class="fb__reviewPop__selectReview">
+                    <div class="fb__reviewPop__selectReview js__photoDetail__area">
                         
                         <div class="selectReview__container swiper-container">
-                            <nav class="selectReview__nav">
+                            <nav class="selectReview__nav js__slider__nav">
                                 <div class="selectReview__button">
                                     <button class="selectReview__button--prev swiper-button-prev">이전</button>
                                     <button class="selectReview__button--next swiper-button-next">다음</button>

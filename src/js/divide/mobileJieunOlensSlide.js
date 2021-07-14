@@ -1,6 +1,6 @@
 import Swiper from "swiper"
 
-const olensMobileSlide = () => {
+const mobileJieunOlensSlide = () => {
     const slideInit = () => {
         new Swiper(".fb__slidetest__slider", {
             loop: true,
@@ -15,4 +15,4 @@ const olensMobileSlide = () => {
     init();
 }
 
-export default olensMobileSlide;
+export default mobileJieunOlensSlide;

@@ -1,4 +1,4 @@
-const olenzFreegift = () => {
+const olensFreegift = () => {
 
     const $document = $(document) 
 
@@ -40,4 +40,4 @@ const olenzFreegift = () => {
 
 }
 
-export default olenzFreegift;
+export default olensFreegift;

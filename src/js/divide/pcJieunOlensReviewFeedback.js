@@ -1,6 +1,6 @@
 import Swiper from "swiper";
 
-const olenzReview2 = () => {
+const pcOlensReviewFeedback = () => {
     const $document = $(document);
     
     //레이어 관련 이벤트
@@ -159,5 +159,5 @@ const olenzReview2 = () => {
     init();
 }
 
-export default olenzReview2;
+export default pcOlensReviewFeedback;
 
