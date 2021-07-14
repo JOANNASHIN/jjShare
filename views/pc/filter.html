@@ -9,147 +9,157 @@
     <script src="/dist/js/main.js"></script>
 </head>
 
-<body id="filter" class="fb">
-    <section class="fb__filter">
+<body id="filter" class="fb__filter">
+    <section class="fb__filter__wrapper">
         <h2 class="fb__title--hidden">filter 연습</h2>
 
-        <!-- 선택 영역 -->
-        <div class="fb__filter__cont">
-            <!-- 가격 -->
-            <dl class="fb__filter__wrapper js__filter__wrapper" data-title="price">
-                <dt class="fb__filter__title">가격</dt>
-        
-                <dd class="fb__filter__inner">
-                    <label class="fb__filter__list js__filter__list" data-list="전체">
-                        <input type="radio" name="price" checked>
-                        <span>전체</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="~ 1만원">
-                        <input type="radio" name="price">
-                        <span>~ 1만원</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="1만원 ~ 3만원">
-                        <input type="radio" name="price">
-                        <span>1만원 ~ 3만원</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="3만원 ~ 6만원">
-                        <input type="radio" name="price">
-                        <span>3만원 ~ 6만원</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="6만원 ~ 9만원">
-                        <input type="radio" name="price">
-                        <span>6만원 ~ 9만원</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="직접입력">
-                        <input type="radio" name="price" class="js__inputSelf__open">
-                        <span>직접입력</span>
-                    </label>
-                </dd>
-
-                <dd class="fb__filter__textBox js__inputSelf__cont">
-                    <div>
-                        <label class="textBox__inner">
-                            <input type="text">
+        <main>
+            <!-- 선택 영역 -->
+            <div class="fb__filter__cont">
+                <!-- 가격 -->
+                <dl class="fb__filter__wrapper js__filter__wrapper" data-title="price">
+                    <dt class="fb__filter__title">가격</dt>
+            
+                    <dd class="fb__filter__inner">
+                        <label class="fb__filter__list js__filter__list" data-list="전체">
+                            <input type="radio" name="price" checked>
+                            <span>전체</span>
                         </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="~ 1만원">
+                            <input type="radio" name="price">
+                            <span>~ 1만원</span>
+                        </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="1만원 ~ 3만원">
+                            <input type="radio" name="price">
+                            <span>1만원 ~ 3만원</span>
+                        </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="3만원 ~ 6만원">
+                            <input type="radio" name="price">
+                            <span>3만원 ~ 6만원</span>
+                        </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="6만원 ~ 9만원">
+                            <input type="radio" name="price">
+                            <span>6만원 ~ 9만원</span>
+                        </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="직접입력">
+                            <input type="radio" name="price" class="js__inputSelf__open">
+                            <span>직접입력</span>
+                        </label>
+                    </dd>
     
-                        <label class="textBox__inner">
-                            <input type="text">
+                    <!-- 직적입력 선택시 show -->
+                    <dd class="fb__filter__textBox js__inputSelf__cont">
+                        <div>
+                            <label class="textBox__inner">
+                                <input type="text">
+                            </label>
+        
+                            <label class="textBox__inner">
+                                <input type="text">
+                            </label>
+                        </div>
+    
+                        <button type="button" class="textBox__button">적용</button>
+                    </dd>
+                </dl>
+            
+                <!-- 카테고리 -->
+                <dl class="fb__filter__wrapper js__filter__wrapper" data-title="category">
+                    <dt class="fb__filter__title">카테고리</dt>
+            
+                    <dd class="fb__filter__inner">
+                        <label class="fb__filter__list js__filter__list" data-list="스킨/토너">
+                            <input class="test" type="checkbox"> 
+                            <span>스킨/토너</span>
                         </label>
-                    </div>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="로션">
+                            <input type="checkbox">
+                            <span>로션</span>
+                        </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="에센스">
+                            <input type="checkbox">
+                            <span>에센스</span>
+                        </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="아이케어">
+                            <input type="checkbox">
+                            <span>아이케어</span>
+                        </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="크림">
+                            <input type="checkbox">
+                            <span>크림</span>
+                        </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="페이스오일">
+                            <input type="checkbox">
+                            <span>페이스오일</span>
+                        </label>
+                    </dd>
+                </dl>
+            
+                <!-- 브랜드 -->
+                <dl class="fb__filter__wrapper js__filter__wrapper" data-title="brand">
+                    <dt class="fb__filter__title">브랜드</dt>
+            
+                    <dd class="fb__filter__inner">
+                        <label class="fb__filter__list js__filter__list">
+                            <input type="checkbox">
+                            <span>3CE</span>
+                        </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="프리메라">
+                            <input type="checkbox">
+                            <span>프리메라</span>
+                        </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="조말론">
+                            <input type="checkbox">
+                            <span>조말론</span>
+                        </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="닥터브라운">
+                            <input type="checkbox">
+                            <span>닥터브라운</span>
+                        </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="바닐라코">
+                            <input type="checkbox">
+                            <span>바닐라코</span>
+                        </label>
+            
+                        <label class="fb__filter__list js__filter__list" data-list="헤라">
+                            <input type="checkbox">
+                            <span>헤라</span>
+                        </label>
+                    </dd>
+                </dl>
+            </div>
+            
+            <!-- 선택한 리스트 영역 -->
+            <div class="fb__filter__print">
+                <ul class="print__inner js__print__price"></ul>
+                <ul class="print__inner js__print"></ul>
+    
+                <!-- @todo 지원 각각의 ul에 담아 -->
+                <!-- <ul class="fb__filter__inner js__print__category"></ul>
+                <ul class="fb__filter__inner js__print__brand"></ul> -->
+            </div>
+        </main>
 
-                    <button type="button" class="textBox__button">적용</button>
-                </dd>
-            </dl>
-        
-            <!-- 카테고리 -->
-            <dl class="fb__filter__wrapper js__filter__wrapper" data-title="category">
-                <dt class="fb__filter__title">카테고리</dt>
-        
-                <dd class="fb__filter__inner">
-                    <label class="fb__filter__list js__filter__list" data-list="스킨/토너">
-                        <input class="test" type="checkbox"> 
-                        <span>스킨/토너</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="로션">
-                        <input type="checkbox">
-                        <span>로션</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="에센스">
-                        <input type="checkbox">
-                        <span>에센스</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="아이케어">
-                        <input type="checkbox">
-                        <span>아이케어</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="크림">
-                        <input type="checkbox">
-                        <span>크림</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="페이스오일">
-                        <input type="checkbox">
-                        <span>페이스오일</span>
-                    </label>
-                </dd>
-            </dl>
-        
-            <!-- 브랜드 -->
-            <dl class="fb__filter__wrapper js__filter__wrapper" data-title="brand">
-                <dt class="fb__filter__title">브랜드</dt>
-        
-                <dd class="fb__filter__inner">
-                    <label class="fb__filter__list js__filter__list">
-                        <input type="checkbox">
-                        <span>3CE</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="프리메라">
-                        <input type="checkbox">
-                        <span>프리메라</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="조말론">
-                        <input type="checkbox">
-                        <span>조말론</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="닥터브라운">
-                        <input type="checkbox">
-                        <span>닥터브라운</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="바닐라코">
-                        <input type="checkbox">
-                        <span>바닐라코</span>
-                    </label>
-        
-                    <label class="fb__filter__list js__filter__list" data-list="헤라">
-                        <input type="checkbox">
-                        <span>헤라</span>
-                    </label>
-                </dd>
-            </dl>
-        </div>
-        
-        <!-- 선택한 리스트 영역 -->
-        <div class="fb__filter__print">
-            <ul class="print__inner js__print__price"></ul>
-            <ul class="print__inner js__print"></ul>
-
-            <!-- @todo 지원 각각의 ul에 담아 -->
-            <!-- <ul class="fb__filter__inner js__print__category"></ul>
-            <ul class="fb__filter__inner js__print__brand"></ul> -->
+        <div class="fb__filter__button">
+            <button class="fb__filter__reset js__filter__reset" type="button">초기화</button>
+            <button class="fb__filter__submit js__filter__submit" type="button">적용 (<em class="js__checked__length">0</em>개)
+            </button>
         </div>
     </section>
+
 </body>
 </html>
