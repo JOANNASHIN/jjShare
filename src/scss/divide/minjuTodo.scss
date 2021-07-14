@@ -1,0 +1,184 @@
+.fb {
+    &__minjuTodo {
+        padding: 50px;
+        .todo {
+            // 투두 전체
+            &__container {
+                width: 750px;
+                height: 1200px;
+                margin: 0 auto;
+                background: #eee;
+                border-radius: 20px;
+            }
+    
+            // 투두 탑
+            &__top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 90%;
+                margin: 0 auto;
+                padding: 50px 30px;
+                border-radius: 10px;
+            }
+            
+            // 투두 제목
+            &__title {
+                display: inline-block;
+                font: {
+                    size: 26px;
+                    weight: bold;
+                }
+            }
+            
+            // 오늘 날짜
+            &__today {
+                display: inline-block;
+                color: #666;
+                font: {
+                    size: 20px;
+                    weight: bold;
+                }
+            }
+        
+            // 입력 인풋
+            &__insert {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 50px;
+    
+                .insert {
+                    &__input {
+                        display: inline-block;
+                        width: 530px;
+                        height: 50px;
+                    }
+    
+                    // 추가 버튼
+                    &__btnAdd {
+                        display: inline-block;
+                        width: 100px;
+                        height: 50px;
+                        background: #bd5446;
+                        border-radius: 10px;
+                        color: #fff;
+                        font-size: 20px;
+                    }
+                }
+            }
+    
+            // 전체/진행/완료 상황
+            &__situation {
+                padding: 30px 50px;
+                // border-bottom: 2px solid #111;
+                font-size: 0;
+
+                &__box {
+                    display: inline-block;
+                    font-size: 24px;
+        
+                    &:not(:first-child) {
+                        margin-left: 30px;
+                    }
+                    
+                    .cnt {
+                        &-title {
+                            color: #333;
+                            font: {
+                                size: 18px;
+                                weight: bold;
+                            };
+                            vertical-align: middle;
+                        }
+        
+                        &-value {
+                            color: #999;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+
+            // 추가되는 리스트
+            &__list {
+                // ul
+                &__box {
+                    overflow: hidden;
+                    overflow-y: auto;
+                    height: 840px;
+                    border-top: 2px solid #111;
+                    border-bottom: 2px solid #111;
+                }
+                
+                // 하나의 li
+                &__row {
+                    position: relative;
+                    width: 100%;
+                    height: 140px;
+                    padding: 30px 50px;
+                    border-bottom: 1px solid #ccc;
+                    cursor: pointer;
+
+                    // 딤처리
+                    &.dim {
+                        .cont {
+                            text-decoration: line-through;
+                        }
+                    }
+
+                    .cont-box {
+                        
+                        .cont {
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            display: block;
+                            width: 550px;
+                            max-height: 30px;
+                            font-size: 16px;
+                        }
+
+                        .date {
+                            display: block;
+                            position: absolute;
+                            left: 50px;
+                            bottom: 30px;
+                            margin-top: 20px;
+                            color: #999;
+                            font: {
+                                size: 16px;
+                                weight: bold;
+                            };
+                        }
+                    }
+                    
+                    .btn-box {
+                        position: absolute;
+                        top: 30px;
+                        right: 50px;
+                        font-size: 14px;
+
+                        .btnEdit {
+                            display: block;
+                            width: 70px;
+                            height: 35px;
+                            border: 1px solid #111;
+                            border-radius: 10px;
+                            color: #111;
+                        }
+            
+                        .btnRemove {
+                            display: block;
+                            width: 70px;
+                            height: 35px;
+                            margin-top: 10px;
+                            background: #222;
+                            border-radius: 10px;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
