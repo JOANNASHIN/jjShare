@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <title>TodoList</title>
+        <link rel="stylesheet" href="/dist/css/main.css">        
+        <script src="/dist/js/main.js"></script>
+    </head>
+    <body id="minjuTodo" class="fb__minjuTodo">
+
+        <!-- 투두 리스트 -->
+        <section class="todo__container">
+
+            <!-- 헤더 탑 영역-->
+            <header class="todo__top">
+                <div class="todo__title">TodoList</div>
+                <div class="todo__today js__today"></div>
+            </header>
+            
+            <!-- 입력 인풋 -->
+            <label class="todo__insert">
+                <input type="text" id="js__insert" class="insert__input" placeholder=" 할 일을 입력하세요.">
+                <button type="button" class="insert__btnAdd js__btnAdd">추가</button>
+            </label>
+
+            <!-- 전체/진행중/완료 카운트 -->
+            <ul class="todo__situation">
+                <li class="todo__situation__box"> 
+                    <span class="cnt-title">전체</span>
+                    <em class="cnt-value js__allCnt">0</em>
+                </li>
+                <li class="todo__situation__box"> 
+                    <span class="cnt-title">진행중</span>
+                    <em class="cnt-value js__ing">0</em>
+                </li>
+                <li class="todo__situation__box"> 
+                    <span class="cnt-title">진행완료</span>
+                    <em class="cnt-value js__done">0</em>
+                </li>
+            </ul>
+
+            <!-- 리스트 -->
+            <div class="todo__list">
+                <ul class="todo__list__box js__list__box">
+
+                    <!-- <li class="todo__list__row">
+                        <div class="cont-box">
+                            <span class="cont">내용입력입력력입력력</span>
+                            <span class="date">2021.07.12 월요일</span>
+                        </div>
+                        <div class="btn-box">
+                            <button type="button" class="btnEdit">수정</button>
+                            <button type="button" class="btnRemove">삭제</button>
+                        </div>
+                    </li> -->
+
+                </ul>
+            </div>
+
+        </section>
+        <!-- 투두 리스트 // -->
+
+    </body>
+</html>
