@@ -1,5 +1,4 @@
 .fb {
-    width: 720px;
 
     &__title {
         &--hidden {
@@ -9,7 +8,11 @@
     }
     
     &__filter {
-        background: #fff;
+        width: 720px;
+
+        &__wrapper {
+            background: #fff;
+        }
 
         &__cont {
             padding: 0 40px;

@@ -24,6 +24,7 @@ import tableJSON from "./divide/tableJSON";
 import joinUs from "./divide/joinUs";
 import getDate from "./divide/getDate";
 import filter from "./divide/filter";
+import minjuTodo from "./divide/minjuTodo";
 
 const swiper = new Swiper;
 const htmlDoc = document.documentElement;
@@ -58,6 +59,7 @@ const appMethods = {
     joinUs,
     getDate,
     filter,
+    minjuTodo,
 }
 
 const appInit = () => {
