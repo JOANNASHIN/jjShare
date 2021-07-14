@@ -38,20 +38,37 @@
 }
 
 //공통
-@import "./divide/common.scss";
-@import "./divide/reset.scss";
 @import "./divide/font.scss";
-@import "./library/vw.scss";
+@import "./divide/reset.scss";
+@import "./divide/common.scss";
 
+
+/* pc */
 @import "./divide/minjuTodo.scss";
 
 
+@import "./divide/review.scss";
+@import "./divide/todoList.scss";
+@import "./divide/joinUs.scss";
+@import "./divide/sizeguide.scss";
+@import "./divide/filter.scss";
+
+
+/* 모바일 */
+
+//vw 사용하는 페이지
+@import "./library/vw.scss";
+
+
+
+
+//rem 사용하는 페이지
 @import "../../node_modules/sass-rem/_rem.scss";
 @import "swiper/swiper-bundle.css";
 
 $rem-baseline: 20px;
 
-html,body {    
+html,body {
     @include rem-baseline;
     font-size: 125%;
     -webkit-text-size-adjust:none; 
@@ -60,8 +77,3 @@ html,body {
 //페이지별
 @import "./divide/olenz.scss";
 @import "./divide/moOlens.scss";
-@import "./divide/review.scss";
-@import "./divide/todoList.scss";
-@import "./divide/joinUs.scss";
-@import "./divide/sizeguide.scss";
-@import "./divide/filter.scss";

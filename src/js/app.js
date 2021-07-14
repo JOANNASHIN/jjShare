@@ -32,6 +32,8 @@ let enSizing = false;
 
 // rem 적용을 위해 추가
 const setFontSize = () => {
+    //750 이하에서만 적용
+    if (window.innerWidth > window.innerHeight || window.innerWidth > 750) return ;
 	htmlDoc.style.fontSize =  (parseInt((htmlDoc.offsetWidth/320*62.5) * 100000) / 100000) + '%';
 }
 

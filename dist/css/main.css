@@ -545,19 +545,15 @@ button.swiper-pagination-bullet {
           backface-visibility: hidden;
 }
 
-.fb.scroll--lock {
-  overflow: hidden;
+@charset "UTF-8";
+@font-face {
+  src: url(../../src/fonts/Myriad-Pro_31655.ttf);
+  font-family: "Myriad-Pro";
 }
-.fb__title {
-  color: #000;
-  font-weight: bold;
-  font-size: 30px;
+@font-face {
+  src: url(../../src/fonts/NotoSansCJKkr-Regular.ttf);
+  font-family: "Noto-Sans";
 }
-.fb__title--hidden {
-  font-size: 0;
-  line-height: 0;
-}
-
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0-modified | 20110126
    License: none (public domain)
@@ -960,14 +956,20 @@ input[type=button] {
   background: none;
 }
 
-@font-face {
-  src: url(../../src/fonts/Myriad-Pro_31655.ttf);
-  font-family: "Myriad-Pro";
+.fb.scroll--lock {
+  overflow: hidden;
 }
-@font-face {
-  src: url(../../src/fonts/NotoSansCJKkr-Regular.ttf);
-  font-family: "Noto-Sans";
+.fb__title {
+  color: #000;
+  font-weight: bold;
+  font-size: 30px;
 }
+.fb__title--hidden {
+  font-size: 0;
+  line-height: 0;
+}
+
+/* pc */
 .fb__minjuTodo {
   padding: 50px;
 }
@@ -1097,407 +1099,6 @@ input[type=button] {
   background: #222;
   border-radius: 10px;
   color: #fff;
-}
-
-html, body {
-  font-size: 125%;
-  font-size: 125%;
-  -webkit-text-size-adjust: none;
-}
-
-.fb__freegift {
-  display: block;
-  width: 32rem;
-}
-.fb__freegift__top {
-  position: relative;
-  min-height: 5rem;
-  margin: 0 1.25rem;
-  padding: 2.5rem 8rem 1.5rem 0;
-  border-bottom: #f0f0f0 0.1rem solid;
-}
-.fb__freegift__title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  line-height: 1;
-}
-.fb__freegift__select {
-  position: absolute;
-  right: 0;
-  bottom: 0.65rem;
-  width: 8rem;
-  height: 3.2rem;
-  background: #fff;
-  border: 0.1rem solid #ccc;
-  color: #555;
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-align: center;
-  line-height: 3.2rem;
-}
-.fb__freegift__cont {
-  padding: 1.2rem;
-}
-.fb__freegift__inner {
-  min-height: 220px;
-  padding: 1.1rem;
-  background: #f8f8f8;
-}
-.fb__freegift__empty {
-  display: none;
-  padding: 3.9rem 0;
-  background: #fff;
-  color: #555;
-  font-size: 1.1rem;
-  text-align: center;
-  line-height: 1.3;
-}
-.fb__freegift__empty.show {
-  display: block;
-}
-.fb__freegift__box {
-  position: relative;
-  width: 100%;
-  min-height: 9rem;
-  padding: 1.1rem;
-  background: #fff;
-}
-.fb__freegift__box:not(:first-child) {
-  margin-top: 1rem;
-}
-.fb__freegift__img {
-  overflow: hidden;
-  position: absolute;
-  top: 1.1rem;
-  left: 1.1rem;
-  width: 6rem;
-  height: 6.75rem;
-}
-.fb__freegift__img img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  margin: auto;
-}
-.fb__freegift__info {
-  padding-left: 7.4rem;
-}
-.fb__freegift__name {
-  display: block;
-  display: -webkit-box;
-  overflow: hidden;
-  max-height: 3rem;
-  margin-top: 1.25rem;
-  margin-bottom: 0.6rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.3;
-  text-overflow: ellipsis;
-  text-align: left;
-  word-wrap: break-word;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-.fb__freegift__option {
-  display: block;
-  margin-bottom: 0.6rem;
-  color: #555;
-  font-size: 1.1rem;
-}
-.fb__freegift__qty {
-  display: block;
-  color: #555;
-  font-size: 1.1rem;
-}
-.fb__freegift__desc {
-  margin-top: 1.5rem;
-}
-.fb__freegift__desc p {
-  overflow: hidden;
-  position: relative;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
-  color: #888;
-  font-size: 1rem;
-  line-height: 1.3;
-}
-.fb__freegift__desc p:after {
-  position: absolute;
-  top: 0.5rem;
-  left: 0;
-  width: 0.3rem;
-  height: 0.3rem;
-  background: #888;
-  border-radius: 50%;
-  content: "";
-}
-.fb__selectgift {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-}
-.fb__selectgift.show {
-  display: block;
-}
-.fb__selectgift .selectgift__layer {
-  position: relative;
-  height: 100%;
-  padding-top: 5.45rem;
-}
-.fb__selectgift .selectgift__layer header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4.75rem;
-  padding: 1.5rem 0;
-  background: #fff;
-  border-bottom: 0.1rem solid #e6e6e6;
-  text-align: center;
-}
-.fb__selectgift .selectgift__layer header:after {
-  position: absolute;
-  bottom: -0.8rem;
-  left: 0;
-  width: 100%;
-  height: 0.7rem;
-  background: #f2f2f2;
-  content: "";
-}
-.fb__selectgift .selectgift__layer header h2 {
-  font-size: 1.6rem;
-  font-weight: 600;
-}
-.fb__selectgift .selectgift__layer header button {
-  position: absolute;
-  top: 1.75rem;
-  right: 1.65rem;
-  width: 1.2rem;
-  height: 1.2rem;
-  font-size: 0;
-  background: none;
-  border: none;
-}
-.fb__selectgift .selectgift__layer header button:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1.2rem;
-  height: 1.2rem;
-  background: url(../../src/images/olenz/btn-close-mo.png) no-repeat 0 0/1.2rem 1.2rem;
-  content: "";
-}
-.fb__selectgift .selectgift__cont {
-  width: 100%;
-  height: 100%;
-  padding: 0 1.2rem;
-  background: #fff;
-}
-.fb__selectgift .selectgift__top {
-  height: 4.3rem;
-  padding: 1.75rem 0 1rem;
-}
-.fb__selectgift .selectgift__desc {
-  font-size: 1.3rem;
-  line-height: 1;
-}
-.fb__selectgift .selectgift__desc em {
-  font-weight: bold;
-}
-.fb__selectgift .selectgift__scroll {
-  overflow-x: hidden;
-  overflow-y: auto;
-  height: 100%;
-}
-.fb__selectgift .selectgift__box {
-  position: relative;
-  min-height: 11.9rem;
-  padding: 1.5rem 0;
-  border-bottom: 0.1rem solid #e6e6e6;
-}
-.fb__selectgift .selectgift__label {
-  overflow: hidden;
-  position: absolute;
-  top: 1.5rem;
-  left: 0;
-  width: 7rem;
-  height: 8rem;
-}
-.fb__selectgift .selectgift__label input {
-  display: none;
-}
-.fb__selectgift .selectgift__label input:checked + .selectgift__img:before {
-  display: block;
-}
-.fb__selectgift .selectgift__img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.fb__selectgift .selectgift__img:before {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4) url(../../src/images/olenz/btn-check.png) no-repeat 2.4rem 3.1rem/2.3rem 1.75rem;
-  content: "";
-}
-.fb__selectgift .selectgift__img img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  margin: auto;
-}
-.fb__selectgift .selectgift__info {
-  padding-left: 8rem;
-}
-.fb__selectgift .selectgift__name {
-  display: block;
-  display: -webkit-box;
-  overflow: hidden;
-  max-height: 2.6rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.3rem;
-  text-overflow: ellipsis;
-  text-align: left;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  word-wrap: break-word;
-}
-.fb__selectgift .selectgift__eye {
-  width: 100%;
-  height: 3.6rem;
-  margin-bottom: 1rem;
-  padding: 0 2.6rem 0 1.25rem;
-  background: url(../../src/images/olenz/btn-select.png) no-repeat calc(100% - 0.75rem) center/1.1rem 0.65rem;
-  border: 0.1rem solid #ccc;
-  font-size: 1.2rem;
-  line-height: 3.6rem;
-}
-.fb__selectgift .selectgift__spinner {
-  display: inline-block;
-  position: relative;
-  width: 7.5rem;
-  height: 1.9rem;
-  border: 0.1rem solid #ccc;
-  line-height: 1;
-  padding: 0 1.8rem;
-  box-sizing: border-box;
-}
-.fb__selectgift .selectgift__spinner button {
-  position: absolute;
-  top: 0;
-  width: 1.8rem;
-  height: 1.8rem;
-  font-size: 0;
-}
-.fb__selectgift .selectgift__spinner__btn--minus {
-  left: 0;
-  background: url(../../src/images/olenz/btn-gift-minus.png) no-repeat center center/1rem 0.1rem;
-  border-right: 0.1rem solid #ccc;
-}
-.fb__selectgift .selectgift__spinner__btn--plus {
-  top: 0;
-  right: 0;
-  background: url(../../src/images/olenz/btn-gift-plus.png) no-repeat center center/1rem 1rem;
-  border-left: 0.1rem solid #ccc;
-  font-size: 0;
-}
-.fb__selectgift .selectgift__spinner__count {
-  width: 3.9rem;
-  height: 1.7rem;
-  border: none;
-  font-size: 1.1rem;
-  text-align: center;
-}
-.fb__selectgift .selectgift__btn {
-  margin: 0 -0.25rem;
-  padding: 1.5rem 1.2rem 4rem;
-}
-.fb__selectgift .selectgift__btn::after {
-  display: block;
-  clear: both;
-  content: "";
-}
-.fb__selectgift .selectgift__btn button {
-  float: left;
-  width: calc(50% - 0.5rem);
-  margin: 0 0.25rem;
-  padding: 1.6rem 0;
-  border: 0.1rem solid #000;
-  border-radius: 0.2rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-  line-height: 1;
-}
-.fb__selectgift .selectgift__btn--bk {
-  background: #000;
-  color: #fff;
-}
-.fb__orderlist.hide .fb__freegift__box:not(:first-child) {
-  display: none;
-}
-.fb__orderlist.hide .fb__orderlist__btn:after {
-  transform: rotate(180deg);
-}
-.fb__orderlist__nav {
-  padding: 50px 0 60px;
-  text-align: center;
-}
-.fb__orderlist__btn {
-  position: relative;
-  padding: 16px 52px 16px 20px;
-  background: #fff;
-  border: 1px solid #ccc;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 1;
-}
-.fb__slidetest {
-  display: block;
-  width: 32rem;
-}
-.fb__slidetest__slider {
-  overflow: hidden;
-  width: 100%;
-}
-.fb__slidetest__slider .slider__wrapper {
-  white-space: nowrap;
-}
-.fb__slidetest__slider .slider__item {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-}
-.fb__slidetest__slider .slider__cont {
-  background: red;
-  height: 100rem;
-}
-.fb__slidetest__slider .slider__cont.yellow {
-  background: yellow;
-  height: 5rem;
-}
-.fb__slidetest__slider .slider__cont.green {
-  background: green;
-  height: 50rem;
 }
 
 .fb__reviewPage {
@@ -2367,6 +1968,408 @@ html, body {
   font-size: 30px;
   line-height: 1;
   vertical-align: middle;
+}
+
+/* 모바일 */
+html, body {
+  font-size: 125%;
+  font-size: 125%;
+  -webkit-text-size-adjust: none;
+}
+
+.fb__freegift {
+  display: block;
+  width: 32rem;
+}
+.fb__freegift__top {
+  position: relative;
+  min-height: 5rem;
+  margin: 0 1.25rem;
+  padding: 2.5rem 8rem 1.5rem 0;
+  border-bottom: #f0f0f0 0.1rem solid;
+}
+.fb__freegift__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.fb__freegift__select {
+  position: absolute;
+  right: 0;
+  bottom: 0.65rem;
+  width: 8rem;
+  height: 3.2rem;
+  background: #fff;
+  border: 0.1rem solid #ccc;
+  color: #555;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 3.2rem;
+}
+.fb__freegift__cont {
+  padding: 1.2rem;
+}
+.fb__freegift__inner {
+  min-height: 220px;
+  padding: 1.1rem;
+  background: #f8f8f8;
+}
+.fb__freegift__empty {
+  display: none;
+  padding: 3.9rem 0;
+  background: #fff;
+  color: #555;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 1.3;
+}
+.fb__freegift__empty.show {
+  display: block;
+}
+.fb__freegift__box {
+  position: relative;
+  width: 100%;
+  min-height: 9rem;
+  padding: 1.1rem;
+  background: #fff;
+}
+.fb__freegift__box:not(:first-child) {
+  margin-top: 1rem;
+}
+.fb__freegift__img {
+  overflow: hidden;
+  position: absolute;
+  top: 1.1rem;
+  left: 1.1rem;
+  width: 6rem;
+  height: 6.75rem;
+}
+.fb__freegift__img img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.fb__freegift__info {
+  padding-left: 7.4rem;
+}
+.fb__freegift__name {
+  display: block;
+  display: -webkit-box;
+  overflow: hidden;
+  max-height: 3rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  text-align: left;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.fb__freegift__option {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: #555;
+  font-size: 1.1rem;
+}
+.fb__freegift__qty {
+  display: block;
+  color: #555;
+  font-size: 1.1rem;
+}
+.fb__freegift__desc {
+  margin-top: 1.5rem;
+}
+.fb__freegift__desc p {
+  overflow: hidden;
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  color: #888;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+.fb__freegift__desc p:after {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  width: 0.3rem;
+  height: 0.3rem;
+  background: #888;
+  border-radius: 50%;
+  content: "";
+}
+.fb__selectgift {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.fb__selectgift.show {
+  display: block;
+}
+.fb__selectgift .selectgift__layer {
+  position: relative;
+  height: 100%;
+  padding-top: 5.45rem;
+}
+.fb__selectgift .selectgift__layer header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4.75rem;
+  padding: 1.5rem 0;
+  background: #fff;
+  border-bottom: 0.1rem solid #e6e6e6;
+  text-align: center;
+}
+.fb__selectgift .selectgift__layer header:after {
+  position: absolute;
+  bottom: -0.8rem;
+  left: 0;
+  width: 100%;
+  height: 0.7rem;
+  background: #f2f2f2;
+  content: "";
+}
+.fb__selectgift .selectgift__layer header h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.fb__selectgift .selectgift__layer header button {
+  position: absolute;
+  top: 1.75rem;
+  right: 1.65rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  font-size: 0;
+  background: none;
+  border: none;
+}
+.fb__selectgift .selectgift__layer header button:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: url(../../src/images/olenz/btn-close-mo.png) no-repeat 0 0/1.2rem 1.2rem;
+  content: "";
+}
+.fb__selectgift .selectgift__cont {
+  width: 100%;
+  height: 100%;
+  padding: 0 1.2rem;
+  background: #fff;
+}
+.fb__selectgift .selectgift__top {
+  height: 4.3rem;
+  padding: 1.75rem 0 1rem;
+}
+.fb__selectgift .selectgift__desc {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.fb__selectgift .selectgift__desc em {
+  font-weight: bold;
+}
+.fb__selectgift .selectgift__scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+}
+.fb__selectgift .selectgift__box {
+  position: relative;
+  min-height: 11.9rem;
+  padding: 1.5rem 0;
+  border-bottom: 0.1rem solid #e6e6e6;
+}
+.fb__selectgift .selectgift__label {
+  overflow: hidden;
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  width: 7rem;
+  height: 8rem;
+}
+.fb__selectgift .selectgift__label input {
+  display: none;
+}
+.fb__selectgift .selectgift__label input:checked + .selectgift__img:before {
+  display: block;
+}
+.fb__selectgift .selectgift__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.fb__selectgift .selectgift__img:before {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4) url(../../src/images/olenz/btn-check.png) no-repeat 2.4rem 3.1rem/2.3rem 1.75rem;
+  content: "";
+}
+.fb__selectgift .selectgift__img img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.fb__selectgift .selectgift__info {
+  padding-left: 8rem;
+}
+.fb__selectgift .selectgift__name {
+  display: block;
+  display: -webkit-box;
+  overflow: hidden;
+  max-height: 2.6rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3rem;
+  text-overflow: ellipsis;
+  text-align: left;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+.fb__selectgift .selectgift__eye {
+  width: 100%;
+  height: 3.6rem;
+  margin-bottom: 1rem;
+  padding: 0 2.6rem 0 1.25rem;
+  background: url(../../src/images/olenz/btn-select.png) no-repeat calc(100% - 0.75rem) center/1.1rem 0.65rem;
+  border: 0.1rem solid #ccc;
+  font-size: 1.2rem;
+  line-height: 3.6rem;
+}
+.fb__selectgift .selectgift__spinner {
+  display: inline-block;
+  position: relative;
+  width: 7.5rem;
+  height: 1.9rem;
+  border: 0.1rem solid #ccc;
+  line-height: 1;
+  padding: 0 1.8rem;
+  box-sizing: border-box;
+}
+.fb__selectgift .selectgift__spinner button {
+  position: absolute;
+  top: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  font-size: 0;
+}
+.fb__selectgift .selectgift__spinner__btn--minus {
+  left: 0;
+  background: url(../../src/images/olenz/btn-gift-minus.png) no-repeat center center/1rem 0.1rem;
+  border-right: 0.1rem solid #ccc;
+}
+.fb__selectgift .selectgift__spinner__btn--plus {
+  top: 0;
+  right: 0;
+  background: url(../../src/images/olenz/btn-gift-plus.png) no-repeat center center/1rem 1rem;
+  border-left: 0.1rem solid #ccc;
+  font-size: 0;
+}
+.fb__selectgift .selectgift__spinner__count {
+  width: 3.9rem;
+  height: 1.7rem;
+  border: none;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.fb__selectgift .selectgift__btn {
+  margin: 0 -0.25rem;
+  padding: 1.5rem 1.2rem 4rem;
+}
+.fb__selectgift .selectgift__btn::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.fb__selectgift .selectgift__btn button {
+  float: left;
+  width: calc(50% - 0.5rem);
+  margin: 0 0.25rem;
+  padding: 1.6rem 0;
+  border: 0.1rem solid #000;
+  border-radius: 0.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.fb__selectgift .selectgift__btn--bk {
+  background: #000;
+  color: #fff;
+}
+.fb__orderlist.hide .fb__freegift__box:not(:first-child) {
+  display: none;
+}
+.fb__orderlist.hide .fb__orderlist__btn:after {
+  transform: rotate(180deg);
+}
+.fb__orderlist__nav {
+  padding: 50px 0 60px;
+  text-align: center;
+}
+.fb__orderlist__btn {
+  position: relative;
+  padding: 16px 52px 16px 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+}
+.fb__slidetest {
+  display: block;
+  width: 32rem;
+}
+.fb__slidetest__slider {
+  overflow: hidden;
+  width: 100%;
+}
+.fb__slidetest__slider .slider__wrapper {
+  white-space: nowrap;
+}
+.fb__slidetest__slider .slider__item {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+.fb__slidetest__slider .slider__cont {
+  background: red;
+  height: 100rem;
+}
+.fb__slidetest__slider .slider__cont.yellow {
+  background: yellow;
+  height: 5rem;
+}
+.fb__slidetest__slider .slider__cont.green {
+  background: green;
+  height: 50rem;
 }
 
 /*# sourceMappingURL=main.css.map*/
