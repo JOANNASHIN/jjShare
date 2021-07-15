@@ -1909,7 +1909,6 @@ input[type=button] {
 .fb__minjuTodo .todo__list__row {
   position: relative;
   width: 100%;
-  height: 140px;
   padding: 30px 50px;
   border-bottom: 1px solid #ccc;
   cursor: pointer;
@@ -1920,34 +1919,32 @@ input[type=button] {
 .fb__minjuTodo .todo__list__row.dim .cont {
   text-decoration: line-through;
 }
+.fb__minjuTodo .todo__list__row .cont-box {
+  position: relative;
+}
+.fb__minjuTodo .todo__list__row .cont-box.contHide {
+  display: none;
+}
 .fb__minjuTodo .todo__list__row .cont-box .cont {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   display: block;
   width: 550px;
-  max-height: 30px;
+  min-height: 60px;
   font-size: 16px;
+  padding-bottom: 40px;
 }
 .fb__minjuTodo .todo__list__row .cont-box .date {
   display: block;
-  position: absolute;
-  left: 50px;
-  bottom: 30px;
   color: #999;
   font-size: 16px;
   font-weight: bold;
 }
-.fb__minjuTodo .todo__list__row .cont-box .edit {
-  width: 650px;
-}
-.fb__minjuTodo .todo__list__row .btn-box {
+.fb__minjuTodo .todo__list__row .cont-box .btn-box {
   position: absolute;
-  top: 30px;
-  right: 50px;
+  top: 0px;
+  right: 0px;
   font-size: 0;
 }
-.fb__minjuTodo .todo__list__row .btn-box .btnEdit {
+.fb__minjuTodo .todo__list__row .cont-box .btn-box .btnEdit {
   display: inline-block;
   width: 70px;
   height: 35px;
@@ -1956,7 +1953,7 @@ input[type=button] {
   color: #111;
   font-size: 14px;
 }
-.fb__minjuTodo .todo__list__row .btn-box .btnRemove {
+.fb__minjuTodo .todo__list__row .cont-box .btn-box .btnRemove {
   display: block;
   width: 70px;
   height: 35px;
@@ -1966,11 +1963,37 @@ input[type=button] {
   color: #fff;
   font-size: 14px;
 }
-.fb__minjuTodo .todo__list__row .btn-box .btnCancle {
+.fb__minjuTodo .todo__list__row .edit-box {
+  display: none;
+  margin: 14px 0;
+  font-size: 0;
+}
+.fb__minjuTodo .todo__list__row .edit-box.editShow {
+  display: block;
+}
+.fb__minjuTodo .todo__list__row .edit-input {
+  display: inline-block;
+  width: 470px;
+  height: 50px;
+}
+.fb__minjuTodo .todo__list__row .edit-btn {
+  display: inline-block;
+  margin: 0 0 8px 9px;
+}
+.fb__minjuTodo .todo__list__row .edit-btn .btnEditDone {
   display: inline-block;
   width: 70px;
   height: 35px;
-  margin-top: 10px;
+  margin-right: 10px;
+  background: #bd5446;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+}
+.fb__minjuTodo .todo__list__row .edit-btn .btnCancle {
+  display: inline-block;
+  width: 70px;
+  height: 35px;
   background: #222;
   border-radius: 10px;
   color: #fff;

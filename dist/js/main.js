@@ -58805,7 +58805,7 @@ const minjuTodo = () => {
 
         // 리스트 빈값 선언
         let addList = "";
-
+        
         // 리스트 추가
         $document.on("click", ".js__btnAdd", function() {
             // 입력된 인풋 밸류값
@@ -58819,10 +58819,18 @@ const minjuTodo = () => {
                     <div class="cont-box">
                         <span class="cont">${_inputValue}</span>
                         <span class="date">${_today}</span>
-                    </div>
-                    <div class="btn-box">
-                        <button type="button" class="btnEdit js__btnEdit">수정</button>
-                        <button type="button" class="btnRemove js__btnRemove">삭제</button>
+                        <div class="btn-box">
+                            <button type="button" class="btnEdit js__btnEdit">수정</button>
+                            <button type="button" class="btnRemove js__btnRemove">삭제</button>
+                        </div>    
+                    </div>   
+
+                    <div class="edit-box">
+                        <input type="text" class="edit-input" placeholder="내용을 입력하세요.">
+                        <div class="edit-btn">
+                            <button type="button" class="btnEditDone js__btnEditDone">완료</button>
+                            <button type="button" class="btnCancle js__btnCancle">취소</button>
+                        </div>
                     </div>
                 </li>
             `
@@ -58836,6 +58844,7 @@ const minjuTodo = () => {
             // 리스트 진행 개수
             $(".js__ing").text( ($(".js__list__row").length) - ($(".js__list__row.dim").length));
             
+            // 리스트 개수가 1이상 되면 전체삭제 버튼
             if ( $(".js__list__row").length >= 1 ) {
                 $(".js__btnAllDelete").addClass("show");
             }
@@ -58843,9 +58852,17 @@ const minjuTodo = () => {
         });
 
         // 리스트 딤처리
-        $document.on("click", ".js__list__row", function() {
+        $document.on("click", ".js__list__row", function(e) {
+            console.log($(e.target), $(this))
+
+            if( !$(e.target).hasClass(".js__list__row") ) {
+                return false;
+            }
+            e.preventDefault();
+
+            e.stopPropagation();
             const $this = $(this);
-            
+
             if ( !($this.hasClass("dim")) ) {
                 $this.addClass("dim");
             }
@@ -58862,8 +58879,51 @@ const minjuTodo = () => {
         });
 
         // 리스트 수정
-        $document.on("click", ".js__btnEdit", function() {
-            // console.log("DDd")
+        $document.on("click", ".js__btnEdit", function(e) {
+            const $this = $(this);
+            e.stopPropagation(); // 딤처리 막기
+            
+            // 컨텐츠 박스 숨기기
+            $this.closest(".js__list__row").find(".cont-box").addClass("contHide");
+
+            // 수정 리스트 보이기
+            $this.closest(".js__list__row").find(".edit-box").addClass("editShow");
+
+            // 리스트 텍스트 가져오기
+            $this.closest(".cont-box").next(".edit-box").find("input").val($this.closest(".js__list__row").find(".cont").text());
+
+            console.log( $this.closest(".js__list__row").find(".cont").text() );
+            
+        });
+
+        // 리스트 수정 후 완료
+        $document.on("click", ".js__btnEditDone", function(e) {
+            e.stopPropagation();
+
+            const $this = $(this);
+            const _editDoneValue = $this.parent().siblings().val();
+
+            // 컨텐츠 박스 보이게
+            $this.closest(".js__list__row").find(".cont-box").removeClass("contHide");
+            // 수정 텍스트 다시 가져오기
+            $this.closest(".js__list__row").find(".cont-box").find(".cont").text(_editDoneValue);
+
+            console.log(_editDoneValue)
+
+            // 수정 리스트 숨기기
+            $this.closest(".js__list__row").find(".edit-box").removeClass("editShow");
+
+        });
+
+        // 수정 취소
+        $document.on("click", ".js__btnCancle", function(e){
+            e.stopPropagation();
+
+            const $this = $(this);
+            // 컨텐츠 박스 보이게
+            $this.closest(".js__list__row").find(".cont-box").removeClass("contHide");
+             // 수정 리스트 숨기기
+             $this.closest(".js__list__row").find(".edit-box").removeClass("editShow");
         });
 
         // 리스트 삭제

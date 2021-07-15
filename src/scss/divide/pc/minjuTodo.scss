@@ -111,7 +111,6 @@
                 &__row {
                     position: relative;
                     width: 100%;
-                    height: 140px;
                     padding: 30px 50px;
                     border-bottom: 1px solid #ccc;
                     cursor: pointer;
@@ -125,77 +124,110 @@
                     }
 
                     .cont-box {
-                        
+                        position: relative;
+                        // height: 80px;
+
+                        &.contHide {
+                            display: none;
+                        }
+
                         // 내용
                         .cont {
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
                             display: block;
                             width: 550px;
-                            max-height: 30px;
+                            min-height: 60px;
                             font-size: 16px;
+                            padding-bottom: 40px;
+
                         }
 
                         // 작성 날짜
                         .date {
                             display: block;
-                            position: absolute;
-                            left: 50px;
-                            bottom: 30px;
                             color: #999;
                             font: {
                                 size: 16px;
                                 weight: bold;
                             };
                         }
+    
+                        .btn-box {
+                            position: absolute;
+                            top: 0px;
+                            right: 0px;
+                            font-size: 0;
+    
+                            // 수정 버튼
+                            .btnEdit {
+                                display: inline-block;
+                                width: 70px;
+                                height: 35px;
+                                border: 1px solid #111;
+                                border-radius: 10px;
+                                color: #111;
+                                font-size: 14px;
+                            }
+                
+                            // 삭제 버튼
+                            .btnRemove {
+                                display: block;
+                                width: 70px;
+                                height: 35px;
+                                margin-top: 10px;
+                                background: #222;
+                                border-radius: 10px;
+                                color: #fff;
+                                font-size: 14px;
+                            }
+                        }
 
-                        .edit {
-                            width: 650px;
+                    }
+
+                    // 수정 영역
+                    .edit {
+                        &-box {
+                            display: none;
+                            margin: 14px 0;
+                            font-size: 0;
+
+                            &.editShow {
+                                display: block;
+                            }
+                        }
+
+                        &-input {
+                            display: inline-block;
+                            width: 470px;
+                            height: 50px;
+                        }
+
+                        &-btn {
+                            display: inline-block;
+                            margin: 0 0 8px 9px;
+                            
+                            .btnEditDone {
+                                display: inline-block;
+                                width: 70px;
+                                height: 35px;
+                                margin-right: 10px;
+                                background: #bd5446;
+                                border-radius: 10px;
+                                color: #fff;
+                                font-size: 14px;
+                            }
+
+                            .btnCancle {
+                                display: inline-block;
+                                width: 70px;
+                                height: 35px;
+                                background: #222;
+                                border-radius: 10px;
+                                color: #fff;
+                                font-size: 14px;
+                            }
                         }
                     }
-                    
-                    .btn-box {
-                        position: absolute;
-                        top: 30px;
-                        right: 50px;
-                        font-size: 0;
 
-                        // 수정 버튼
-                        .btnEdit {
-                            display: inline-block;
-                            width: 70px;
-                            height: 35px;
-                            border: 1px solid #111;
-                            border-radius: 10px;
-                            color: #111;
-                            font-size: 14px;
-                        }
-            
-                        // 삭제 버튼
-                        .btnRemove {
-                            display: block;
-                            width: 70px;
-                            height: 35px;
-                            margin-top: 10px;
-                            background: #222;
-                            border-radius: 10px;
-                            color: #fff;
-                            font-size: 14px;
-                        }
-
-                        // 취소 버튼
-                        .btnCancle {
-                            display: inline-block;
-                            width: 70px;
-                            height: 35px;
-                            margin-top: 10px;
-                            background: #222;
-                            border-radius: 10px;
-                            color: #fff;
-                            font-size: 14px;
-                        }
-                    }
                 }
             }
 
