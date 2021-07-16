@@ -7,15 +7,77 @@
     }
 }
 
-%imageResize {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: auto;
-    margin: auto;
+%scroll {
+    overflow-y: hidden;
+    overflow-x: auto;
+    margin-bottom: rem(-5px);
+    padding-bottom: rem(5px);
+    white-space: nowrap;
+    font-size: 0;
+
+    &::-webkit-scrollbar {
+        display: none;
+
+        &-thumb {
+            display: none;
+        }
+
+        &-button {
+            display: none;
+        }
+    }
+}
+
+//image url
+@function src($folder: 'guide', $filename: "") {
+    @return  "../images/svg/#{$folder}/#{$filename}";
+}
+
+//font
+@mixin fontcss($color: $black, $weight: 200, $size: rem(14px), $lineheight: 1) {
+    @if ($color) {
+        color: $color;
+    }
+    @if ($weight) {
+        font-weight: $weight;
+    }
+    @if ($size) {
+        font-size: $size;
+    }
+    @if ($lineheight) {
+        line-height: $lineheight;
+    }
+}
+
+
+//이미지 리사이징
+@mixin imageResize($type: "width") {
+    overflow: hidden;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    
+        @if ($type == "width") {
+            width: 100%;
+            height: auto;
+        }
+        @else if ($type == "height") {
+            width: auto;
+            height: 100%;
+        }
+        @else if ($type == "auto") {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
 }
 
 @mixin line($lineCount: 1) {
