@@ -1990,7 +1990,7 @@ input[type=button] {
   color: #fff;
   font-size: 14px;
 }
-.fb__minjuTodo .todo__list__row .edit-btn .btnCancle {
+.fb__minjuTodo .todo__list__row .edit-btn .btnCancel {
   display: inline-block;
   width: 70px;
   height: 35px;

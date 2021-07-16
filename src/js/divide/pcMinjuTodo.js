@@ -40,7 +40,7 @@ const minjuTodo = () => {
                         <input type="text" class="edit-input" placeholder="내용을 입력하세요.">
                         <div class="edit-btn">
                             <button type="button" class="btnEditDone js__btnEditDone">완료</button>
-                            <button type="button" class="btnCancle js__btnCancle">취소</button>
+                            <button type="button" class="btnCancel js__btnCancel">취소</button>
                         </div>
                     </div>
                 </li>
@@ -64,23 +64,27 @@ const minjuTodo = () => {
 
         // 리스트 딤처리
         $document.on("click", ".js__list__row", function(e) {
-            console.log($(e.target), $(this))
-
-            if( !$(e.target).hasClass(".js__list__row") ) {
-                return false;
-            }
-            e.preventDefault();
-
-            e.stopPropagation();
             const $this = $(this);
 
+            // 수정박스가 보여질 때
+            if( $(".edit-box").hasClass("editShow") ) {
+                return false;
+            }
+
+            // 딤추가/ 버튼 활성화/비활
             if ( !($this.hasClass("dim")) ) {
                 $this.addClass("dim");
+
+                // attr()로 버튼의 disabled 사용여부 (disabled 활성화/비활성화)
+                // attr()은 HTML의 속성을 취급
+                // prop()은 javescript의 property를 취급하는 메소드, disabled의 상태값 확인
+                $(".js__btnEdit").attr("disabled", true);
             }
             else {
                 $this.removeClass("dim");
+                $(".js__btnEdit").attr("disabled", false);
             }
-
+            
             // 진행 완료 ( = if 조건 )
             $(".js__done").text($(".js__list__row.dim").length);
             
@@ -92,8 +96,8 @@ const minjuTodo = () => {
         // 리스트 수정
         $document.on("click", ".js__btnEdit", function(e) {
             const $this = $(this);
-            e.stopPropagation(); // 딤처리 막기
-            
+            e.stopPropagation();
+
             // 컨텐츠 박스 숨기기
             $this.closest(".js__list__row").find(".cont-box").addClass("contHide");
 
@@ -127,7 +131,7 @@ const minjuTodo = () => {
         });
 
         // 수정 취소
-        $document.on("click", ".js__btnCancle", function(e){
+        $document.on("click", ".js__btnCancel", function(e){
             e.stopPropagation();
 
             const $this = $(this);
