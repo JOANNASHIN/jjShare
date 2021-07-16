@@ -1846,7 +1846,7 @@ input[type=button] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 86%;
+  width: 87%;
   margin: 0 auto;
   padding: 50px 0px 40px;
   border-radius: 10px;
@@ -1869,17 +1869,17 @@ input[type=button] {
 }
 .fb__minjuTodo .todo__insert .insert__input {
   display: inline-block;
-  width: 530px;
+  width: 580px;
   height: 50px;
 }
 .fb__minjuTodo .todo__insert .insert__btnAdd {
   display: inline-block;
-  width: 100px;
+  width: 50px;
   height: 50px;
   background: #bd5446;
-  border-radius: 10px;
+  border-radius: 50%;
   color: #fff;
-  font-size: 20px;
+  font-size: 35px;
 }
 .fb__minjuTodo .todo__situation {
   padding: 20px 50px;
@@ -1887,18 +1887,20 @@ input[type=button] {
 }
 .fb__minjuTodo .todo__situation__box {
   display: inline-block;
-  font-size: 24px;
+  font-size: 0;
 }
 .fb__minjuTodo .todo__situation__box:not(:first-child) {
   margin-left: 30px;
 }
 .fb__minjuTodo .todo__situation__box .cnt-title {
+  margin-right: 10px;
   color: #333;
   font-size: 18px;
   font-weight: bold;
 }
 .fb__minjuTodo .todo__situation__box .cnt-value {
   color: #999;
+  font-size: 22px;
 }
 .fb__minjuTodo .todo__list__box {
   overflow: hidden;

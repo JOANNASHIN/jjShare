@@ -17,7 +17,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                width: 86%;
+                width: 87%;
                 margin: 0 auto;
                 padding: 50px 0px 40px;
                 border-radius: 10px;
@@ -41,29 +41,29 @@
                     weight: bold;
                 }
             }
-        
+                
             // 입력 인풋
             &__insert {
                 display: flex;
                 justify-content: space-between;
                 padding: 0 50px;
-    
+                
                 .insert {
                     &__input {
                         display: inline-block;
-                        width: 530px;
+                        width: 580px;
                         height: 50px;
                     }
     
                     // 추가 버튼
                     &__btnAdd {
                         display: inline-block;
-                        width: 100px;
+                        width: 50px;
                         height: 50px;
                         background: #bd5446;
-                        border-radius: 10px;
+                        border-radius: 50%;
                         color: #fff;
-                        font-size: 20px;
+                        font-size: 35px;
                     }
                 }
             }
@@ -75,7 +75,7 @@
 
                 &__box {
                     display: inline-block;
-                    font-size: 24px;
+                    font-size: 0;
         
                     &:not(:first-child) {
                         margin-left: 30px;
@@ -83,6 +83,7 @@
                     
                     .cnt {
                         &-title {
+                            margin-right: 10px;
                             color: #333;
                             font: {
                                 size: 18px;
@@ -92,6 +93,7 @@
         
                         &-value {
                             color: #999;
+                            font-size: 22px;
                         }
                     }
                 }
@@ -99,7 +101,7 @@
 
             // 추가되는 리스트
             &__list {
-                // ul
+                
                 &__box {
                     overflow: hidden;
                     overflow-y: auto;
@@ -107,7 +109,6 @@
                     border-top: 2px solid #111;
                 }
                 
-                // 하나의 li
                 &__row {
                     position: relative;
                     width: 100%;
@@ -125,7 +126,6 @@
 
                     .cont-box {
                         position: relative;
-                        // height: 80px;
 
                         &.contHide {
                             display: none;
@@ -138,7 +138,6 @@
                             min-height: 60px;
                             font-size: 16px;
                             padding-bottom: 40px;
-
                         }
 
                         // 작성 날짜
@@ -180,7 +179,6 @@
                                 font-size: 14px;
                             }
                         }
-
                     }
 
                     // 수정 영역
