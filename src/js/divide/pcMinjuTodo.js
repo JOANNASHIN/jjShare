@@ -62,8 +62,7 @@ const todoStart = () => {
                     $(".js__btnAllDelete").addClass("show");
                 }
             }
-            const _total = countChange(); // 전체개수
-            const _ing = countChange(); // 진행개수
+            countChange(); // 카운트 
         });
     }
 
@@ -79,12 +78,12 @@ const todoStart = () => {
             
             if ( !$this.hasClass("dim") ) {
                 $this.addClass("dim")
-                $this.find(".js__btnEdit").attr("disabled", true);
+                $this.find(".js__btnEdit").prop("disabled", true);
             }
             
             else {
                 $this.removeClass("dim")
-                $this.find(".js__btnEdit").attr("disabled", false);
+                $this.find(".js__btnEdit").prop("disabled", false);
             }
             
             const _done = countChange();
@@ -145,19 +144,20 @@ const todoStart = () => {
     // 삭제 
     const listDelete =  () => {
         // 리스트 삭제
-        $document.on("click", ".js__btnRemove", function() {
-            const $this = $(this); 
-            const findList = $this.closest($(".js__list__row"));
-            const _total = countChange();
+        $document
+            .on("click", ".js__btnRemove", function() {
+                const $this = $(this); 
+                const findList = $this.closest(".js__list__row");
+                const _total = countChange();
 
-            findList.remove();
-        });
-        // 전체 삭제
-        $document.on("click", ".js__btnAllDelete", function() {
-            $(".js__list__box").empty();
-            $(".js__count__value").text("0");
-        });
-    }
+                findList.remove();
+            })
+            // 전체 삭제
+            .on("click", ".js__btnAllDelete", function() {
+                $(".js__list__box").empty();
+                $(".js__count__value").text("0");
+            });
+        }
 
     const todoInit = () => { 
         
