@@ -58786,201 +58786,184 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
-
-const minjuTodo = () => {
+const todoStart = () => {
     const $document = $(document);
 
-    const todoApp = () => {
-        // 날짜 변수 선언
+    // 오늘 날짜 구하기
+    const getToday = () => {
         const _now = new Date();
         const weekly = ["일", "월", "화", "수", "목", "금", "토"];
-        const _getYear = _now.getFullYear();
         const _getMonth = _now.getMonth();
-        const _getDate = _now.getDate();
-        const _getDay = _now.getDay();
-
-        // 오늘 날짜 구하기
-        const _today = `${_getYear}.${_getMonth+1}.${_getDate} ${weekly[_getDay]+"요일"}`
-        $(".js__today").text(_today);
-
-        // 리스트 빈값 선언
-        let addList = "";
         
-        // 리스트 추가
+        let _date = `${ _now.getFullYear()}.${_getMonth+1}.${ _now.getDate()} ${weekly[_now.getDay()]+"요일"}`
+        $(".js__today").text(_date);
+
+        return _date;
+    }
+
+    // 리스트 카운트
+    const countChange =  () => {
+        const _total = $(".js__allCnt").text($(".js__list__row").length); // 전체개수
+        const _ing = $(".js__ing").text( ($(".js__list__row").length) - ($(".js__list__row.dim").length)); //진행 중
+        const _done =  $(".js__done").text($(".js__list__row.dim").length); // 진행 완료
+    }
+
+    // 리스트 추가
+    const addListEvent = () => {
         $document.on("click", ".js__btnAdd", function() {
-
-            // 입력된 인풋 밸류값
             const _inputValue = $("#js__insert").val();
-            // html에서 인풋 찾기
-            const insertInput = document.getElementById("js__insert");
-
-            // 내용 빈값이면 얼럿
-            if ( !_inputValue ) {
-                alert("할 일을 입력해주세요.")
-                return false;
-            }
+            const _date = getToday();
 
             // 리스트 생성
-            const addList = `
-                <li class="todo__list__row js__list__row">
-                    <div class="cont-box">
-                        <span class="cont">${_inputValue}</span>
-                        <span class="date">${_today}</span>
-                        <div class="btn-box">
-                            <button type="button" class="btnEdit js__btnEdit">수정</button>
-                            <button type="button" class="btnRemove js__btnRemove">삭제</button>
-                        </div>    
-                    </div>   
-
-                    <div class="edit-box">
-                        <input type="text" class="edit-input" placeholder="내용을 입력하세요.">
-                        <div class="edit-btn">
-                            <button type="button" class="btnEditDone js__btnEditDone">완료</button>
-                            <button type="button" class="btnCancel js__btnCancel">취소</button>
-                        </div>
-                    </div>
-                </li>
-            `
-            $(".js__list__box").prepend(addList);
-
-            // 하나 입력 후 인풋 비워주기
-            insertInput.value = null;
-
-            // 리스트 전체 개수
-            $(".js__allCnt").text($(".js__list__row").length);
-            
-            // 리스트 진행중 개수
-            $(".js__ing").text( ($(".js__list__row").length) - ($(".js__list__row.dim").length));
-            
-            // 리스트 개수가 1이상 되면 전체삭제 bt 활성화
-            if ( $(".js__list__row").length >= 1 ) {
-                $(".js__btnAllDelete").addClass("show");
-            }
-
-        });
-
-        // 리스트 딤처리
-        $document.on("click", ".js__list__row", function(e) {
-            const $this = $(this);
-
-            // 수정박스가 보여질 때
-            if( $(".edit-box").hasClass("editShow") ) {
-                return false;
-            }
-
-            // 딤추가/ 버튼 활성화/비활
-            if ( !($this.hasClass("dim")) ) {
-                $this.addClass("dim");
-                $(".js__btnEdit").attr("disabled", true);
+            if ( !_inputValue ) {
+                alert("할 일을 입력해주세요.");
+                return;
             }
             else {
-                $this.removeClass("dim");
-                $(".js__btnEdit").attr("disabled", false);
+                const addList =
+                    `
+                    <li class="todo__list__row js__list__row">
+                        <div class="todo__list__inner js__list__inner show">
+                            <span class="todo__list__content js__text">${_inputValue}</span>
+                            <span class="todo__list__date">${_date}</span>
+                            <div class="todo__list__controller">
+                                <button type="button" class="todo__list__controller--btnEdit js__btnEdit">수정</button>
+                                <button type="button" class="todo__list__controller--btnRemove js__btnRemove">삭제</button>
+                            </div>    
+                        </div>   
+    
+                        <div class="todo__edit__inner js__edit__inner">
+                            <input type="text" class="todo__edit__input" placeholder="내용을 입력하세요.">
+                            <div class="todo__edit__controller">
+                                <button type="button" class="todo__edit__controller--btnEditDone js__btnEditDone">완료</button>
+                                <button type="button" class="todo__edit__controller--btnCancel js__btnCancel">취소</button>
+                            </div>
+                        </div>
+                    </li>
+                `
+                $(".js__list__box").prepend(addList);
+
+                $("#js__insert").val("");
+
+                // 전체삭제 bt 활성화
+                if ( $(".js__list__row").length ) {
+                    $(".js__btnAllDelete").addClass("show");
+                }
             }
-            
-            // 진행 완료 ( = if 조건 )
-            $(".js__done").text($(".js__list__row.dim").length);
-            
-            // 진행 개수 ( = else )
-            $(".js__ing").text( ($(".js__list__row").length) - ($(".js__list__row.dim").length));
-
+            const _total = countChange(); // 전체개수
+            const _ing = countChange(); // 진행개수
         });
+    }
 
-        // 리스트 수정
-        $document.on("click", ".js__btnEdit", function() {
+    // 리스트 딤처리
+    const listDim = () => {
+        $document.on("click", ".js__list__row", function() {
             const $this = $(this);
-            const $contBox = $this.closest(".js__list__row").find(".cont-box"); // 컨텐츠 박스
-            const $editBox = $this.closest(".js__list__row").find(".edit-box"); // 수정 박스
-
-            const _listTextValue = $this.closest(".js__list__row").find(".cont").text(); // 텍스트값
-
-            // 컨텐츠 박스 숨기기
-            $contBox.addClass("contHide");
-
-            // 수정 리스트 보이기
-            $editBox.addClass("editShow");
-
-            // 리스트 텍스트 가져오기
-            $editBox.find("input").val(_listTextValue);
-        });
-
-        // 리스트 수정 후 완료
-        $document.on("click", ".js__btnEditDone", function(e) {
-            e.stopPropagation();
-
-            const $this = $(this);
-            const $contBox = $this.closest(".js__list__row").find(".cont-box");
-            const $editBox = $this.closest(".js__list__row").find(".edit-box");
-
-            const _editDoneValue = $this.parent().siblings().val(); // 수정 완료값
-
-            if ( !_editDoneValue ) {
-                alert("내용을 입력해주세요.")
+            
+            // 수정할 때 딤처리 안되게
+            if( $(".js__edit__inner").hasClass("show") ) {
                 return false;
             }
-
-            // 컨텐츠 박스 보이게
-            $contBox.removeClass("contHide");
-
-            // 수정 텍스트 다시 가져오기
-            $contBox.find(".cont").text(_editDoneValue);
-
-            // 수정 리스트 숨기기
-            $editBox.removeClass("editShow");
+            
+            if ( !$this.hasClass("dim") ) {
+                $this.addClass("dim")
+                $this.find(".js__btnEdit").attr("disabled", true);
+            }
+            
+            else {
+                $this.removeClass("dim")
+                $this.find(".js__btnEdit").attr("disabled", false);
+            }
+            
+            const _done = countChange();
+            const _ing = countChange();          
         });
+    }
 
-        // 수정 취소
-        $document.on("click", ".js__btnCancel", function(e){
-            e.stopPropagation();
+    // 리스트 수정
+    const listEdit = () => {
+        $document
+            // 수정
+            .on("click", ".js__btnEdit", function() {
+                const $this = $(this);
+                const $listInner = $this.closest(".js__list__row").find(".js__list__inner"); // 리스트 이너
+                const $editInner = $this.closest(".js__list__row").find(".js__edit__inner"); // 수정 이너
 
-            const $this = $(this);
-            const $contBox = $this.closest(".js__list__row").find(".cont-box");
-            const $editBox = $this.closest(".js__list__row").find(".edit-box");
+                const _listTextValue = $this.closest(".js__list__row").find(".js__text").text(); // 텍스트값
 
-            // 컨텐츠 박스 보이게
-            $contBox.removeClass("contHide");
-             // 수정 리스트 숨기기
-            $editBox.removeClass("editShow");
-        });
+                $listInner.removeClass("show"); // 리스트 숨기고
+                $editInner.addClass("show"); // 수정 리스트 보이기
+                $editInner.find("input").val(_listTextValue); // 리스트 텍스트 가져오기
+            })
 
+            // 완료
+            .on("click", ".js__btnEditDone", function(e) {
+                e.stopPropagation(); // 딤 전파 막기
+
+                const $this = $(this);
+                const $listInner = $this.closest(".js__list__row").find(".js__list__inner");
+                const $editInner = $this.closest(".js__list__row").find(".js__edit__inner");
+
+                const _editDoneValue =  $this.closest(".todo__edit__controller").siblings().val();
+                
+                if ( !_editDoneValue ) {
+                    alert("내용을 입력해주세요.")
+                    return false;
+                }
+                else {
+                    $editInner.removeClass("show");
+                    $listInner.addClass("show");
+
+                    $listInner.find(".js__text").text(_editDoneValue);
+                }
+            })
+
+            // 취소
+            .on("click", ".js__btnCancel", function(e) {
+                e.stopPropagation();
+                const $this = $(this);
+                const $listInner = $this.closest(".js__list__row").find(".js__list__inner");
+                const $editInner = $this.closest(".js__list__row").find(".js__edit__inner");
+
+                $listInner.addClass("show");
+                $editInner.removeClass("show");
+            });   
+    }
+
+    // 삭제 
+    const listDelete =  () => {
         // 리스트 삭제
         $document.on("click", ".js__btnRemove", function() {
             const $this = $(this); 
             const findList = $this.closest($(".js__list__row"));
+            const _total = countChange();
 
             findList.remove();
-
-            // 전체 개수
-            $(".js__allCnt").text($(".js__list__row").length);
-
-            // 리스트가 없으면
-            if ( $(".js__list__row").length == 0 ) {
-                $(".js__btnAllDelete").removeClass("show");
-                $(".todo__situation__box").find(".cnt-value").text("0");
-            }
         });
-
         // 전체 삭제
         $document.on("click", ".js__btnAllDelete", function() {
-
             $(".js__list__box").empty();
-
-            $(".todo__situation__box").find(".cnt-value").text("0");
-
-             if ( $(".js__list__row").length == 0 ) {
-                $(".js__btnAllDelete").removeClass("show");
-            }
+            $(".js__count__value").text("0");
         });
     }
 
-    todoApp();
-} 
+    const todoInit = () => { 
+        
+        getToday(); //날짜
+        countChange(); //카운트
+        addListEvent(); // 리스트 추가
+        listDim(); // 딤처리
+        listEdit();// 리스트 수정
+        listDelete();// 리스트 삭제
+        
+    }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (minjuTodo);
+    todoInit();
+
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (todoStart);
 
 /***/ }),
 
