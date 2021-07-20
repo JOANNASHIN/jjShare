@@ -1924,12 +1924,14 @@ input[type=button] {
 .fb__minjuTodo .todo__list__row.dim .todo__list__content {
   text-decoration: line-through;
 }
-.fb__minjuTodo .todo__list__inner {
-  position: relative;
+.fb__minjuTodo .todo__list__row.editShow .todo__list__inner {
   display: none;
 }
-.fb__minjuTodo .todo__list__inner.show {
+.fb__minjuTodo .todo__list__row.editShow .todo__edit__inner {
   display: block;
+}
+.fb__minjuTodo .todo__list__inner {
+  position: relative;
 }
 .fb__minjuTodo .todo__list__content {
   display: block;
