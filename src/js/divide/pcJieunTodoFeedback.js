@@ -63,7 +63,9 @@ const todoFeedback = () => {
         const bindEvents = () => {
             $document
                 .on("keyup", ".js__todo__add-area input", function (e) {
-                    if (e.keyCode === 13) tryToAdd($(this));
+                    if (e.keyCode === 13) {
+                        tryToAdd($(this));
+                    }
                 })
                 
                 .on("click", ".js__todo__add", function () {
